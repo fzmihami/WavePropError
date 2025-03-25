@@ -15,7 +15,7 @@ BUILD_DIR = build
 #####################
 
 CXX = g++
-CXXFLAGS = -std=c++11 -fopenmp
+CXXFLAGS = -std=c++17 -fopenmp
 CPPFLAGS = -I $(INCLUDE_DIR)
 LDFLAGS = -fopenmp
 

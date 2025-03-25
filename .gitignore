@@ -6,6 +6,7 @@ __pycache__
 
 # C++ extensions
 *.o
+code/barracuda
 
 # Visual Studio files
 .vscode/
