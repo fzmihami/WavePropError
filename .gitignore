@@ -13,6 +13,12 @@ __pycache__
 # Files inside code/inputs and code/results
 code/inputs/*
 code/results/*
+code/built/*
+
+# Allow the folders themselves to stay tracked
+!code/inputs/.gitkeep
+!code/results/.gitkeep
+!code/built/.gitkeep
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
