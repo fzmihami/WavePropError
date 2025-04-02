@@ -1,4 +1,27 @@
-"""This module contains functions to create empirical spectral distributions from user input data."""
+"""
+This module contains functions to create empirical spectral distributions from user input data.
+
+It defines an enumeration of common wave spectral models and provides functions to generate
+spectral densities, amplitude distributions, and phase distributions for ocean waves.
+
+Functions
+---------
+empirical_spec :
+    Returns the spectral density of a given wave spectrum input.
+
+create_empirical_spec :
+    Creates the empirical spectrum and optionally plots it.
+
+Classes
+-------
+spec : Enum
+    Defines the types of wave spectra: Pierson-Moskowitz, JONSWAP, and TMA.
+
+Constants
+---------
+G : float
+    Gravitational acceleration [m/s^2].
+"""
 
 import numpy as np
 from enum import Enum
@@ -9,19 +32,23 @@ import matplotlib.pyplot as plt
 G = 9.81  # m/s^2
 
 
+# Define an enumeration class for wave spectral models
 class spec(Enum):
-    pierson_moskowitz = 1
-    jonswap = 2
-    tma = 3
+    pierson_moskowitz = 1  # Pierson-Moskowitz spectrum (index 1)
+    jonswap = 2  # JONSWAP spectrum (index 2)
+    tma = 3  # TMA spectrum (index 3)
 
 
-pierson_moskowitz = spec.pierson_moskowitz
-jonswap = spec.jonswap
-tma = spec.tma
+# Retrieve specific spectral models
+pierson_moskowitz = (
+    spec.pierson_moskowitz
+)  # Assign Pierson-Moskowitz spectrum to the variable
+jonswap = spec.jonswap  # Assign JONSWAP spectrum to the variable
+tma = spec.tma  # Assign TMA spectrum to the variable
 
 
 def empirical_spec(f, fp, spec_type, Hs, water_depth):
-    """Returns the spectral density of a given wave spectrum.
+    """Returns the spectral density of a given wave spectrum input.
 
     Parameters
     ----------
@@ -35,8 +62,6 @@ def empirical_spec(f, fp, spec_type, Hs, water_depth):
         Significant wave height [m].
     water_depth : float
         Water depth [m].
-    run_time : float
-        Simulation run time [s].
 
     Returns
     -------
@@ -78,8 +103,10 @@ def empirical_spec(f, fp, spec_type, Hs, water_depth):
     return S
 
 
-def create_empirical_spec(spec_type, Hs, Tp, water_depth, run_time, show_plot=False)->np.ndarray:
-    """create the text file containing the empirical spectrum, which is used as input for the wave maker.
+def create_empirical_spec(
+    spec_type, Hs, Tp, water_depth, run_time, show_plot=False
+) -> np.ndarray:
+    """create the text file containing the empirical spectrum, which is used as input for the wavemaker.
 
     Parameters
     ----------

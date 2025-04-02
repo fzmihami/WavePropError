@@ -1,4 +1,38 @@
-"""This module contains functions to run the wave numerical model."""
+"""
+This module contains functions for running wave propagation runs with diffrent numercal schemes and wave inputs.
+It automates the process of generating steering files, compiling and running the C++ code, and processing the output results.
+The output is returned as an `xarray.Dataset`, which contains all the results from the numerical simulation.
+
+
+Constants
+---------
+G : float
+    Acceleration due to gravity [m/s^2].
+    default: G = 9.81
+
+
+Functions
+---------
+run_sine_wave :
+    Runs the model with a sine wave input and returns results in a xarray.Dataset format.
+
+run_spectral_wave :
+    Runs the model with a spectral wave input and returns results in a xarray.Dataset format.
+
+create_steering_file :
+    Generates the steering file for the wave model simulation based on the provided parameters.
+    This file is nessary for the C++ code to run the simulation.
+
+
+Classes
+-------
+scheme : Enum
+    Enum to choose between available numerical schemes for the wave model:
+    - conservative_staggered: Conservative staggered scheme.
+    - hllc: HLLC scheme (Harten-Lax-van Leer Contact).
+    - central_upwind: Central upwind scheme (Kurganov-Tadmor).
+    - hll: HLL scheme (Harten-Lax-van Leer).
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,6 +45,7 @@ import subprocess
 G = 9.81  # m/s^2
 
 
+# Define an enumeration class for numerical schemes
 class scheme(Enum):
     conservative_staggered = 1
     hllc = 2
@@ -18,6 +53,7 @@ class scheme(Enum):
     hll = 4
 
 
+# Define numerical schemes for easy access
 conservative_staggered = scheme.conservative_staggered
 hllc = scheme.hllc
 central_upwind = scheme.central_upwind
@@ -46,32 +82,46 @@ def run_sine_wave(
     ----------
     name_run : str
         Name of the run.
+        The name is used to save the results in the 'code/results' folder and it will be used to read the results.
+
     scheme : scheme
         Numerical scheme used in the model.
+
     order_reconstruction : int
         Order of the flux reconstruction.
+
     order_time_integration : int
         Order of the time integration.
+
     courant_number : float
         Courant number.
+
     grid_size : float
         Grid size [m].
+
     domain_size : float
         Domain size [m].
+
     water_depth : float
         Water depth [m].
+
     wave_amplitude : float
         Amplitude of the wave [m].
+
     wave_period : float
         Period of the wave [s].
+
     run_time : float
         Simulation run time [s].
+
     output_interval : float
         Output interval [s].
+
     gauges_locations : array_like [Ng]
-        Locations of the gauges [m]. 
+        Locations of the gauges [m].
         The reference point is the center of the wavemaker.
         Ng is the number of gauges.
+
     gauges_dt : float
         Time interval for the gauges [s].
 
@@ -99,23 +149,26 @@ def run_sine_wave(
         spec_array,
     )
 
-
     # Compile c++ code
     subprocess.run(["make"], cwd="code", stdout=subprocess.DEVNULL)
 
     # Run the model
     print(f"Running {name_run}...")
-    if subprocess.run(["./barracuda", f"inputs/{name_run}.steer"], cwd="code").returncode != 0:
+    if (
+        subprocess.run(
+            ["./barracuda", f"inputs/{name_run}.steer"], cwd="code"
+        ).returncode
+        != 0
+    ):
         return
-
 
     # Read the results
     print(f"\n")
     print(f"Reading {name_run} results and converting to xarray.Dataset...")
     ds = read_results(name_run)
 
-    ds.attrs['wave_amplitude'] = wave_amplitude
-    ds.attrs['wave_period'] = wave_period
+    ds.attrs["wave_amplitude"] = wave_amplitude
+    ds.attrs["wave_period"] = wave_period
 
     # Delete the results from the code/results folder
     subprocess.run(["rm", "-r", f"code/results/{name_run}"], cwd=".")
@@ -124,7 +177,6 @@ def run_sine_wave(
     print(f"Done!")
 
     return ds
-
 
 
 def run_spectral_wave(
@@ -150,34 +202,49 @@ def run_spectral_wave(
     ----------
     name_run : str
         Name of the run.
+        The name is used to save the results in the 'code/results' folder and it will be used to read the results.
+
     scheme : scheme
         Numerical scheme used in the model.
+
     order_reconstruction : int
         Order of the flux reconstruction.
+
     order_time_integration : int
         Order of the time integration.
+
     courant_number : float
         Courant number.
+
     grid_size : float
         Grid size [m].
+
     domain_size : float
         Domain size [m].
+
     water_depth : float
         Water depth [m].
+
     spectrum_type : spec
         Type of empirical spectrum.
+
     significant_wave_height : float
         Significant wave height [m].
+
     peak_wave_period : float
         Peak period [s].
+
     run_time : float
         Simulation run time [s].
+
     output_interval : float
         Output interval [s].
+
     gauges_locations : array_like [Ng]
-        Locations of the gauges [m]. 
+        Locations of the gauges [m].
         The reference point is the center of the wavemaker.
         Ng is the number of gauges.
+
     gauges_dt : float
         Time interval for the gauges [s].
 
@@ -215,7 +282,12 @@ def run_spectral_wave(
     # Run the model
     print(f"Running {name_run}...")
 
-    if subprocess.run(["./barracuda", f"inputs/{name_run}.steer"], cwd="code").returncode != 0:
+    if (
+        subprocess.run(
+            ["./barracuda", f"inputs/{name_run}.steer"], cwd="code"
+        ).returncode
+        != 0
+    ):
         return
 
     # Read the results
@@ -223,9 +295,8 @@ def run_spectral_wave(
     print(f"Reading {name_run} results and converting to xarray.Dataset...")
     ds = read_results(name_run)
 
-    ds.attrs['significant_wave_height'] = significant_wave_height
-    ds.attrs['peak_wave_period'] = peak_wave_period
-
+    ds.attrs["significant_wave_height"] = significant_wave_height
+    ds.attrs["peak_wave_period"] = peak_wave_period
 
     # Delete the results from the code/results folder
     subprocess.run(["rm", "-r", f"code/results/{name_run}"], cwd=".")
@@ -257,30 +328,42 @@ def create_steering_file(
     ----------
     name_run : str
         Name of the run.
+
     scheme : scheme
         Numerical scheme used in the model.
+
     order_reconstruction : int
         Order of the flux reconstruction.
+
     order_time_integration : int
         Order of the time integration.
+
     courant_number : float
         Courant number.
+
     grid_size : float
         Grid size [m].
+
     domain_size : float
         Domain size [m].
+
     water_depth : float
         Water depth [m].
+
     run_time : float
         Simulation run time [s].
+
     output_interval : float
         Output interval [s].
+
     gauges_locations : array_like [Ng]
-        Locations of the gauges [m]. 
+        Locations of the gauges [m].
         The reference point is the center of the wavemaker.
         Ng is the number of gauges.
+
     gauges_dt : float
         Time interval for the gauges [s].
+
     spec_array : array_like [Nf, 3]
 
     Returns
@@ -294,7 +377,9 @@ def create_steering_file(
     gauges_locations = np.array(gauges_locations)
     for i in range(len(gauges_locations)):
         gauges_locations[i] = float(gauges_locations[i])
-    gauges_locations_str = np.array2string(gauges_locations, separator=', ', max_line_width=np.inf)
+    gauges_locations_str = np.array2string(
+        gauges_locations, separator=", ", max_line_width=np.inf
+    )
 
     with open(f"code/inputs/{name_run}.steer", "w") as f:
         f.write(f"SCHEME: {scheme.name}\n")
@@ -314,116 +399,3 @@ def create_steering_file(
 
         f.flush()
         os.fsync(f.fileno())
-
-
-def read_output(name_run: str) -> np.ndarray:
-    return np.zeros((1, 1))
-
-
-
-
-def run_suzuki(
-    name_run: str,
-    scheme: scheme,
-    order_reconstruction: int,
-    order_time_integration: int,
-    courant_number: float,
-    grid_size: float,
-    domain_size: float,
-    water_depth: float,
-    spec_all : np.ndarray,
-    run_time: float,
-    output_interval: float,
-    gauges_locations: np.ndarray,
-    gauges_dt: float,
-) -> None:
-    """Run the wave model with a spectral wave input.
-
-    Parameters
-    ----------
-    name_run : str
-        Name of the run.
-    scheme : scheme
-        Numerical scheme used in the model.
-    order_reconstruction : int
-        Order of the flux reconstruction.
-    order_time_integration : int
-        Order of the time integration.
-    courant_number : float
-        Courant number.
-    grid_size : float
-        Grid size [m].
-    domain_size : float
-        Domain size [m].
-    water_depth : float
-        Water depth [m].
-    spectrum_type : spec
-        Type of empirical spectrum.
-    significant_wave_height : float
-        Significant wave height [m].
-    peak_wave_period : float
-        Peak period [s].
-    run_time : float
-        Simulation run time [s].
-    output_interval : float
-        Output interval [s].
-    gauges_locations : array_like [Ng]
-        Locations of the gauges [m]. 
-        The reference point is the center of the wavemaker.
-        Ng is the number of gauges.
-    gauges_dt : float
-        Time interval for the gauges [s].
-
-    Returns
-    -------
-    None
-    """
-
-    # create wave input
-    # spec_all = create_empirical_spec(
-    #     spectrum_type, significant_wave_height, peak_wave_period, water_depth, run_time
-    # )
-    spec_array = spec_all[:, [0, 2, 3]]
-
-    # create the steering file
-    create_steering_file(
-        name_run,
-        scheme,
-        order_reconstruction,
-        order_time_integration,
-        courant_number,
-        grid_size,
-        domain_size,
-        water_depth,
-        run_time,
-        output_interval,
-        gauges_locations,
-        gauges_dt,
-        spec_array,
-    )
-
-    # Compile c++ code
-    subprocess.run(["make"], cwd="code", stdout=subprocess.DEVNULL)
-
-    # Run the model
-    print(f"Running {name_run}...")
-
-    if subprocess.run(["./barracuda", f"inputs/{name_run}.steer"], cwd="code").returncode != 0:
-        return
-
-    # Read the results
-    print(f"\n")
-    print(f"Reading {name_run} results and converting to xarray.Dataset...")
-    ds = read_results(name_run)
-
-    # ds.attrs['significant_wave_height'] = significant_wave_height
-    # ds.attrs['peak_wave_period'] = peak_wave_period
-
-
-    # Delete the results from the code/results folder
-    subprocess.run(["rm", "-r", f"code/results/{name_run}"], cwd=".")
-    subprocess.run(["rm", f"code/inputs/{name_run}.steer"], cwd=".")
-
-    print(f"Done!")
-
-    return ds

@@ -1,4 +1,14 @@
-"""This module contains functions to read the numerical results."""
+"""
+This module contains functions to read the numerical results computed with the C++ code.
+
+It provides a function to read the numerical results from binary files and create an xarray Dataset containing the time series of the free surface elevation and gauge data.
+
+Functions
+---------
+read_results :
+    Reads the numerical results from a specified C++ run and returns an xarray Dataset with the free surface elevation and gauge time series.
+
+"""
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,30 +16,26 @@ import plotly.graph_objects as go
 import xarray as xr
 import os
 
+
 def read_results(name_run: str) -> xr.Dataset:
     """Read the numerical results.
 
     Parameters
     ----------
     name_run : str
-        Name of the run.
+        Name of the run. Used to locate the results in the 'code/results' folder.
+        This name is same as name_run in the run fucntion in run_model.cpp.
 
-    wave_amplitude : float
-        Amplitude of the wave [m].
-
-    wave_period : float
-        Period of the wave [s].
-    
     Returns
     -------
     ds : xarray.Dataset
         Dataset with the numerical results.
     """
     # folder name for the run
-    dir_run = os.path.join('code/results', name_run)
+    dir_run = os.path.join("code/results", name_run)
 
     # read info file binary
-    info = np.fromfile(os.path.join(dir_run, 'info.bin'), dtype=np.float32)
+    info = np.fromfile(os.path.join(dir_run, "info.bin"), dtype=np.float32)
 
     # time arra
     Time = info[0]
@@ -42,8 +48,14 @@ def read_results(name_run: str) -> xr.Dataset:
     K_gauges = int(round(info[4]))
     time_gauges = np.linspace(0, Time, K_gauges)
 
-    path_gauge = os.path.join(dir_run, 'TimeSeries')
-    nbr_gauges = len([f for f in os.listdir(path_gauge) if os.path.isfile(os.path.join(path_gauge, f))])
+    path_gauge = os.path.join(dir_run, "TimeSeries")
+    nbr_gauges = len(
+        [
+            f
+            for f in os.listdir(path_gauge)
+            if os.path.isfile(os.path.join(path_gauge, f))
+        ]
+    )
 
     # x axis
     Lx = info[5]
@@ -63,21 +75,23 @@ def read_results(name_run: str) -> xr.Dataset:
     # read the free surface elevation evolution
     eta_all = np.zeros((Kprint, len(x1)))
     for k in range(Kprint):
-        eta = np.fromfile(os.path.join(dir_run, 'FreeSurface', f'H_{k:06d}.bin'), dtype=np.float32)
+        eta = np.fromfile(
+            os.path.join(dir_run, "FreeSurface", f"H_{k:06d}.bin"), dtype=np.float32
+        )
         eta_all[k, :] = eta
 
     # read the time series at the gauges
 
     # change the sie of the array if the length of the time series is different -> Rare case due the float point precision
     if nbr_gauges > 0:
-        eta = np.fromfile(os.path.join(path_gauge, f'Gauge_{0}.bin'), dtype=np.float32)
+        eta = np.fromfile(os.path.join(path_gauge, f"Gauge_{0}.bin"), dtype=np.float32)
         K_gauges = len(eta) - 1
         time_gauges = np.linspace(0, Time, K_gauges)
 
     eta_gauges = np.zeros((K_gauges, nbr_gauges))
     index_gauges = np.zeros(nbr_gauges)
     for i in range(nbr_gauges):
-        eta = np.fromfile(os.path.join(path_gauge, f'Gauge_{i}.bin'), dtype=np.float32)
+        eta = np.fromfile(os.path.join(path_gauge, f"Gauge_{i}.bin"), dtype=np.float32)
         index_gauges[i] = round(eta[0])
         eta_gauges[:, i] = eta[1:]
 
@@ -86,25 +100,32 @@ def read_results(name_run: str) -> xr.Dataset:
     # create the xarray dataset
     ds = xr.Dataset(
         {
-            'eta': (['time', 'x'], eta_all, {'units': 'm', 'description': 'Free surface elevation'}),
-            'eta_gauges': (['time_gauges', 'gauges'], eta_gauges, {'units': 'm', 'description': 'Free surface timeseries at the gauges'}),
-            'index_gauges': (['gauges'], index_gauges, {'description': 'Index of the position of the gauges'}),
+            "eta": (
+                ["time", "x"],
+                eta_all,
+                {"units": "m", "description": "Free surface elevation"},
+            ),
+            "eta_gauges": (
+                ["time_gauges", "gauges"],
+                eta_gauges,
+                {"units": "m", "description": "Free surface timeseries at the gauges"},
+            ),
+            "index_gauges": (
+                ["gauges"],
+                index_gauges,
+                {"description": "Index of the position of the gauges"},
+            ),
         },
         coords={
-            'time': time,
-            'x': x1,
-            'time_gauges': time_gauges,
-            'gauges': np.arange(nbr_gauges),
+            "time": time,
+            "x": x1,
+            "time_gauges": time_gauges,
+            "gauges": np.arange(nbr_gauges),
         },
         attrs={
-            'name_run': name_run,
-            'water_depth': depth,
+            "name_run": name_run,
+            "water_depth": depth,
         },
     )
 
     return ds
-
-
-
-
-    
