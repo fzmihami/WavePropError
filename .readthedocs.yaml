@@ -19,7 +19,7 @@ python:
   install:
     - requirements: docs/requirements.txt  # For pip installation
     - method: pip
-    - path: .
+      path: .
 
 # Optional: specify the Conda environment setup
 conda:
