@@ -3,3 +3,6 @@ matplotlib
 scipy
 xarray
 plotly
+sphinx
+sphinx_rtd_theme
+breathe
