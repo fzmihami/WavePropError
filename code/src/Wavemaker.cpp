@@ -1,13 +1,11 @@
 /**
  * @file Wavemaker.cpp
- * @brief Implementation of the WaveMaker class for computing the source term
- * for the wavemaker.
+ * @brief Implements the WaveMaker class for generating wave forcing through a source term.
  *
- * This file contains the implementation of the WaveMaker class, which is
- * responsible for computing the source term for the wavemaker and storing
- * relevant parameters. The wavemaker is used to generate waves inside the
- * computational domain. The source term is computed by superimposing the
- * contributions from different frequencies.
+ * This file provides the implementation of the WaveMaker class, which computes
+ * the source term used to generate waves within the computational domain. It also
+ * manages and stores the relevant wavemaker parameters. The wave forcing is
+ * constructed by superimposing contributions from multiple frequency components.
  */
 
 #include <algorithm>
@@ -52,7 +50,7 @@ WaveMaker::WaveMaker(const Input &In, const unsigned int &N) {
     this->K[i] = wavelength(this->Omg[i], In.WaterDepth);
   }
 
-  // compute peak wavelength - Wei et al. 1999
+  // compute peak wavelength
   unsigned int max_amp_index =
       std::max_element(this->Amp, this->Amp + Nf) - this->Amp;
   this->Kp = this->K[max_amp_index];

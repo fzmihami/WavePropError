@@ -1,0 +1,42 @@
+\doxysection{Solve\+Equation.\+h}
+\hypertarget{SolveEquation_8h_source}{}\label{SolveEquation_8h_source}\index{code/include/SolveEquation.h@{code/include/SolveEquation.h}}
+\mbox{\hyperlink{SolveEquation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Dispersion_8h}{Dispersion.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{FluxComputation_8h}{FluxComputation.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ReadUserInput_8h}{ReadUserInput.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TimeVariables_8h}{TimeVariables.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Wavemaker_8h}{Wavemaker.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{SolveEquation_8h_a3801c3507f2e3b149294e1053408a91b}{SolveEquationStaggered\_step1}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflux__staggered}{flux\_staggered}}\ \&Fstaggered,\ \mbox{\hyperlink{classDispersion}{Dispersion}}\ \&Disp,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classWaveMaker}{WaveMaker}}\ \&WM,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{SolveEquation_8h_a90d3b8fa44e8b2d0f7fa0bd6fe518a4b}{SolveEquationStaggered\_step2}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S1,\ \mbox{\hyperlink{classState}{State}}\ \&S2,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,\ \mbox{\hyperlink{classflux__staggered}{flux\_staggered}}\ \&Fstaggered,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDispersion}{Dispersion}}\ \&Disp,\ \mbox{\hyperlink{classWaveMaker}{WaveMaker}}\ \&WM,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{SolveEquation_8h_a746d876f03c899216606b2c0ea948725}{SolveEquationStaggered\_step3}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S2,\ \mbox{\hyperlink{classState}{State}}\ \&S3,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,\ \mbox{\hyperlink{classflux__staggered}{flux\_staggered}}\ \&Fstaggered,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDispersion}{Dispersion}}\ \&Disp,\ \mbox{\hyperlink{classWaveMaker}{WaveMaker}}\ \&WM,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{SolveEquation_8h_a451c61e3381fb87a50744217adcc1807}{SolveEquationCollocated\_step1}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classflux}{flux}}\ \&Fcollocated,\ \mbox{\hyperlink{classDispersion}{Dispersion}}\ \&Disp,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classWaveMaker}{WaveMaker}}\ \&WM,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00119\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{SolveEquation_8h_aa85d0f93e1b2184b3b07cdbbac58cc13}{SolveEquationCollocated\_step2}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S1,\ \mbox{\hyperlink{classState}{State}}\ \&S2,}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,\ \mbox{\hyperlink{classflux}{flux}}\ \&Fcollocated,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDispersion}{Dispersion}}\ \&Disp,\ \mbox{\hyperlink{classWaveMaker}{WaveMaker}}\ \&WM,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{SolveEquation_8h_a3604d0243b01113e7901f7564f3763f0}{SolveEquationCollocated\_step3}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S2,\ \mbox{\hyperlink{classState}{State}}\ \&S3,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,\ \mbox{\hyperlink{classflux}{flux}}\ \&Fcollocated,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDispersion}{Dispersion}}\ \&Disp,\ \mbox{\hyperlink{classWaveMaker}{WaveMaker}}\ \&WM,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1);}
+
+\end{DoxyCode}

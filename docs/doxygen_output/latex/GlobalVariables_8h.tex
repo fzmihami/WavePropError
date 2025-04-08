@@ -1,0 +1,205 @@
+\doxysection{code/include/\+Global\+Variables.h File Reference}
+\hypertarget{GlobalVariables_8h}{}\label{GlobalVariables_8h}\index{code/include/GlobalVariables.h@{code/include/GlobalVariables.h}}
+
+
+Defines global constants and variables used in the wave propagation solver.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}} \{ \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968aca2badb5a8cc56cfab889a69c9e0cef6}{conservative\+\_\+staggered}}
+, \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968a37ea226464a76d4f841772ff1f5843c0}{hllc}}
+, \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968a7395c1b2905d77784d2d0af187e482a6}{central\+\_\+upwind}}
+, \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968af2e3f15077facd1d4f26626f532ec4e9}{hll}}
+ \}
+\item 
+enum \mbox{\hyperlink{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4a}{grid}} \{ \mbox{\hyperlink{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156}{collocated}}
+, \mbox{\hyperlink{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900}{staggered}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \mbox{\hyperlink{GlobalVariables_8h_a96a5ba0386e2a1b3b9ec030f12e91e47}{Liste\+Scheme}} \mbox{[}4\mbox{]}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8h_accf9cafc36aeda21688e19a1c2d3888d}{G}}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8h_aa08a577393243b86dfd2a97e61443673}{PI}}
+\item 
+float \mbox{\hyperlink{GlobalVariables_8h_a777989279445ddc055c317df60b3dd64}{hmin}}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8h_aca7f35c8ae5f70eaffe705ebc6766585}{alpha1}}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8h_a8f669f98a450c90b372af97dbe393064}{gamma1}}
+\item 
+float \mbox{\hyperlink{GlobalVariables_8h_a7dce376424d554a29a3742d3dbfc7ee3}{alpha\+SP}}
+\item 
+float \mbox{\hyperlink{GlobalVariables_8h_a6a322c5e57d95bf50f6478579c28b9cd}{gamma\+SP}}
+\item 
+unsigned int \mbox{\hyperlink{GlobalVariables_8h_a1e55a637d0220456f6caa6823b1efda9}{n\+SP}}
+\item 
+float \mbox{\hyperlink{GlobalVariables_8h_a115114c8257e3a44296ac83db835062f}{epsilon\+SP}}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8h_a87f49feba762f3dd933bf0df4b960a2a}{theta\+RC}}
+\item 
+unsigned int \mbox{\hyperlink{GlobalVariables_8h_a402c4b48d21417b113c1bdbc078d4b93}{position\+WM}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines global constants and variables used in the wave propagation solver. 
+
+This header provides physical constants, numerical parameters, and sponge-\/layer settings shared across the numerical wave model.\hypertarget{GlobalVariables_8h_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{Constants}{Constants}}\label{GlobalVariables_8h_autotoc_md0}
+
+\begin{DoxyItemize}
+\item {\ttfamily G} \+: Gravitational acceleration $ [m/s^2] $
+\item {\ttfamily PI} \+: Mathematical constant pi
+\item {\ttfamily hmin} \+: Minimum water depth to prevent dry cells
+\item {\ttfamily alpha1}, {\ttfamily gamma1} \+: Coefficients from Nwogu\textquotesingle{}s equations for dispersion optimization
+\item {\ttfamily theta\+RC} \+: Reconstruction parameter in the shallow water scheme
+\end{DoxyItemize}\hypertarget{GlobalVariables_8h_autotoc_md1}{}\doxysubsubsection{\texorpdfstring{Sponge Layer Parameters}{Sponge Layer Parameters}}\label{GlobalVariables_8h_autotoc_md1}
+
+\begin{DoxyItemize}
+\item {\ttfamily alpha\+SP} \+: Damping factor
+\item {\ttfamily gamma\+SP} \+: Damping strength scaling factor, typically in \mbox{[}0.\+88, 0.\+92\mbox{]}
+\item {\ttfamily n\+SP} \+: Number of grid points for sponge layer per boundary
+\item {\ttfamily epsilon\+SP} \+: Threshold above which the sponge layer becomes inactive
+\end{DoxyItemize}\hypertarget{GlobalVariables_8h_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{Numerical Schemes}{Numerical Schemes}}\label{GlobalVariables_8h_autotoc_md2}
+
+\begin{DoxyItemize}
+\item {\ttfamily Liste\+Scheme} \+: List of available numerical flux schemes
+\begin{DoxyItemize}
+\item "{}conservative\+\_\+staggered"{}
+\item "{}hllc"{}
+\item "{}central\+\_\+upwind"{}
+\item "{}hll"{}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{GlobalVariables_8h_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{Wave Generation}{Wave Generation}}\label{GlobalVariables_8h_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\ttfamily position\+WM} \+: Index of the wavemaker location; typically set in {\ttfamily \doxylink{Wavemaker_8cpp}{Wavemaker.\+cpp}}
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The global variables are defined in this file and are used throughout the numerical solver (C++ codes). 
+\end{DoxyNote}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4a}\index{GlobalVariables.h@{GlobalVariables.h}!grid@{grid}}
+\index{grid@{grid}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{grid}{grid}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4a} 
+enum \mbox{\hyperlink{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4a}{grid}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{collocated@{collocated}!GlobalVariables.h@{GlobalVariables.h}}\index{GlobalVariables.h@{GlobalVariables.h}!collocated@{collocated}}}\Hypertarget{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156}\label{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156} 
+collocated&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{staggered@{staggered}!GlobalVariables.h@{GlobalVariables.h}}\index{GlobalVariables.h@{GlobalVariables.h}!staggered@{staggered}}}\Hypertarget{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900}\label{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900} 
+staggered&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}\index{GlobalVariables.h@{GlobalVariables.h}!scheme@{scheme}}
+\index{scheme@{scheme}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{scheme}{scheme}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968} 
+enum \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{conservative\_staggered@{conservative\_staggered}!GlobalVariables.h@{GlobalVariables.h}}\index{GlobalVariables.h@{GlobalVariables.h}!conservative\_staggered@{conservative\_staggered}}}\Hypertarget{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968aca2badb5a8cc56cfab889a69c9e0cef6}\label{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968aca2badb5a8cc56cfab889a69c9e0cef6} 
+conservative\+\_\+staggered&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hllc@{hllc}!GlobalVariables.h@{GlobalVariables.h}}\index{GlobalVariables.h@{GlobalVariables.h}!hllc@{hllc}}}\Hypertarget{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968a37ea226464a76d4f841772ff1f5843c0}\label{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968a37ea226464a76d4f841772ff1f5843c0} 
+hllc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{central\_upwind@{central\_upwind}!GlobalVariables.h@{GlobalVariables.h}}\index{GlobalVariables.h@{GlobalVariables.h}!central\_upwind@{central\_upwind}}}\Hypertarget{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968a7395c1b2905d77784d2d0af187e482a6}\label{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968a7395c1b2905d77784d2d0af187e482a6} 
+central\+\_\+upwind&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hll@{hll}!GlobalVariables.h@{GlobalVariables.h}}\index{GlobalVariables.h@{GlobalVariables.h}!hll@{hll}}}\Hypertarget{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968af2e3f15077facd1d4f26626f532ec4e9}\label{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968af2e3f15077facd1d4f26626f532ec4e9} 
+hll&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{GlobalVariables_8h_aca7f35c8ae5f70eaffe705ebc6766585}\index{GlobalVariables.h@{GlobalVariables.h}!alpha1@{alpha1}}
+\index{alpha1@{alpha1}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{alpha1}{alpha1}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_aca7f35c8ae5f70eaffe705ebc6766585} 
+const float alpha1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a7dce376424d554a29a3742d3dbfc7ee3}\index{GlobalVariables.h@{GlobalVariables.h}!alphaSP@{alphaSP}}
+\index{alphaSP@{alphaSP}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{alphaSP}{alphaSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a7dce376424d554a29a3742d3dbfc7ee3} 
+float alpha\+SP\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a115114c8257e3a44296ac83db835062f}\index{GlobalVariables.h@{GlobalVariables.h}!epsilonSP@{epsilonSP}}
+\index{epsilonSP@{epsilonSP}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{epsilonSP}{epsilonSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a115114c8257e3a44296ac83db835062f} 
+float epsilon\+SP\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_accf9cafc36aeda21688e19a1c2d3888d}\index{GlobalVariables.h@{GlobalVariables.h}!G@{G}}
+\index{G@{G}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_accf9cafc36aeda21688e19a1c2d3888d} 
+const float G\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a8f669f98a450c90b372af97dbe393064}\index{GlobalVariables.h@{GlobalVariables.h}!gamma1@{gamma1}}
+\index{gamma1@{gamma1}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{gamma1}{gamma1}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a8f669f98a450c90b372af97dbe393064} 
+const float gamma1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a6a322c5e57d95bf50f6478579c28b9cd}\index{GlobalVariables.h@{GlobalVariables.h}!gammaSP@{gammaSP}}
+\index{gammaSP@{gammaSP}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{gammaSP}{gammaSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a6a322c5e57d95bf50f6478579c28b9cd} 
+float gamma\+SP\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a777989279445ddc055c317df60b3dd64}\index{GlobalVariables.h@{GlobalVariables.h}!hmin@{hmin}}
+\index{hmin@{hmin}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{hmin}{hmin}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a777989279445ddc055c317df60b3dd64} 
+float hmin\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a96a5ba0386e2a1b3b9ec030f12e91e47}\index{GlobalVariables.h@{GlobalVariables.h}!ListeScheme@{ListeScheme}}
+\index{ListeScheme@{ListeScheme}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{ListeScheme}{ListeScheme}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a96a5ba0386e2a1b3b9ec030f12e91e47} 
+const std\+::string Liste\+Scheme\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a1e55a637d0220456f6caa6823b1efda9}\index{GlobalVariables.h@{GlobalVariables.h}!nSP@{nSP}}
+\index{nSP@{nSP}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{nSP}{nSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a1e55a637d0220456f6caa6823b1efda9} 
+unsigned int n\+SP\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_aa08a577393243b86dfd2a97e61443673}\index{GlobalVariables.h@{GlobalVariables.h}!PI@{PI}}
+\index{PI@{PI}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_aa08a577393243b86dfd2a97e61443673} 
+const float PI\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a402c4b48d21417b113c1bdbc078d4b93}\index{GlobalVariables.h@{GlobalVariables.h}!positionWM@{positionWM}}
+\index{positionWM@{positionWM}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{positionWM}{positionWM}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a402c4b48d21417b113c1bdbc078d4b93} 
+unsigned int position\+WM\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{GlobalVariables_8h_a87f49feba762f3dd933bf0df4b960a2a}\index{GlobalVariables.h@{GlobalVariables.h}!thetaRC@{thetaRC}}
+\index{thetaRC@{thetaRC}!GlobalVariables.h@{GlobalVariables.h}}
+\doxysubsubsection{\texorpdfstring{thetaRC}{thetaRC}}
+{\footnotesize\ttfamily \label{GlobalVariables_8h_a87f49feba762f3dd933bf0df4b960a2a} 
+const float theta\+RC\hspace{0.3cm}{\ttfamily [extern]}}
+

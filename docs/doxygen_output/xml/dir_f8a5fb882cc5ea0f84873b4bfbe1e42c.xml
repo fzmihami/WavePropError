@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_f8a5fb882cc5ea0f84873b4bfbe1e42c" kind="dir">
+    <compoundname>code/include</compoundname>
+    <innerfile refid="Boundaries_8h">Boundaries.h</innerfile>
+    <innerfile refid="Dispersion_8h">Dispersion.h</innerfile>
+    <innerfile refid="FluxComputation_8h">FluxComputation.h</innerfile>
+    <innerfile refid="GlobalVariables_8h">GlobalVariables.h</innerfile>
+    <innerfile refid="ReadUserInput_8h">ReadUserInput.h</innerfile>
+    <innerfile refid="SolveEquation_8h">SolveEquation.h</innerfile>
+    <innerfile refid="TimeVariables_8h">TimeVariables.h</innerfile>
+    <innerfile refid="Wavemaker_8h">Wavemaker.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="code/include/"/>
+  </compounddef>
+</doxygen>

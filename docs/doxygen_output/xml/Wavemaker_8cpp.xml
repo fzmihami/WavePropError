@@ -1,0 +1,332 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="Wavemaker_8cpp" kind="file" language="C++">
+    <compoundname>Wavemaker.cpp</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">omp.h</includes>
+    <includes refid="Wavemaker_8h" local="yes">Wavemaker.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ReadUserInput.h</label>
+        <link refid="ReadUserInput_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>Wavemaker.h</label>
+        <link refid="Wavemaker_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>code/src/Wavemaker.cpp</label>
+        <link refid="Wavemaker_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+      <node id="3">
+        <label>cstring</label>
+      </node>
+      <node id="10">
+        <label>fstream</label>
+      </node>
+      <node id="11">
+        <label>iomanip</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>math.h</label>
+      </node>
+      <node id="6">
+        <label>omp.h</label>
+      </node>
+      <node id="12">
+        <label>string</label>
+      </node>
+      <node id="13">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="Wavemaker_8cpp_1ad2b6f722fc7edfe06e4f317c47b18456" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float wavelength</definition>
+        <argsstring>(float omega, float depth)</argsstring>
+        <name>wavelength</name>
+        <param>
+          <type>float</type>
+          <declname>omega</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+<para>Computes the wavelength from the angular frequency and water depth. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function calculates the wavelength based on the dispersion relation from Nwogu&apos;s equation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>omega</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Angular frequency </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>depth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Water depth </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The computed wavelength. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/Wavemaker.cpp" line="120" column="7" bodyfile="code/src/Wavemaker.cpp" bodystart="120" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="Wavemaker_8cpp_1a2f568fde6174ae53ea014cbc418d2edc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float SecondorderEquation</definition>
+        <argsstring>(float a, float b, float c)</argsstring>
+        <name>SecondorderEquation</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Solves a second-order equation of the form ax^2 + bx + c = 0. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the roots of the quadratic equation using the quadratic formula.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coefficient of x^2 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coefficient of x </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Constant term </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The root of the equation. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/Wavemaker.cpp" line="137" column="7" bodyfile="code/src/Wavemaker.cpp" bodystart="137" bodyend="142"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implements the <ref refid="classWaveMaker" kindref="compound">WaveMaker</ref> class for generating wave forcing through a source term. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file provides the implementation of the <ref refid="classWaveMaker" kindref="compound">WaveMaker</ref> class, which computes the source term used to generate waves within the computational domain. It also manages and stores the relevant wavemaker parameters. The wave forcing is constructed by superimposing contributions from multiple frequency components. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;omp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="Wavemaker_8h" kindref="compound">Wavemaker.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="classWaveMaker_1a22cf52c5cf4a8b9c1dd72f262a8c36d4" kindref="member">WaveMaker::WaveMaker</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classInput" kindref="compound">Input</ref><sp/>&amp;In,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;N)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref><sp/>=<sp/>In.<ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>.size();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1ae03cdb6bf0dd246bfc0ec488f67bb007" kindref="member">N</ref><sp/>=<sp/><ref refid="classWaveMaker_1ae03cdb6bf0dd246bfc0ec488f67bb007" kindref="member">N</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" kindref="member">Beta</ref><sp/>=<sp/>2.0f<sp/>*<sp/>M_PI<sp/>/<sp/>In.<ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1abe5bef6fb25b4d353a57906fa3a57125" kindref="member">depth</ref><sp/>=<sp/>In.<ref refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kindref="member">WaterDepth</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1ad313aa0681f180071508b94fb443188e" kindref="member">Freq</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>];</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>memset(this-&gt;<ref refid="classWaveMaker_1ad313aa0681f180071508b94fb443188e" kindref="member">Freq</ref>,<sp/>0,<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>];</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>memset(this-&gt;<ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref>,<sp/>0,<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" kindref="member">Phase</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>];</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>memset(this-&gt;<ref refid="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" kindref="member">Phase</ref>,<sp/>0,<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>memset(this-&gt;<ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>,<sp/>0,<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>];</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>memset(this-&gt;<ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>,<sp/>0,<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" kindref="member">Di</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>];</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>memset(this-&gt;<ref refid="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" kindref="member">Di</ref>,<sp/>0,<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a1493e19950984f465869c648bc776466" kindref="member">SourceTerm</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classWaveMaker_1ae03cdb6bf0dd246bfc0ec488f67bb007" kindref="member">N</ref>];</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>memset(this-&gt;<ref refid="classWaveMaker_1a1493e19950984f465869c648bc776466" kindref="member">SourceTerm</ref>,<sp/>0,<sp/><ref refid="classWaveMaker_1ae03cdb6bf0dd246bfc0ec488f67bb007" kindref="member">N</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1ad313aa0681f180071508b94fb443188e" kindref="member">Freq</ref>[i]<sp/>=<sp/>In.<ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>[i][0];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref>[i]<sp/>=<sp/>In.<ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>[i][1];</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" kindref="member">Phase</ref>[i]<sp/>=<sp/>In.<ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>[i][2];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>[i]<sp/>=<sp/>2.0f<sp/>*<sp/>M_PI<sp/>*<sp/>this-&gt;<ref refid="classWaveMaker_1ad313aa0681f180071508b94fb443188e" kindref="member">Freq</ref>[i];</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>[i]<sp/>=<sp/><ref refid="Wavemaker_8h_1ad2b6f722fc7edfe06e4f317c47b18456" kindref="member">wavelength</ref>(this-&gt;<ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>[i],<sp/>In.<ref refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kindref="member">WaterDepth</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>compute<sp/>peak<sp/>wavelength</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max_amp_index<sp/>=</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::max_element(this-&gt;<ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref>,<sp/>this-&gt;<ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref><sp/>+<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>)<sp/>-<sp/>this-&gt;<ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1ad81c3af5c9ecbe817e8487f5321a6593" kindref="member">Kp</ref><sp/>=<sp/>this-&gt;<ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>[max_amp_index];</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Lp<sp/>=<sp/>2.0f<sp/>*<sp/>M_PI<sp/>/<sp/>this-&gt;<ref refid="classWaveMaker_1ad81c3af5c9ecbe817e8487f5321a6593" kindref="member">Kp</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" kindref="member">Beta</ref><sp/>=<sp/>80.0f<sp/>/<sp/>(de<sp/>*<sp/>de<sp/>*<sp/>Lp<sp/>*<sp/>Lp);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>compute<sp/>the<sp/>number<sp/>of<sp/>grid<sp/>points<sp/>for<sp/>the<sp/>wavemaker</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a9be062dde81f30b4664313857160f40a" kindref="member">width</ref><sp/>=<sp/>0.5f<sp/>*<sp/>Lp;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a23f5ff9b36abf66bb9571517b8de6c7f" kindref="member">Ns</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int)std::round(this-&gt;<ref refid="classWaveMaker_1a9be062dde81f30b4664313857160f40a" kindref="member">width</ref><sp/>/<sp/>In.<ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>wavemaker<sp/>position<sp/>at<sp/>2*Lp<sp/>from<sp/>the<sp/>left<sp/>boundary</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>this-&gt;<ref refid="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" kindref="member">posWM</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int)std::round(2.0f<sp/>*<sp/>Lp<sp/>/<sp/>In.<ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="GlobalVariables_8h_1a402c4b48d21417b113c1bdbc078d4b93" kindref="member">positionWM</ref><sp/>=<sp/><ref refid="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" kindref="member">posWM</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>sponge<sp/>layer<sp/>width<sp/>-<sp/>Larsen<sp/>and<sp/>Dancy<sp/>1983</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><ref refid="GlobalVariables_8h_1a1e55a637d0220456f6caa6823b1efda9" kindref="member">nSP</ref><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>int)std::round(</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Lp<sp/>/<sp/>In.<ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>);<sp/></highlight><highlight class="comment">//<sp/>the<sp/>sponge<sp/>layer<sp/>width<sp/>is<sp/>the<sp/>peak<sp/>wavelength</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><ref refid="GlobalVariables_8h_1a6a322c5e57d95bf50f6478579c28b9cd" kindref="member">gammaSP</ref><sp/>=<sp/>pow(log(1.0<sp/>/<sp/><ref refid="GlobalVariables_8h_1a115114c8257e3a44296ac83db835062f" kindref="member">epsilonSP</ref>)<sp/>/<sp/>log(<ref refid="GlobalVariables_8h_1a7dce376424d554a29a3742d3dbfc7ee3" kindref="member">alphaSP</ref>),</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.0<sp/>/<sp/><ref refid="GlobalVariables_8h_1a1e55a637d0220456f6caa6823b1efda9" kindref="member">nSP</ref>);<sp/></highlight><highlight class="comment">//<sp/>extract<sp/>correspending<sp/>gamma<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>verify<sp/>if<sp/>the<sp/>domain<sp/>is<sp/>too<sp/>small<sp/>for<sp/>the<sp/>wavemaker</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(In.<ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref><sp/>&lt;<sp/>5.0f<sp/>*<sp/>Lp)<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;The<sp/>domain<sp/>is<sp/>too<sp/>small<sp/>to<sp/>fit<sp/>the<sp/>wavemaker&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>Di</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>li<sp/>=<sp/><ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>[i];</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Bi<sp/>=<sp/>sqrt(<ref refid="GlobalVariables_8h_1aa08a577393243b86dfd2a97e61443673" kindref="member">PI</ref><sp/>/<sp/><ref refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" kindref="member">Beta</ref>)<sp/>*<sp/>exp(-(li<sp/>*<sp/>li<sp/>/<sp/>(4<sp/>*<sp/><ref refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" kindref="member">Beta</ref>)));</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" kindref="member">Di</ref>[i]<sp/>=<sp/>(2<sp/>*<sp/><ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref>[i]<sp/>*</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>[i]<sp/>*<sp/><ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>[i]<sp/>-<sp/>alpha3<sp/>*<sp/><ref refid="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" kindref="member">G</ref><sp/>*<sp/>pow(<ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>[i],<sp/>4)<sp/>*<sp/>pow(<ref refid="classWaveMaker_1abe5bef6fb25b4d353a57906fa3a57125" kindref="member">depth</ref>,<sp/>3)))<sp/>/</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>[i]<sp/>*<sp/><ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>[i]<sp/>*<sp/>Bi<sp/>*<sp/>(1.0<sp/>-<sp/><ref refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kindref="member">alpha1</ref><sp/>*<sp/>pow(<ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>[i]<sp/>*<sp/><ref refid="classWaveMaker_1abe5bef6fb25b4d353a57906fa3a57125" kindref="member">depth</ref>,<sp/>2)));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><ref refid="classWaveMaker_1a3e383af6629bb2f3a2f4bb02840c10cf" kindref="member">WaveMaker::~WaveMaker</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classWaveMaker_1ad313aa0681f180071508b94fb443188e" kindref="member">Freq</ref>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kindref="member">Amp</ref>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" kindref="member">Phase</ref>;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kindref="member">K</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" kindref="member">Di</ref>;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classWaveMaker_1a1493e19950984f465869c648bc776466" kindref="member">SourceTerm</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classWaveMaker_1aa298adc2d35dcc76d8dfb5b27009bb72" kindref="member">WaveMaker::ComputeSourceTerm</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;dx)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>St<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for<sp/>reduction(+<sp/>:<sp/>St)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kindref="member">Nf</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ramp<sp/>=<sp/>tanh(t<sp/>*<sp/><ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>[i]<sp/>/<sp/>(2<sp/>*<sp/><ref refid="GlobalVariables_8h_1aa08a577393243b86dfd2a97e61443673" kindref="member">PI</ref>));</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>St<sp/>+=<sp/>ramp<sp/>*<sp/><ref refid="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" kindref="member">Di</ref>[i]<sp/>*<sp/>sin(-<ref refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kindref="member">Omg</ref>[i]<sp/>*<sp/>t<sp/>+<sp/><ref refid="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" kindref="member">Phase</ref>[i]);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>compute<sp/>the<sp/>source<sp/>term</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/><ref refid="classWaveMaker_1a23f5ff9b36abf66bb9571517b8de6c7f" kindref="member">Ns</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWaveMaker_1a1493e19950984f465869c648bc776466" kindref="member">SourceTerm</ref>[<ref refid="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" kindref="member">posWM</ref><sp/>+<sp/>i]<sp/>=<sp/>St<sp/>*<sp/>exp(-<ref refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" kindref="member">Beta</ref><sp/>*<sp/>pow(i<sp/>*<sp/>dx,<sp/>2));</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classWaveMaker_1a1493e19950984f465869c648bc776466" kindref="member">SourceTerm</ref>[<ref refid="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" kindref="member">posWM</ref><sp/>-<sp/>i]<sp/>=<sp/>St<sp/>*<sp/>exp(-<ref refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" kindref="member">Beta</ref><sp/>*<sp/>pow(i<sp/>*<sp/>dx,<sp/>2));</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><ref refid="classWaveMaker_1a1493e19950984f465869c648bc776466" kindref="member">SourceTerm</ref>[<ref refid="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" kindref="member">posWM</ref>]<sp/>=<sp/>St;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="Wavemaker_8cpp_1ad2b6f722fc7edfe06e4f317c47b18456" kindref="member">wavelength</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>omega,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>depth)<sp/></highlight><highlight class="comment">//<sp/>Compute<sp/>Kn<sp/>from<sp/>Omega</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>beta<sp/>=<sp/><ref refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kindref="member">alpha1</ref><sp/>+<sp/>(float)(1.0<sp/>/<sp/>3.0);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>K;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(abs(beta)<sp/>&gt;=<sp/>1E-8)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>K<sp/>=<sp/><ref refid="Wavemaker_8cpp_1a2f568fde6174ae53ea014cbc418d2edc" kindref="member">SecondorderEquation</ref>(<ref refid="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" kindref="member">G</ref><sp/>*<sp/>beta,<sp/>-(depth<sp/>*<sp/>omega<sp/>*<sp/>omega<sp/>*<sp/><ref refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kindref="member">alpha1</ref><sp/>+<sp/><ref refid="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" kindref="member">G</ref>),</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>depth<sp/>*<sp/>omega<sp/>*<sp/>omega);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>K<sp/>=<sp/>depth<sp/>*<sp/>omega<sp/>*<sp/>omega<sp/>/<sp/>(depth<sp/>*<sp/>omega<sp/>*<sp/>omega<sp/>*<sp/><ref refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kindref="member">alpha1</ref><sp/>+<sp/><ref refid="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" kindref="member">G</ref>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>sqrt(K)<sp/>/<sp/>depth;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>k;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="Wavemaker_8cpp_1a2f568fde6174ae53ea014cbc418d2edc" kindref="member">SecondorderEquation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>delta<sp/>=<sp/>b<sp/>*<sp/>b<sp/>-<sp/>4<sp/>*<sp/>a<sp/>*<sp/>c;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x1<sp/>=<sp/>(-b<sp/>-<sp/>sqrt(delta))<sp/>/<sp/>(2.0<sp/>*<sp/>a);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x1;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="code/src/Wavemaker.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,59 @@
+\doxysection{Time\+Variables.\+h}
+\hypertarget{TimeVariables_8h_source}{}\label{TimeVariables_8h_source}\index{code/include/TimeVariables.h@{code/include/TimeVariables.h}}
+\mbox{\hyperlink{TimeVariables_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ PBSTR\ "{}||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ PBWIDTH\ 60}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GlobalVariables_8h}{GlobalVariables.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ReadUserInput_8h}{ReadUserInput.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classState_aebb5064c773ed46e56204d477a1e7228}{State}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classState_a92c45c45d00a0c31904d49a70940a4c0}{N}};\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classState_a9003679c6515e8b96d63bbf9a74ac0fa}{dx}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classState_a3a9010910d0d229557f5d4a196180f70}{dx\_1}};\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classState_a9a7fd7b6579d141f3d0dc2d74adf9b14}{depth}};\ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4a}{grid}}\ \mbox{\hyperlink{classState_ada483a41be06c799e60b0d32edb9a79e}{Grid}};\ \ \ \ \ \ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classState_a28f63f0cd7b0d7943e2cf5c9e1028ae1}{Hn}};\ \ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classState_a2094315fb752fa99dbe6fcf5b373db76}{Eta}};\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classState_a40dda08f046cda018543a53e8bcea15f}{Zn}};\ \ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{float}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ *\mbox{\hyperlink{classState_a6f17867499b4093f2447815f90719ecb}{Pn}};\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classState_aa769a173d9fe2757c1e5fc8fc2ca6ece}{Un}};\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{classState_aebb5064c773ed46e56204d477a1e7228}{State}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{classState_afab438d92b90dc18d194dbd9c9c8bab3}{\string~State}}();}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classState_a33bb353c38aad953bc3f2bfd5c1c3ac5}{Update}}(\mbox{\hyperlink{classState_aebb5064c773ed46e56204d477a1e7228}{State}}\ \&other);}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TimeVariables_8h_a5ac26d30d4e3e06e81531abaf2e89662}{PrintVariables}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&t1,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&Kprint,\ \textcolor{keywordtype}{float}\ \&Tprint);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TimeVariables_8h_a6299f999304f86c4caf62e98802e4bb6}{printINFO}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TimeVariables_8h_ab02e6eff2f5a6566d4c54fbd64a83f1d}{RecordTimeSeries}}(\mbox{\hyperlink{classState}{State}}\ \&S0,\ \mbox{\hyperlink{classState}{State}}\ \&S2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<float>\ *Hgauges,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&t1,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt1,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&Kgauges,\ \textcolor{keywordtype}{float}\ \&Tgauges);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TimeVariables_8h_a44fb1c7752f15d1dcfe6e68731e4ab4e}{PrintTimeSeries}}(std::vector<float>\ *Hgauges,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00170\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TimeVariables_8h_aa5509f31ef9b645c138dc622b48e5bf6}{linear\_interpolation}}(\textcolor{keywordtype}{float}\ *H1,\ \textcolor{keywordtype}{float}\ *H2,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&t,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&Tprint);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00186\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{TimeVariables_8h_aa5509f31ef9b645c138dc622b48e5bf6}{linear\_interpolation}}(\textcolor{keywordtype}{float}\ value1,\ \textcolor{keywordtype}{float}\ value2,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&t,}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&Tprint);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00200\ std::string\ \mbox{\hyperlink{TimeVariables_8h_aaf56a21b99f1eac435bd924b0357b8b4}{intToStringWithLeadingZeros}}(\textcolor{keywordtype}{int}\ number,\ \textcolor{keywordtype}{int}\ totalLength);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00210\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{TimeVariables_8h_a9d3b483a858efb84ce776bed255b6dd6}{printProgress}}(\textcolor{keywordtype}{double}\ percentage);}
+
+\end{DoxyCode}

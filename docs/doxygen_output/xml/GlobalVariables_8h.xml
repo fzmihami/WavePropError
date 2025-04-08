@@ -1,0 +1,465 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="GlobalVariables_8h" kind="file" language="C++">
+    <compoundname>GlobalVariables.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includedby refid="Boundaries_8h" local="yes">code/include/Boundaries.h</includedby>
+    <includedby refid="Dispersion_8h" local="yes">code/include/Dispersion.h</includedby>
+    <includedby refid="ReadUserInput_8h" local="yes">code/include/ReadUserInput.h</includedby>
+    <includedby refid="TimeVariables_8h" local="yes">code/include/TimeVariables.h</includedby>
+    <includedby refid="Wavemaker_8h" local="yes">code/include/Wavemaker.h</includedby>
+    <includedby refid="FluxComputation_8cpp" local="yes">code/src/FluxComputation.cpp</includedby>
+    <includedby refid="GlobalVariables_8cpp" local="yes">code/src/GlobalVariables.cpp</includedby>
+    <includedby refid="ReadUserInput_8cpp" local="yes">code/src/ReadUserInput.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>code/include/GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>code/include/Boundaries.h</label>
+        <link refid="Boundaries_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>code/include/Dispersion.h</label>
+        <link refid="Dispersion_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>code/include/FluxComputation.h</label>
+        <link refid="FluxComputation_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>code/include/GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>code/include/ReadUserInput.h</label>
+        <link refid="ReadUserInput_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>code/include/SolveEquation.h</label>
+        <link refid="SolveEquation_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>code/include/TimeVariables.h</label>
+        <link refid="TimeVariables_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>code/include/Wavemaker.h</label>
+        <link refid="Wavemaker_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>code/src/Boundaries.cpp</label>
+        <link refid="Boundaries_8cpp"/>
+      </node>
+      <node id="8">
+        <label>code/src/Dispersion.cpp</label>
+        <link refid="Dispersion_8cpp"/>
+      </node>
+      <node id="12">
+        <label>code/src/FluxComputation.cpp</label>
+        <link refid="FluxComputation_8cpp"/>
+      </node>
+      <node id="17">
+        <label>code/src/GlobalVariables.cpp</label>
+        <link refid="GlobalVariables_8cpp"/>
+      </node>
+      <node id="16">
+        <label>code/src/ReadUserInput.cpp</label>
+        <link refid="ReadUserInput_8cpp"/>
+      </node>
+      <node id="4">
+        <label>code/src/SolveEquation.cpp</label>
+        <link refid="SolveEquation_8cpp"/>
+      </node>
+      <node id="13">
+        <label>code/src/TimeVariables.cpp</label>
+        <link refid="TimeVariables_8cpp"/>
+      </node>
+      <node id="15">
+        <label>code/src/Wavemaker.cpp</label>
+        <link refid="Wavemaker_8cpp"/>
+      </node>
+      <node id="7">
+        <label>code/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" prot="public" static="no" strong="no">
+        <type></type>
+        <name>scheme</name>
+        <enumvalue id="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968aca2badb5a8cc56cfab889a69c9e0cef6" prot="public">
+          <name>conservative_staggered</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968a37ea226464a76d4f841772ff1f5843c0" prot="public">
+          <name>hllc</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968a7395c1b2905d77784d2d0af187e482a6" prot="public">
+          <name>central_upwind</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968af2e3f15077facd1d4f26626f532ec4e9" prot="public">
+          <name>hll</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="40" column="2" bodyfile="code/include/GlobalVariables.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="enum" id="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>grid</name>
+        <enumvalue id="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156" prot="public">
+          <name>collocated</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900" prot="public">
+          <name>staggered</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="41" column="2" bodyfile="code/include/GlobalVariables.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="GlobalVariables_8h_1a96a5ba0386e2a1b3b9ec030f12e91e47" prot="public" static="no" extern="yes" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string ListeScheme[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>ListeScheme</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="44" column="27" bodyfile="code/src/GlobalVariables.cpp" bodystart="16" bodyend="17" declfile="code/include/GlobalVariables.h" declline="44" declcolumn="27"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" prot="public" static="no" extern="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="47" column="21" bodyfile="code/src/GlobalVariables.cpp" bodystart="12" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="47" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1aa08a577393243b86dfd2a97e61443673" prot="public" static="no" extern="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="48" column="21" bodyfile="code/src/GlobalVariables.cpp" bodystart="13" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="48" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a777989279445ddc055c317df60b3dd64" prot="public" static="no" extern="yes" mutable="no">
+        <type>float</type>
+        <definition>float hmin</definition>
+        <argsstring></argsstring>
+        <name>hmin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="49" column="15" bodyfile="code/src/GlobalVariables.cpp" bodystart="14" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="49" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" prot="public" static="no" extern="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float alpha1</definition>
+        <argsstring></argsstring>
+        <name>alpha1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="52" column="21" bodyfile="code/src/GlobalVariables.cpp" bodystart="19" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="52" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a8f669f98a450c90b372af97dbe393064" prot="public" static="no" extern="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float gamma1</definition>
+        <argsstring></argsstring>
+        <name>gamma1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="53" column="21" bodyfile="code/src/GlobalVariables.cpp" bodystart="20" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="53" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a7dce376424d554a29a3742d3dbfc7ee3" prot="public" static="no" extern="yes" mutable="no">
+        <type>float</type>
+        <definition>float alphaSP</definition>
+        <argsstring></argsstring>
+        <name>alphaSP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="56" column="15" bodyfile="code/src/GlobalVariables.cpp" bodystart="22" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="56" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a6a322c5e57d95bf50f6478579c28b9cd" prot="public" static="no" extern="yes" mutable="no">
+        <type>float</type>
+        <definition>float gammaSP</definition>
+        <argsstring></argsstring>
+        <name>gammaSP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="57" column="15" bodyfile="code/src/GlobalVariables.cpp" bodystart="23" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="57" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a1e55a637d0220456f6caa6823b1efda9" prot="public" static="no" extern="yes" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nSP</definition>
+        <argsstring></argsstring>
+        <name>nSP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="58" column="22" bodyfile="code/src/GlobalVariables.cpp" bodystart="24" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="58" declcolumn="22"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a115114c8257e3a44296ac83db835062f" prot="public" static="no" extern="yes" mutable="no">
+        <type>float</type>
+        <definition>float epsilonSP</definition>
+        <argsstring></argsstring>
+        <name>epsilonSP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="59" column="15" bodyfile="code/src/GlobalVariables.cpp" bodystart="25" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="59" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a87f49feba762f3dd933bf0df4b960a2a" prot="public" static="no" extern="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float thetaRC</definition>
+        <argsstring></argsstring>
+        <name>thetaRC</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="62" column="21" bodyfile="code/src/GlobalVariables.cpp" bodystart="28" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="62" declcolumn="21"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8h_1a402c4b48d21417b113c1bdbc078d4b93" prot="public" static="no" extern="yes" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int positionWM</definition>
+        <argsstring></argsstring>
+        <name>positionWM</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/GlobalVariables.h" line="65" column="22" bodyfile="code/src/GlobalVariables.cpp" bodystart="30" bodyend="-1" declfile="code/include/GlobalVariables.h" declline="65" declcolumn="22"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Defines global constants and variables used in the wave propagation solver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This header provides physical constants, numerical parameters, and sponge-layer settings shared across the numerical wave model.</para>
+<sect1 id="GlobalVariables_8h_1autotoc_md0_1s1"><sect2 id="GlobalVariables_8h_1autotoc_md0">
+<title>Constants</title><para><itemizedlist>
+<listitem><para><computeroutput>G</computeroutput> : Gravitational acceleration <formula id="35">$ [m/s^2] $</formula></para>
+</listitem><listitem><para><computeroutput>PI</computeroutput> : Mathematical constant pi</para>
+</listitem><listitem><para><computeroutput>hmin</computeroutput> : Minimum water depth to prevent dry cells</para>
+</listitem><listitem><para><computeroutput>alpha1</computeroutput>, <computeroutput>gamma1</computeroutput> : Coefficients from Nwogu&apos;s equations for dispersion optimization</para>
+</listitem><listitem><para><computeroutput>thetaRC</computeroutput> : Reconstruction parameter in the shallow water scheme</para>
+</listitem></itemizedlist>
+</para>
+</sect2></sect1>
+<sect1 id="GlobalVariables_8h_1autotoc_md1_1s1"><sect2 id="GlobalVariables_8h_1autotoc_md1">
+<title>Sponge Layer Parameters</title><para><itemizedlist>
+<listitem><para><computeroutput>alphaSP</computeroutput> : Damping factor</para>
+</listitem><listitem><para><computeroutput>gammaSP</computeroutput> : Damping strength scaling factor, typically in [0.88, 0.92]</para>
+</listitem><listitem><para><computeroutput>nSP</computeroutput> : Number of grid points for sponge layer per boundary</para>
+</listitem><listitem><para><computeroutput>epsilonSP</computeroutput> : Threshold above which the sponge layer becomes inactive</para>
+</listitem></itemizedlist>
+</para>
+</sect2></sect1>
+<sect1 id="GlobalVariables_8h_1autotoc_md2_1s1"><sect2 id="GlobalVariables_8h_1autotoc_md2">
+<title>Numerical Schemes</title><para><itemizedlist>
+<listitem><para><computeroutput>ListeScheme</computeroutput> : List of available numerical flux schemes<itemizedlist>
+<listitem><para>&quot;conservative_staggered&quot;</para>
+</listitem><listitem><para>&quot;hllc&quot;</para>
+</listitem><listitem><para>&quot;central_upwind&quot;</para>
+</listitem><listitem><para>&quot;hll&quot;</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2></sect1>
+<sect1 id="GlobalVariables_8h_1autotoc_md3_1s1"><sect2 id="GlobalVariables_8h_1autotoc_md3">
+<title>Wave Generation</title><para><itemizedlist>
+<listitem><para><computeroutput>positionWM</computeroutput> : Index of the wavemaker location; typically set in <computeroutput><ref refid="Wavemaker_8cpp" kindref="compound">Wavemaker.cpp</ref></computeroutput></para>
+</listitem></itemizedlist>
+</para>
+<para><simplesect kind="note"><para>The global variables are defined in this file and are used throughout the numerical solver (C++ codes). </para>
+</simplesect>
+</para>
+</sect2></sect1>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Grid<sp/>and<sp/>scheme<sp/>enumerations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968a7395c1b2905d77784d2d0af187e482a6" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref><sp/>{<sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968aca2badb5a8cc56cfab889a69c9e0cef6" kindref="member">conservative_staggered</ref>,<sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968a37ea226464a76d4f841772ff1f5843c0" kindref="member">hllc</ref>,<sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968a7395c1b2905d77784d2d0af187e482a6" kindref="member">central_upwind</ref>,<sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968af2e3f15077facd1d4f26626f532ec4e9" kindref="member">hll</ref><sp/>};</highlight></codeline>
+<codeline lineno="41" refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156" refkind="member"><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4a" kindref="member">grid</ref><sp/>{<sp/><ref refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156" kindref="member">collocated</ref>,<sp/><ref refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900" kindref="member">staggered</ref><sp/>};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>List<sp/>of<sp/>numerical<sp/>schemes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="GlobalVariables_8h_1a96a5ba0386e2a1b3b9ec030f12e91e47" kindref="member">ListeScheme</ref>[4];</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Physical<sp/>constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" kindref="member">G</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1aa08a577393243b86dfd2a97e61443673" kindref="member">PI</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a777989279445ddc055c317df60b3dd64" kindref="member">hmin</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Nwogu’s<sp/>dispersion<sp/>coefficients</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kindref="member">alpha1</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a8f669f98a450c90b372af97dbe393064" kindref="member">gamma1</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Sponge<sp/>layer<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a7dce376424d554a29a3742d3dbfc7ee3" kindref="member">alphaSP</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a6a322c5e57d95bf50f6478579c28b9cd" kindref="member">gammaSP</ref>;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a1e55a637d0220456f6caa6823b1efda9" kindref="member">nSP</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a115114c8257e3a44296ac83db835062f" kindref="member">epsilonSP</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Reconstruction<sp/>parameter<sp/>for<sp/>SWE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a87f49feba762f3dd933bf0df4b960a2a" kindref="member">thetaRC</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Wavemaker<sp/>position</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a402c4b48d21417b113c1bdbc078d4b93" kindref="member">positionWM</ref>;</highlight></codeline>
+    </programlisting>
+    <location file="code/include/GlobalVariables.h"/>
+  </compounddef>
+</doxygen>

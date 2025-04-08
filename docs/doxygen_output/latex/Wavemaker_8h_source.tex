@@ -1,0 +1,53 @@
+\doxysection{Wavemaker.\+h}
+\hypertarget{Wavemaker_8h_source}{}\label{Wavemaker_8h_source}\index{code/include/Wavemaker.h@{code/include/Wavemaker.h}}
+\mbox{\hyperlink{Wavemaker_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GlobalVariables_8h}{GlobalVariables.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ReadUserInput_8h}{ReadUserInput.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWaveMaker_a22cf52c5cf4a8b9c1dd72f262a8c36d4}{WaveMaker}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWaveMaker_a8462cbfe6b53792189f99f170c45e59b}{Nf}};\ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWaveMaker_ae03cdb6bf0dd246bfc0ec488f67bb007}{N}};\ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classWaveMaker_aaee7c6343a70be527b67f9a8753f57af}{Beta}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWaveMaker_a1dce60f8d2ca99f5c471044e86e67d76}{posWM}};\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classWaveMaker_abe5bef6fb25b4d353a57906fa3a57125}{depth}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classWaveMaker_a9be062dde81f30b4664313857160f40a}{width}};\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWaveMaker_a23f5ff9b36abf66bb9571517b8de6c7f}{Ns}};\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classWaveMaker_ad81c3af5c9ecbe817e8487f5321a6593}{Kp}};\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ de\ =\ 0.5f;\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ alpha3\ =}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \mbox{\hyperlink{GlobalVariables_8h_aca7f35c8ae5f70eaffe705ebc6766585}{alpha1}}\ +}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ float(1.0\ /}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ 3.0);\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classWaveMaker_ad313aa0681f180071508b94fb443188e}{Freq}};\ \ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classWaveMaker_afb093f6036f4a6bf7e23b2a3e43c8b88}{Amp}};\ \ \ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classWaveMaker_a34c3ffd9b7a2735b1b5bcbb86d425d05}{Phase}};\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classWaveMaker_a863082fc821e741b31d73a3dbbab4aac}{Omg}};\ \ \ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classWaveMaker_a863046085a672fd4e6c1532dac582c79}{K}};\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classWaveMaker_ad90f1e6327703bba6f3f8f4ef6708581}{Di}};\ \ \ \ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classWaveMaker_a1493e19950984f465869c648bc776466}{SourceTerm}};\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{classWaveMaker_a22cf52c5cf4a8b9c1dd72f262a8c36d4}{WaveMaker}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classInput}{Input}}\ \&In,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&\mbox{\hyperlink{classWaveMaker_ae03cdb6bf0dd246bfc0ec488f67bb007}{N}});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWaveMaker_aa298adc2d35dcc76d8dfb5b27009bb72}{ComputeSourceTerm}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&t,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ \&dx);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{classWaveMaker_a3e383af6629bb2f3a2f4bb02840c10cf}{\string~WaveMaker}}();}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{Wavemaker_8h_a2f568fde6174ae53ea014cbc418d2edc}{SecondorderEquation}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ c);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{Wavemaker_8h_ad2b6f722fc7edfe06e4f317c47b18456}{wavelength}}(\textcolor{keywordtype}{float}\ omega,\ \textcolor{keywordtype}{float}\ depth);}
+
+\end{DoxyCode}

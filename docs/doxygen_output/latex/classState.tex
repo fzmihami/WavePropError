@@ -1,0 +1,207 @@
+\doxysection{State Class Reference}
+\hypertarget{classState}{}\label{classState}\index{State@{State}}
+
+
+Represents the state variables of the numerical wave solver.  
+
+
+
+
+{\ttfamily \#include $<$Time\+Variables.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classState_aebb5064c773ed46e56204d477a1e7228}{State}} (const \mbox{\hyperlink{classInput}{Input}} \&In)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classState}{State} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classState_afab438d92b90dc18d194dbd9c9c8bab3}{\texorpdfstring{$\sim$}{\string~}\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classState}{State} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classState_a33bb353c38aad953bc3f2bfd5c1c3ac5}{Update}} (\mbox{\hyperlink{classState}{State}} \&other)
+\begin{DoxyCompactList}\small\item\em Swaps the pointers of two \doxylink{classState}{State} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classState_a92c45c45d00a0c31904d49a70940a4c0}{N}}
+\begin{DoxyCompactList}\small\item\em Number of grid points. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classState_a9003679c6515e8b96d63bbf9a74ac0fa}{dx}}
+\begin{DoxyCompactList}\small\item\em Grid spacing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classState_a3a9010910d0d229557f5d4a196180f70}{dx\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em Inverse of grid spacing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classState_a9a7fd7b6579d141f3d0dc2d74adf9b14}{depth}}
+\begin{DoxyCompactList}\small\item\em Water depth, which is constant in the domain. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4a}{grid}} \mbox{\hyperlink{classState_ada483a41be06c799e60b0d32edb9a79e}{Grid}}
+\begin{DoxyCompactList}\small\item\em Grid type (collocated or staggered) \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classState_a28f63f0cd7b0d7943e2cf5c9e1028ae1}{Hn}}
+\begin{DoxyCompactList}\small\item\em Water height at the current time step. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classState_a2094315fb752fa99dbe6fcf5b373db76}{Eta}}
+\begin{DoxyCompactList}\small\item\em Water surface elevation at the current time step. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classState_a40dda08f046cda018543a53e8bcea15f}{Zn}}
+\begin{DoxyCompactList}\small\item\em Bottom elevation at the current time step. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classState_a6f17867499b4093f2447815f90719ecb}{Pn}}
+\begin{DoxyCompactList}\small\item\em Conserved momentum in Nwogu\textquotesingle{}s equation at the current time step. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classState_aa769a173d9fe2757c1e5fc8fc2ca6ece}{Un}}
+\begin{DoxyCompactList}\small\item\em Velocity at the current time step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the state variables of the numerical wave solver. 
+
+The {\ttfamily \doxylink{classState}{State}} class contains the state variables (i.\+e., water height, velocity, etc.) at the current time step. It includes methods for updating the state and managing memory. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classState_aebb5064c773ed46e56204d477a1e7228}\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily \label{classState_aebb5064c773ed46e56204d477a1e7228} 
+State\+::\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classState}{State} class. 
+
+Initializes the state variables using the initial conditions provided in the input file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em In} & Reference to an \doxylink{classInput}{Input} object containing user-\/defined parameters for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classState_afab438d92b90dc18d194dbd9c9c8bab3}\index{State@{State}!````~State@{\texorpdfstring{$\sim$}{\string~}State}}
+\index{````~State@{\texorpdfstring{$\sim$}{\string~}State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}State()}{\string~State()}}
+{\footnotesize\ttfamily \label{classState_afab438d92b90dc18d194dbd9c9c8bab3} 
+State\+::\texorpdfstring{$\sim$}{\string~}\+State (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{classState}{State} class. 
+
+Cleans up dynamically allocated memory for the state variables. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classState_a33bb353c38aad953bc3f2bfd5c1c3ac5}\index{State@{State}!Update@{Update}}
+\index{Update@{Update}!State@{State}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily \label{classState_a33bb353c38aad953bc3f2bfd5c1c3ac5} 
+void State\+::\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Swaps the pointers of two \doxylink{classState}{State} objects. 
+
+This function swaps the pointers of the state variables between two \doxylink{classState}{State} objects, effectively updating their values. This is useful for updating the state variables at each time step without copying the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Reference to another \doxylink{classState}{State} object to swap with. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classState_a9a7fd7b6579d141f3d0dc2d74adf9b14}\index{State@{State}!depth@{depth}}
+\index{depth@{depth}!State@{State}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily \label{classState_a9a7fd7b6579d141f3d0dc2d74adf9b14} 
+float State\+::depth}
+
+
+
+Water depth, which is constant in the domain. 
+
+\Hypertarget{classState_a9003679c6515e8b96d63bbf9a74ac0fa}\index{State@{State}!dx@{dx}}
+\index{dx@{dx}!State@{State}}
+\doxysubsubsection{\texorpdfstring{dx}{dx}}
+{\footnotesize\ttfamily \label{classState_a9003679c6515e8b96d63bbf9a74ac0fa} 
+float State\+::dx}
+
+
+
+Grid spacing. 
+
+\Hypertarget{classState_a3a9010910d0d229557f5d4a196180f70}\index{State@{State}!dx\_1@{dx\_1}}
+\index{dx\_1@{dx\_1}!State@{State}}
+\doxysubsubsection{\texorpdfstring{dx\_1}{dx\_1}}
+{\footnotesize\ttfamily \label{classState_a3a9010910d0d229557f5d4a196180f70} 
+float State\+::dx\+\_\+1}
+
+
+
+Inverse of grid spacing. 
+
+\Hypertarget{classState_a2094315fb752fa99dbe6fcf5b373db76}\index{State@{State}!Eta@{Eta}}
+\index{Eta@{Eta}!State@{State}}
+\doxysubsubsection{\texorpdfstring{Eta}{Eta}}
+{\footnotesize\ttfamily \label{classState_a2094315fb752fa99dbe6fcf5b373db76} 
+float\texorpdfstring{$\ast$}{*} State\+::\+Eta}
+
+
+
+Water surface elevation at the current time step. 
+
+\Hypertarget{classState_ada483a41be06c799e60b0d32edb9a79e}\index{State@{State}!Grid@{Grid}}
+\index{Grid@{Grid}!State@{State}}
+\doxysubsubsection{\texorpdfstring{Grid}{Grid}}
+{\footnotesize\ttfamily \label{classState_ada483a41be06c799e60b0d32edb9a79e} 
+\mbox{\hyperlink{GlobalVariables_8h_a52bdd18b63ba2ec1780aecd91679ee4a}{grid}} State\+::\+Grid}
+
+
+
+Grid type (collocated or staggered) 
+
+\Hypertarget{classState_a28f63f0cd7b0d7943e2cf5c9e1028ae1}\index{State@{State}!Hn@{Hn}}
+\index{Hn@{Hn}!State@{State}}
+\doxysubsubsection{\texorpdfstring{Hn}{Hn}}
+{\footnotesize\ttfamily \label{classState_a28f63f0cd7b0d7943e2cf5c9e1028ae1} 
+float\texorpdfstring{$\ast$}{*} State\+::\+Hn}
+
+
+
+Water height at the current time step. 
+
+\Hypertarget{classState_a92c45c45d00a0c31904d49a70940a4c0}\index{State@{State}!N@{N}}
+\index{N@{N}!State@{State}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \label{classState_a92c45c45d00a0c31904d49a70940a4c0} 
+unsigned int State\+::N}
+
+
+
+Number of grid points. 
+
+\Hypertarget{classState_a6f17867499b4093f2447815f90719ecb}\index{State@{State}!Pn@{Pn}}
+\index{Pn@{Pn}!State@{State}}
+\doxysubsubsection{\texorpdfstring{Pn}{Pn}}
+{\footnotesize\ttfamily \label{classState_a6f17867499b4093f2447815f90719ecb} 
+float\texorpdfstring{$\ast$}{*} State\+::\+Pn}
+
+
+
+Conserved momentum in Nwogu\textquotesingle{}s equation at the current time step. 
+
+\Hypertarget{classState_aa769a173d9fe2757c1e5fc8fc2ca6ece}\index{State@{State}!Un@{Un}}
+\index{Un@{Un}!State@{State}}
+\doxysubsubsection{\texorpdfstring{Un}{Un}}
+{\footnotesize\ttfamily \label{classState_aa769a173d9fe2757c1e5fc8fc2ca6ece} 
+float\texorpdfstring{$\ast$}{*} State\+::\+Un}
+
+
+
+Velocity at the current time step. 
+
+\Hypertarget{classState_a40dda08f046cda018543a53e8bcea15f}\index{State@{State}!Zn@{Zn}}
+\index{Zn@{Zn}!State@{State}}
+\doxysubsubsection{\texorpdfstring{Zn}{Zn}}
+{\footnotesize\ttfamily \label{classState_a40dda08f046cda018543a53e8bcea15f} 
+float\texorpdfstring{$\ast$}{*} State\+::\+Zn}
+
+
+
+Bottom elevation at the current time step. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/include/\mbox{\hyperlink{TimeVariables_8h}{Time\+Variables.\+h}}\item 
+code/src/\mbox{\hyperlink{TimeVariables_8cpp}{Time\+Variables.\+cpp}}\end{DoxyCompactItemize}

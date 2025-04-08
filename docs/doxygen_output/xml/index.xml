@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.13.2" xml:lang="en-US">
+  <compound refid="classDispersion" kind="class"><name>Dispersion</name>
+    <member refid="classDispersion_1a966258f232e7b8ab41412c15d0b0c394" kind="variable"><name>N</name></member>
+    <member refid="classDispersion_1a0a97fe146fa93ff5596d2c5aa2ed6be2" kind="variable"><name>PhiC</name></member>
+    <member refid="classDispersion_1a6d366770689c550765e3ccea7ed17034" kind="variable"><name>PhiM</name></member>
+    <member refid="classDispersion_1a0558a889fa184573627f6c6f7ad2ae72" kind="variable"><name>Uxx</name></member>
+    <member refid="classDispersion_1ae49bffaf5c4d3d5323e54ce42d8a4127" kind="variable"><name>D1</name></member>
+    <member refid="classDispersion_1abfaf79e98f25c390ebaacc26ad59310e" kind="variable"><name>D2</name></member>
+    <member refid="classDispersion_1afb9ae6690fa9deb41081640ff64d0500" kind="variable"><name>D3</name></member>
+    <member refid="classDispersion_1a65c18a6718364baa8411208b43591504" kind="function"><name>Dispersion</name></member>
+    <member refid="classDispersion_1a47a0c75361054ac95fcf4ef6d1be60ac" kind="function"><name>ComputeDispersion</name></member>
+    <member refid="classDispersion_1a37aff1717dbf3526460d162ffd1de9fb" kind="function"><name>SolveTridiagonalMatrix</name></member>
+    <member refid="classDispersion_1a686beccff78fed61a363efa654fd3446" kind="function"><name>~Dispersion</name></member>
+  </compound>
+  <compound refid="classflux" kind="class"><name>flux</name>
+    <member refid="classflux_1a238ea1541242c332a0086dbeb0b65c7c" kind="variable"><name>N</name></member>
+    <member refid="classflux_1a0bed9e6ca693154d6db8c6574b50bb60" kind="variable"><name>WS</name></member>
+    <member refid="classflux_1a4ed77c0022f6c88683401962047eb0af" kind="variable"><name>Hn</name></member>
+    <member refid="classflux_1af3266be4d4330ef110a0cc8065df608c" kind="variable"><name>Qn</name></member>
+    <member refid="classflux_1af99086969bd3966c3fc28bcb8fc478b4" kind="variable"><name>HL</name></member>
+    <member refid="classflux_1ac99fb062e3d35e84297c5f9163b80332" kind="variable"><name>HR</name></member>
+    <member refid="classflux_1a39216f37660192a5ea9aa2cd2b16e28e" kind="variable"><name>QL</name></member>
+    <member refid="classflux_1ad0098376f298fb5ba4ec7648feabfd46" kind="variable"><name>QR</name></member>
+    <member refid="classflux_1adfdcb49efed897bd7006b9d1f20e3c71" kind="variable"><name>FluxH</name></member>
+    <member refid="classflux_1a6527f04e525e156d0753409d9769924e" kind="variable"><name>FluxU</name></member>
+    <member refid="classflux_1ad12f9ebd94d5fc3acc6bc9ab0546b947" kind="function"><name>flux</name></member>
+    <member refid="classflux_1a5bbf9064fed1080784110a2e9318ad36" kind="function"><name>ComputeFlux</name></member>
+    <member refid="classflux_1ad6c3e1f342c841e8b0914e61bc833083" kind="function"><name>~flux</name></member>
+  </compound>
+  <compound refid="classflux__staggered" kind="class"><name>flux_staggered</name>
+    <member refid="classflux__staggered_1af8f15fc8cfc15349cb859f087460753a" kind="variable"><name>N</name></member>
+    <member refid="classflux__staggered_1a4b056356ee504a8b01be6b746378f81d" kind="variable"><name>WS</name></member>
+    <member refid="classflux__staggered_1ad667361ac320bb15f1c574fca5c0f3cb" kind="variable"><name>HUn</name></member>
+    <member refid="classflux__staggered_1a2e6fe0d852341d0324e2f5b3e2ab2f30" kind="variable"><name>HUUn</name></member>
+    <member refid="classflux__staggered_1a50d7bab30663331b7203a3b49f4e9c25" kind="function"><name>flux_staggered</name></member>
+    <member refid="classflux__staggered_1ac5c4e71e1d64faca3f970ffebe8c8ebe" kind="function"><name>ComputeFlux</name></member>
+    <member refid="classflux__staggered_1af346837e589bbbebce50b3f07a204465" kind="function"><name>~flux_staggered</name></member>
+  </compound>
+  <compound refid="classInput" kind="class"><name>Input</name>
+    <member refid="classInput_1a01d6c51d16a2e0f3941d9bab08f1e3ad" kind="variable"><name>Scheme</name></member>
+    <member refid="classInput_1a79c9872ba0b9d45323432f66ff93920f" kind="variable"><name>OrderReconstruction</name></member>
+    <member refid="classInput_1a846c82d3220d2603b3816ee835080fb5" kind="variable"><name>OrderTime</name></member>
+    <member refid="classInput_1ac733778f3f08c0e53d87c713b1f89e0e" kind="variable"><name>CourantNumber</name></member>
+    <member refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kind="variable"><name>dx</name></member>
+    <member refid="classInput_1ab894ff82367728f57ff63718cce01d48" kind="variable"><name>LengthDomain</name></member>
+    <member refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kind="variable"><name>WaterDepth</name></member>
+    <member refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kind="variable"><name>Time</name></member>
+    <member refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" kind="variable"><name>dtOutput</name></member>
+    <member refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" kind="variable"><name>dtGauges</name></member>
+    <member refid="classInput_1ae182944bc095662bd11c5fd42d46a74d" kind="variable"><name>IndexGauges</name></member>
+    <member refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kind="variable"><name>WaveInput</name></member>
+    <member refid="classInput_1acf4707403f56c6bed9967bf97b93cf1d" kind="variable"><name>ResFolder</name></member>
+    <member refid="classInput_1ae25a2db2d3fee019fcd582f769614f9e" kind="function"><name>Input</name></member>
+    <member refid="classInput_1aa679c8f40bb7645ffbe6e8dbbe71b9d6" kind="function"><name>LOGOUT</name></member>
+  </compound>
+  <compound refid="classState" kind="class"><name>State</name>
+    <member refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kind="variable"><name>N</name></member>
+    <member refid="classState_1a9003679c6515e8b96d63bbf9a74ac0fa" kind="variable"><name>dx</name></member>
+    <member refid="classState_1a3a9010910d0d229557f5d4a196180f70" kind="variable"><name>dx_1</name></member>
+    <member refid="classState_1a9a7fd7b6579d141f3d0dc2d74adf9b14" kind="variable"><name>depth</name></member>
+    <member refid="classState_1ada483a41be06c799e60b0d32edb9a79e" kind="variable"><name>Grid</name></member>
+    <member refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" kind="variable"><name>Hn</name></member>
+    <member refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kind="variable"><name>Eta</name></member>
+    <member refid="classState_1a40dda08f046cda018543a53e8bcea15f" kind="variable"><name>Zn</name></member>
+    <member refid="classState_1a6f17867499b4093f2447815f90719ecb" kind="variable"><name>Pn</name></member>
+    <member refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kind="variable"><name>Un</name></member>
+    <member refid="classState_1aebb5064c773ed46e56204d477a1e7228" kind="function"><name>State</name></member>
+    <member refid="classState_1afab438d92b90dc18d194dbd9c9c8bab3" kind="function"><name>~State</name></member>
+    <member refid="classState_1a33bb353c38aad953bc3f2bfd5c1c3ac5" kind="function"><name>Update</name></member>
+  </compound>
+  <compound refid="classWaveMaker" kind="class"><name>WaveMaker</name>
+    <member refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" kind="variable"><name>Nf</name></member>
+    <member refid="classWaveMaker_1ae03cdb6bf0dd246bfc0ec488f67bb007" kind="variable"><name>N</name></member>
+    <member refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" kind="variable"><name>Beta</name></member>
+    <member refid="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" kind="variable"><name>posWM</name></member>
+    <member refid="classWaveMaker_1abe5bef6fb25b4d353a57906fa3a57125" kind="variable"><name>depth</name></member>
+    <member refid="classWaveMaker_1a9be062dde81f30b4664313857160f40a" kind="variable"><name>width</name></member>
+    <member refid="classWaveMaker_1a23f5ff9b36abf66bb9571517b8de6c7f" kind="variable"><name>Ns</name></member>
+    <member refid="classWaveMaker_1ad81c3af5c9ecbe817e8487f5321a6593" kind="variable"><name>Kp</name></member>
+    <member refid="classWaveMaker_1ad313aa0681f180071508b94fb443188e" kind="variable"><name>Freq</name></member>
+    <member refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" kind="variable"><name>Amp</name></member>
+    <member refid="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" kind="variable"><name>Phase</name></member>
+    <member refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" kind="variable"><name>Omg</name></member>
+    <member refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" kind="variable"><name>K</name></member>
+    <member refid="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" kind="variable"><name>Di</name></member>
+    <member refid="classWaveMaker_1a1493e19950984f465869c648bc776466" kind="variable"><name>SourceTerm</name></member>
+    <member refid="classWaveMaker_1a85b262bc82ab9ae299aa9dbdb70a2103" kind="variable"><name>de</name></member>
+    <member refid="classWaveMaker_1a1361b9d5047e63d047145e36ce48e7cb" kind="variable"><name>alpha3</name></member>
+    <member refid="classWaveMaker_1a22cf52c5cf4a8b9c1dd72f262a8c36d4" kind="function"><name>WaveMaker</name></member>
+    <member refid="classWaveMaker_1aa298adc2d35dcc76d8dfb5b27009bb72" kind="function"><name>ComputeSourceTerm</name></member>
+    <member refid="classWaveMaker_1a3e383af6629bb2f3a2f4bb02840c10cf" kind="function"><name>~WaveMaker</name></member>
+  </compound>
+  <compound refid="Boundaries_8h" kind="file"><name>Boundaries.h</name>
+    <member refid="Boundaries_8h_1a15939cb64e963cfec3ae091f8b888865" kind="function"><name>ApplySpongeLayer</name></member>
+  </compound>
+  <compound refid="Dispersion_8h" kind="file"><name>Dispersion.h</name>
+    <member refid="Dispersion_8h_1a5a035cdd8f6decd41a4650e0828110e9" kind="function"><name>ThomasAlgorithm</name></member>
+  </compound>
+  <compound refid="FluxComputation_8h" kind="file"><name>FluxComputation.h</name>
+    <member refid="FluxComputation_8h_1a047d256037d27435f4f1218b38685b9b" kind="function"><name>Recontruction_Order1</name></member>
+    <member refid="FluxComputation_8h_1a0b1b58ffc138adc95d6b8573e56daf77" kind="function"><name>Recontruction_Order2</name></member>
+    <member refid="FluxComputation_8h_1a885eac6dccfcc8b73fdb27b433efa00b" kind="function"><name>Recontruction_Order3</name></member>
+    <member refid="FluxComputation_8h_1ae61ccf497bda712978ba2fac7e211d13" kind="function"><name>Recontruction_Order5</name></member>
+    <member refid="FluxComputation_8h_1a14240127a8376ac6eff63eaca802f766" kind="function"><name>minmod</name></member>
+    <member refid="FluxComputation_8h_1ab5374d849e36ba16e42428a4674e16f3" kind="function"><name>upwind</name></member>
+    <member refid="FluxComputation_8h_1a03e356ed6b569840b09933d9538d1634" kind="function"><name>upwind</name></member>
+    <member refid="FluxComputation_8h_1ade1f7f95f720e6c73d063f64fe10f87e" kind="function"><name>Flux_CentralUpwind</name></member>
+    <member refid="FluxComputation_8h_1a1c4a609a92dc39c7441057fcf4a70e2f" kind="function"><name>Flux_HLL</name></member>
+    <member refid="FluxComputation_8h_1a06eca82ea44bc6e1f759e96835038d81" kind="function"><name>Flux_HLLC</name></member>
+  </compound>
+  <compound refid="GlobalVariables_8h" kind="file"><name>GlobalVariables.h</name>
+    <member refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kind="enum"><name>scheme</name></member>
+    <member refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968aca2badb5a8cc56cfab889a69c9e0cef6" kind="enumvalue"><name>conservative_staggered</name></member>
+    <member refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968a37ea226464a76d4f841772ff1f5843c0" kind="enumvalue"><name>hllc</name></member>
+    <member refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968a7395c1b2905d77784d2d0af187e482a6" kind="enumvalue"><name>central_upwind</name></member>
+    <member refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968af2e3f15077facd1d4f26626f532ec4e9" kind="enumvalue"><name>hll</name></member>
+    <member refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4a" kind="enum"><name>grid</name></member>
+    <member refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156" kind="enumvalue"><name>collocated</name></member>
+    <member refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900" kind="enumvalue"><name>staggered</name></member>
+    <member refid="GlobalVariables_8h_1a96a5ba0386e2a1b3b9ec030f12e91e47" kind="variable"><name>ListeScheme</name></member>
+    <member refid="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" kind="variable"><name>G</name></member>
+    <member refid="GlobalVariables_8h_1aa08a577393243b86dfd2a97e61443673" kind="variable"><name>PI</name></member>
+    <member refid="GlobalVariables_8h_1a777989279445ddc055c317df60b3dd64" kind="variable"><name>hmin</name></member>
+    <member refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kind="variable"><name>alpha1</name></member>
+    <member refid="GlobalVariables_8h_1a8f669f98a450c90b372af97dbe393064" kind="variable"><name>gamma1</name></member>
+    <member refid="GlobalVariables_8h_1a7dce376424d554a29a3742d3dbfc7ee3" kind="variable"><name>alphaSP</name></member>
+    <member refid="GlobalVariables_8h_1a6a322c5e57d95bf50f6478579c28b9cd" kind="variable"><name>gammaSP</name></member>
+    <member refid="GlobalVariables_8h_1a1e55a637d0220456f6caa6823b1efda9" kind="variable"><name>nSP</name></member>
+    <member refid="GlobalVariables_8h_1a115114c8257e3a44296ac83db835062f" kind="variable"><name>epsilonSP</name></member>
+    <member refid="GlobalVariables_8h_1a87f49feba762f3dd933bf0df4b960a2a" kind="variable"><name>thetaRC</name></member>
+    <member refid="GlobalVariables_8h_1a402c4b48d21417b113c1bdbc078d4b93" kind="variable"><name>positionWM</name></member>
+  </compound>
+  <compound refid="ReadUserInput_8h" kind="file"><name>ReadUserInput.h</name>
+    <member refid="ReadUserInput_8h_1a979af3a6dbf69541b297d53581c424ef" kind="function"><name>convertScheme</name></member>
+    <member refid="ReadUserInput_8h_1a3b44780a014089188e34196475b06538" kind="function"><name>convertIndexGauges</name></member>
+  </compound>
+  <compound refid="SolveEquation_8h" kind="file"><name>SolveEquation.h</name>
+    <member refid="SolveEquation_8h_1a3801c3507f2e3b149294e1053408a91b" kind="function"><name>SolveEquationStaggered_step1</name></member>
+    <member refid="SolveEquation_8h_1a90d3b8fa44e8b2d0f7fa0bd6fe518a4b" kind="function"><name>SolveEquationStaggered_step2</name></member>
+    <member refid="SolveEquation_8h_1a746d876f03c899216606b2c0ea948725" kind="function"><name>SolveEquationStaggered_step3</name></member>
+    <member refid="SolveEquation_8h_1a451c61e3381fb87a50744217adcc1807" kind="function"><name>SolveEquationCollocated_step1</name></member>
+    <member refid="SolveEquation_8h_1aa85d0f93e1b2184b3b07cdbbac58cc13" kind="function"><name>SolveEquationCollocated_step2</name></member>
+    <member refid="SolveEquation_8h_1a3604d0243b01113e7901f7564f3763f0" kind="function"><name>SolveEquationCollocated_step3</name></member>
+  </compound>
+  <compound refid="TimeVariables_8h" kind="file"><name>TimeVariables.h</name>
+    <member refid="TimeVariables_8h_1a93f03159397f25c687840129b18c972d" kind="define"><name>PBSTR</name></member>
+    <member refid="TimeVariables_8h_1a69793e71975c25754a8236df29896e15" kind="define"><name>PBWIDTH</name></member>
+    <member refid="TimeVariables_8h_1a5ac26d30d4e3e06e81531abaf2e89662" kind="function"><name>PrintVariables</name></member>
+    <member refid="TimeVariables_8h_1a6299f999304f86c4caf62e98802e4bb6" kind="function"><name>printINFO</name></member>
+    <member refid="TimeVariables_8h_1ab02e6eff2f5a6566d4c54fbd64a83f1d" kind="function"><name>RecordTimeSeries</name></member>
+    <member refid="TimeVariables_8h_1a44fb1c7752f15d1dcfe6e68731e4ab4e" kind="function"><name>PrintTimeSeries</name></member>
+    <member refid="TimeVariables_8h_1aa5509f31ef9b645c138dc622b48e5bf6" kind="function"><name>linear_interpolation</name></member>
+    <member refid="TimeVariables_8h_1a29f60631590f10a98b879ade5e28cdf7" kind="function"><name>linear_interpolation</name></member>
+    <member refid="TimeVariables_8h_1aaf56a21b99f1eac435bd924b0357b8b4" kind="function"><name>intToStringWithLeadingZeros</name></member>
+    <member refid="TimeVariables_8h_1a9d3b483a858efb84ce776bed255b6dd6" kind="function"><name>printProgress</name></member>
+  </compound>
+  <compound refid="Wavemaker_8h" kind="file"><name>Wavemaker.h</name>
+    <member refid="Wavemaker_8h_1a2f568fde6174ae53ea014cbc418d2edc" kind="function"><name>SecondorderEquation</name></member>
+    <member refid="Wavemaker_8h_1ad2b6f722fc7edfe06e4f317c47b18456" kind="function"><name>wavelength</name></member>
+  </compound>
+  <compound refid="Boundaries_8cpp" kind="file"><name>Boundaries.cpp</name>
+    <member refid="Boundaries_8cpp_1a15939cb64e963cfec3ae091f8b888865" kind="function"><name>ApplySpongeLayer</name></member>
+  </compound>
+  <compound refid="Dispersion_8cpp" kind="file"><name>Dispersion.cpp</name>
+    <member refid="Dispersion_8cpp_1a5a035cdd8f6decd41a4650e0828110e9" kind="function"><name>ThomasAlgorithm</name></member>
+  </compound>
+  <compound refid="FluxComputation_8cpp" kind="file"><name>FluxComputation.cpp</name>
+    <member refid="FluxComputation_8cpp_1ab5374d849e36ba16e42428a4674e16f3" kind="function"><name>upwind</name></member>
+    <member refid="FluxComputation_8cpp_1a03e356ed6b569840b09933d9538d1634" kind="function"><name>upwind</name></member>
+    <member refid="FluxComputation_8cpp_1a1427a5bc052b35ab5a40fa74efa38688" kind="function"><name>min3</name></member>
+    <member refid="FluxComputation_8cpp_1a9cb524ba719998ee7ffe777b35beda4d" kind="function"><name>max3</name></member>
+    <member refid="FluxComputation_8cpp_1a14240127a8376ac6eff63eaca802f766" kind="function"><name>minmod</name></member>
+    <member refid="FluxComputation_8cpp_1a047d256037d27435f4f1218b38685b9b" kind="function"><name>Recontruction_Order1</name></member>
+    <member refid="FluxComputation_8cpp_1a0b1b58ffc138adc95d6b8573e56daf77" kind="function"><name>Recontruction_Order2</name></member>
+    <member refid="FluxComputation_8cpp_1a885eac6dccfcc8b73fdb27b433efa00b" kind="function"><name>Recontruction_Order3</name></member>
+    <member refid="FluxComputation_8cpp_1ae61ccf497bda712978ba2fac7e211d13" kind="function"><name>Recontruction_Order5</name></member>
+    <member refid="FluxComputation_8cpp_1ade1f7f95f720e6c73d063f64fe10f87e" kind="function"><name>Flux_CentralUpwind</name></member>
+    <member refid="FluxComputation_8cpp_1a1c4a609a92dc39c7441057fcf4a70e2f" kind="function"><name>Flux_HLL</name></member>
+    <member refid="FluxComputation_8cpp_1a06eca82ea44bc6e1f759e96835038d81" kind="function"><name>Flux_HLLC</name></member>
+  </compound>
+  <compound refid="GlobalVariables_8cpp" kind="file"><name>GlobalVariables.cpp</name>
+    <member refid="GlobalVariables_8cpp_1accf9cafc36aeda21688e19a1c2d3888d" kind="variable"><name>G</name></member>
+    <member refid="GlobalVariables_8cpp_1aa08a577393243b86dfd2a97e61443673" kind="variable"><name>PI</name></member>
+    <member refid="GlobalVariables_8cpp_1a777989279445ddc055c317df60b3dd64" kind="variable"><name>hmin</name></member>
+    <member refid="GlobalVariables_8cpp_1a96a5ba0386e2a1b3b9ec030f12e91e47" kind="variable"><name>ListeScheme</name></member>
+    <member refid="GlobalVariables_8cpp_1aca7f35c8ae5f70eaffe705ebc6766585" kind="variable"><name>alpha1</name></member>
+    <member refid="GlobalVariables_8cpp_1a8f669f98a450c90b372af97dbe393064" kind="variable"><name>gamma1</name></member>
+    <member refid="GlobalVariables_8cpp_1a7dce376424d554a29a3742d3dbfc7ee3" kind="variable"><name>alphaSP</name></member>
+    <member refid="GlobalVariables_8cpp_1a6a322c5e57d95bf50f6478579c28b9cd" kind="variable"><name>gammaSP</name></member>
+    <member refid="GlobalVariables_8cpp_1a1e55a637d0220456f6caa6823b1efda9" kind="variable"><name>nSP</name></member>
+    <member refid="GlobalVariables_8cpp_1a115114c8257e3a44296ac83db835062f" kind="variable"><name>epsilonSP</name></member>
+    <member refid="GlobalVariables_8cpp_1a87f49feba762f3dd933bf0df4b960a2a" kind="variable"><name>thetaRC</name></member>
+    <member refid="GlobalVariables_8cpp_1a6d1d85b49b60e43664912620f0c4fa8b" kind="variable"><name>positionWM</name></member>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="ReadUserInput_8cpp" kind="file"><name>ReadUserInput.cpp</name>
+    <member refid="ReadUserInput_8cpp_1a979af3a6dbf69541b297d53581c424ef" kind="function"><name>convertScheme</name></member>
+    <member refid="ReadUserInput_8cpp_1a3b44780a014089188e34196475b06538" kind="function"><name>convertIndexGauges</name></member>
+  </compound>
+  <compound refid="SolveEquation_8cpp" kind="file"><name>SolveEquation.cpp</name>
+    <member refid="SolveEquation_8cpp_1a3801c3507f2e3b149294e1053408a91b" kind="function"><name>SolveEquationStaggered_step1</name></member>
+    <member refid="SolveEquation_8cpp_1a90d3b8fa44e8b2d0f7fa0bd6fe518a4b" kind="function"><name>SolveEquationStaggered_step2</name></member>
+    <member refid="SolveEquation_8cpp_1a746d876f03c899216606b2c0ea948725" kind="function"><name>SolveEquationStaggered_step3</name></member>
+    <member refid="SolveEquation_8cpp_1a451c61e3381fb87a50744217adcc1807" kind="function"><name>SolveEquationCollocated_step1</name></member>
+    <member refid="SolveEquation_8cpp_1aa85d0f93e1b2184b3b07cdbbac58cc13" kind="function"><name>SolveEquationCollocated_step2</name></member>
+    <member refid="SolveEquation_8cpp_1a3604d0243b01113e7901f7564f3763f0" kind="function"><name>SolveEquationCollocated_step3</name></member>
+  </compound>
+  <compound refid="TimeVariables_8cpp" kind="file"><name>TimeVariables.cpp</name>
+    <member refid="TimeVariables_8cpp_1a7fe4c0c6db0a7f2f67527d8f55ac5f97" kind="function"><name>swap_pointers</name></member>
+    <member refid="TimeVariables_8cpp_1a99c2abde7b24b24ef7a0e6850f830b13" kind="function"><name>printbin</name></member>
+    <member refid="TimeVariables_8cpp_1a6299f999304f86c4caf62e98802e4bb6" kind="function"><name>printINFO</name></member>
+    <member refid="TimeVariables_8cpp_1a5ac26d30d4e3e06e81531abaf2e89662" kind="function"><name>PrintVariables</name></member>
+    <member refid="TimeVariables_8cpp_1ab02e6eff2f5a6566d4c54fbd64a83f1d" kind="function"><name>RecordTimeSeries</name></member>
+    <member refid="TimeVariables_8cpp_1a44fb1c7752f15d1dcfe6e68731e4ab4e" kind="function"><name>PrintTimeSeries</name></member>
+    <member refid="TimeVariables_8cpp_1aa5509f31ef9b645c138dc622b48e5bf6" kind="function"><name>linear_interpolation</name></member>
+    <member refid="TimeVariables_8cpp_1a29f60631590f10a98b879ade5e28cdf7" kind="function"><name>linear_interpolation</name></member>
+    <member refid="TimeVariables_8cpp_1aaf56a21b99f1eac435bd924b0357b8b4" kind="function"><name>intToStringWithLeadingZeros</name></member>
+    <member refid="TimeVariables_8cpp_1a9d3b483a858efb84ce776bed255b6dd6" kind="function"><name>printProgress</name></member>
+  </compound>
+  <compound refid="Wavemaker_8cpp" kind="file"><name>Wavemaker.cpp</name>
+    <member refid="Wavemaker_8cpp_1ad2b6f722fc7edfe06e4f317c47b18456" kind="function"><name>wavelength</name></member>
+    <member refid="Wavemaker_8cpp_1a2f568fde6174ae53ea014cbc418d2edc" kind="function"><name>SecondorderEquation</name></member>
+  </compound>
+  <compound refid="dir_050edd66366d13764f98250ef6db77f6" kind="dir"><name>code</name>
+  </compound>
+  <compound refid="dir_f8a5fb882cc5ea0f84873b4bfbe1e42c" kind="dir"><name>code/include</name>
+  </compound>
+  <compound refid="dir_14807827589b339a04434892d1c1deae" kind="dir"><name>code/src</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,119 @@
+\doxysection{flux\+\_\+staggered Class Reference}
+\hypertarget{classflux__staggered}{}\label{classflux__staggered}\index{flux\_staggered@{flux\_staggered}}
+
+
+Computes the fluxes for the Shallow Water Equations in a staggered grid.  
+
+
+
+
+{\ttfamily \#include $<$Flux\+Computation.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflux__staggered_a50d7bab30663331b7203a3b49f4e9c25}{flux\+\_\+staggered}} (unsigned int N)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classflux__staggered}{flux\+\_\+staggered} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflux__staggered_ac5c4e71e1d64faca3f970ffebe8c8ebe}{Compute\+Flux}} (const \mbox{\hyperlink{classState}{State}} \&state, const unsigned int \&Order\+Reconstruction)
+\begin{DoxyCompactList}\small\item\em Computes the fluxes for the Shallow Water Equations in a staggered grid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classflux__staggered_af346837e589bbbebce50b3f07a204465}{\texorpdfstring{$\sim$}{\string~}flux\+\_\+staggered}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux__staggered_a4b056356ee504a8b01be6b746378f81d}{WS}}
+\begin{DoxyCompactList}\small\item\em Wave speed for the CFL computation. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux__staggered_ad667361ac320bb15f1c574fca5c0f3cb}{HUn}}
+\begin{DoxyCompactList}\small\item\em Hn\texorpdfstring{$\ast$}{*}\+Un approximation in the continuity equation. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux__staggered_a2e6fe0d852341d0324e2f5b3e2ab2f30}{HUUn}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the fluxes for the Shallow Water Equations in a staggered grid. 
+
+The {\ttfamily \doxylink{classflux__staggered}{flux\+\_\+staggered}} class is responsible for computing the fluxes in the shallow water equations using a conservative staggered scheme (Stelling and Duinmeijer, 2003). This flux computation is based on second-\/order reconstruction. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflux__staggered_a50d7bab30663331b7203a3b49f4e9c25}\index{flux\_staggered@{flux\_staggered}!flux\_staggered@{flux\_staggered}}
+\index{flux\_staggered@{flux\_staggered}!flux\_staggered@{flux\_staggered}}
+\doxysubsubsection{\texorpdfstring{flux\_staggered()}{flux\_staggered()}}
+{\footnotesize\ttfamily \label{classflux__staggered_a50d7bab30663331b7203a3b49f4e9c25} 
+flux\+\_\+staggered\+::flux\+\_\+staggered (\begin{DoxyParamCaption}\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classflux__staggered}{flux\+\_\+staggered} class. 
+
+Initializes the \doxylink{classflux__staggered}{flux\+\_\+staggered} class with the number of grid points and allocates memory for the flux variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & Number of grid points in the computational domain. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classflux__staggered_af346837e589bbbebce50b3f07a204465}\index{flux\_staggered@{flux\_staggered}!````~flux\_staggered@{\texorpdfstring{$\sim$}{\string~}flux\_staggered}}
+\index{````~flux\_staggered@{\texorpdfstring{$\sim$}{\string~}flux\_staggered}!flux\_staggered@{flux\_staggered}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}flux\_staggered()}{\string~flux\_staggered()}}
+{\footnotesize\ttfamily \label{classflux__staggered_af346837e589bbbebce50b3f07a204465} 
+flux\+\_\+staggered\+::\texorpdfstring{$\sim$}{\string~}flux\+\_\+staggered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+brief Destructor for the \doxylink{classflux__staggered}{flux\+\_\+staggered} class.
+
+Cleans up dynamically allocated memory for the flux variables. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflux__staggered_ac5c4e71e1d64faca3f970ffebe8c8ebe}\index{flux\_staggered@{flux\_staggered}!ComputeFlux@{ComputeFlux}}
+\index{ComputeFlux@{ComputeFlux}!flux\_staggered@{flux\_staggered}}
+\doxysubsubsection{\texorpdfstring{ComputeFlux()}{ComputeFlux()}}
+{\footnotesize\ttfamily \label{classflux__staggered_ac5c4e71e1d64faca3f970ffebe8c8ebe} 
+void flux\+\_\+staggered\+::\+Compute\+Flux (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classState}{State}} \&}]{state}{, }\item[{const unsigned int \&}]{Order\+Reconstruction}{}\end{DoxyParamCaption})}
+
+
+
+Computes the fluxes for the Shallow Water Equations in a staggered grid. 
+
+This function computes the fluxes using the specified reconstruction order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Reference to a \doxylink{classState}{State} object containing the current state of the system. \\
+\hline
+{\em Order\+Reconstruction} & The order of reconstruction to be used (1 or 2).\\
+\hline
+\end{DoxyParams}
+Refrence\+: Stelling and Duinmeijer (2003) 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflux__staggered_ad667361ac320bb15f1c574fca5c0f3cb}\index{flux\_staggered@{flux\_staggered}!HUn@{HUn}}
+\index{HUn@{HUn}!flux\_staggered@{flux\_staggered}}
+\doxysubsubsection{\texorpdfstring{HUn}{HUn}}
+{\footnotesize\ttfamily \label{classflux__staggered_ad667361ac320bb15f1c574fca5c0f3cb} 
+float\texorpdfstring{$\ast$}{*} flux\+\_\+staggered\+::\+HUn}
+
+
+
+Hn\texorpdfstring{$\ast$}{*}\+Un approximation in the continuity equation. 
+
+\Hypertarget{classflux__staggered_a2e6fe0d852341d0324e2f5b3e2ab2f30}\index{flux\_staggered@{flux\_staggered}!HUUn@{HUUn}}
+\index{HUUn@{HUUn}!flux\_staggered@{flux\_staggered}}
+\doxysubsubsection{\texorpdfstring{HUUn}{HUUn}}
+{\footnotesize\ttfamily \label{classflux__staggered_a2e6fe0d852341d0324e2f5b3e2ab2f30} 
+float\texorpdfstring{$\ast$}{*} flux\+\_\+staggered\+::\+HUUn}
+
+\Hypertarget{classflux__staggered_a4b056356ee504a8b01be6b746378f81d}\index{flux\_staggered@{flux\_staggered}!WS@{WS}}
+\index{WS@{WS}!flux\_staggered@{flux\_staggered}}
+\doxysubsubsection{\texorpdfstring{WS}{WS}}
+{\footnotesize\ttfamily \label{classflux__staggered_a4b056356ee504a8b01be6b746378f81d} 
+float\texorpdfstring{$\ast$}{*} flux\+\_\+staggered\+::\+WS}
+
+
+
+Wave speed for the CFL computation. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/include/\mbox{\hyperlink{FluxComputation_8h}{Flux\+Computation.\+h}}\item 
+code/src/\mbox{\hyperlink{FluxComputation_8cpp}{Flux\+Computation.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,263 @@
+\doxysection{Wave\+Maker Class Reference}
+\hypertarget{classWaveMaker}{}\label{classWaveMaker}\index{WaveMaker@{WaveMaker}}
+
+
+Computes the source term for the wavemaker.  
+
+
+
+
+{\ttfamily \#include $<$Wavemaker.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaveMaker_a22cf52c5cf4a8b9c1dd72f262a8c36d4}{Wave\+Maker}} (const \mbox{\hyperlink{classInput}{Input}} \&In, const unsigned int \&\mbox{\hyperlink{classWaveMaker_ae03cdb6bf0dd246bfc0ec488f67bb007}{N}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classWaveMaker}{Wave\+Maker} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaveMaker_aa298adc2d35dcc76d8dfb5b27009bb72}{Compute\+Source\+Term}} (const float \&t, const float \&dx)
+\begin{DoxyCompactList}\small\item\em Computes the source term that will be added to the momentum equation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaveMaker_a3e383af6629bb2f3a2f4bb02840c10cf}{\texorpdfstring{$\sim$}{\string~}\+Wave\+Maker}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classWaveMaker}{Wave\+Maker} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classWaveMaker_a8462cbfe6b53792189f99f170c45e59b}{Nf}}
+\begin{DoxyCompactList}\small\item\em Number of frequencies. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classWaveMaker_ae03cdb6bf0dd246bfc0ec488f67bb007}{N}}
+\begin{DoxyCompactList}\small\item\em Number of grid points. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWaveMaker_aaee7c6343a70be527b67f9a8753f57af}{Beta}}
+\begin{DoxyCompactList}\small\item\em Beta parameter for the source term. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classWaveMaker_a1dce60f8d2ca99f5c471044e86e67d76}{pos\+WM}}
+\begin{DoxyCompactList}\small\item\em Position of the wavemaker in the grid. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWaveMaker_abe5bef6fb25b4d353a57906fa3a57125}{depth}}
+\begin{DoxyCompactList}\small\item\em Water depth at the wavemaker. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWaveMaker_a9be062dde81f30b4664313857160f40a}{width}}
+\item 
+unsigned int \mbox{\hyperlink{classWaveMaker_a23f5ff9b36abf66bb9571517b8de6c7f}{Ns}}
+\begin{DoxyCompactList}\small\item\em Number of grid points for the wavemaker. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classWaveMaker_ad81c3af5c9ecbe817e8487f5321a6593}{Kp}}
+\begin{DoxyCompactList}\small\item\em Wavenumber corresponding to the peak frequency. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaveMaker_ad313aa0681f180071508b94fb443188e}{Freq}}
+\begin{DoxyCompactList}\small\item\em Frequencies as input by the user. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaveMaker_afb093f6036f4a6bf7e23b2a3e43c8b88}{Amp}}
+\begin{DoxyCompactList}\small\item\em Amplitudes as input by the user. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaveMaker_a34c3ffd9b7a2735b1b5bcbb86d425d05}{Phase}}
+\begin{DoxyCompactList}\small\item\em Phases as input by the user. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaveMaker_a863082fc821e741b31d73a3dbbab4aac}{Omg}}
+\begin{DoxyCompactList}\small\item\em Angular frequencies computed from the input frequencies. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaveMaker_a863046085a672fd4e6c1532dac582c79}{K}}
+\begin{DoxyCompactList}\small\item\em Wavenumbers computed from the angular frequencies. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaveMaker_ad90f1e6327703bba6f3f8f4ef6708581}{Di}}
+\begin{DoxyCompactList}\small\item\em Magnitude of the source term for each frequency. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWaveMaker_a1493e19950984f465869c648bc776466}{Source\+Term}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the source term for the wavemaker. 
+
+The {\ttfamily \doxylink{classWaveMaker}{Wave\+Maker}} class is responsible for computing the source term for the wavemaker and adding the term to the momnentum equation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWaveMaker_a22cf52c5cf4a8b9c1dd72f262a8c36d4}\index{WaveMaker@{WaveMaker}!WaveMaker@{WaveMaker}}
+\index{WaveMaker@{WaveMaker}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{WaveMaker()}{WaveMaker()}}
+{\footnotesize\ttfamily \label{classWaveMaker_a22cf52c5cf4a8b9c1dd72f262a8c36d4} 
+Wave\+Maker\+::\+Wave\+Maker (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{const unsigned int \&}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classWaveMaker}{Wave\+Maker} class. 
+
+Initializes the wavemaker parameters and computes the source term for the wavemaker.
+
+
+\begin{DoxyParams}{Parameters}
+{\em In} & Reference to an \doxylink{classInput}{Input} object containing user-\/defined parameters for the wavemaker such as frequencies, amplitudes, and phases. \\
+\hline
+{\em N} & Number of grid points in the computational domain. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWaveMaker_a3e383af6629bb2f3a2f4bb02840c10cf}\index{WaveMaker@{WaveMaker}!````~WaveMaker@{\texorpdfstring{$\sim$}{\string~}WaveMaker}}
+\index{````~WaveMaker@{\texorpdfstring{$\sim$}{\string~}WaveMaker}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}WaveMaker()}{\string~WaveMaker()}}
+{\footnotesize\ttfamily \label{classWaveMaker_a3e383af6629bb2f3a2f4bb02840c10cf} 
+Wave\+Maker\+::\texorpdfstring{$\sim$}{\string~}\+Wave\+Maker (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{classWaveMaker}{Wave\+Maker} class. 
+
+Cleans up dynamically allocated memory for the wavemaker parameters. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWaveMaker_aa298adc2d35dcc76d8dfb5b27009bb72}\index{WaveMaker@{WaveMaker}!ComputeSourceTerm@{ComputeSourceTerm}}
+\index{ComputeSourceTerm@{ComputeSourceTerm}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{ComputeSourceTerm()}{ComputeSourceTerm()}}
+{\footnotesize\ttfamily \label{classWaveMaker_aa298adc2d35dcc76d8dfb5b27009bb72} 
+void Wave\+Maker\+::\+Compute\+Source\+Term (\begin{DoxyParamCaption}\item[{const float \&}]{t}{, }\item[{const float \&}]{dx}{}\end{DoxyParamCaption})}
+
+
+
+Computes the source term that will be added to the momentum equation. 
+
+This function computes the source term for the wavemaker based on the input parameters and adds it to the momentum equation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Current time step. \\
+\hline
+{\em dx} & Grid spacing in the computational domain. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classWaveMaker_afb093f6036f4a6bf7e23b2a3e43c8b88}\index{WaveMaker@{WaveMaker}!Amp@{Amp}}
+\index{Amp@{Amp}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Amp}{Amp}}
+{\footnotesize\ttfamily \label{classWaveMaker_afb093f6036f4a6bf7e23b2a3e43c8b88} 
+float\texorpdfstring{$\ast$}{*} Wave\+Maker\+::\+Amp}
+
+
+
+Amplitudes as input by the user. 
+
+\Hypertarget{classWaveMaker_aaee7c6343a70be527b67f9a8753f57af}\index{WaveMaker@{WaveMaker}!Beta@{Beta}}
+\index{Beta@{Beta}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Beta}{Beta}}
+{\footnotesize\ttfamily \label{classWaveMaker_aaee7c6343a70be527b67f9a8753f57af} 
+float Wave\+Maker\+::\+Beta}
+
+
+
+Beta parameter for the source term. 
+
+\Hypertarget{classWaveMaker_abe5bef6fb25b4d353a57906fa3a57125}\index{WaveMaker@{WaveMaker}!depth@{depth}}
+\index{depth@{depth}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{depth}{depth}}
+{\footnotesize\ttfamily \label{classWaveMaker_abe5bef6fb25b4d353a57906fa3a57125} 
+float Wave\+Maker\+::depth}
+
+
+
+Water depth at the wavemaker. 
+
+\Hypertarget{classWaveMaker_ad90f1e6327703bba6f3f8f4ef6708581}\index{WaveMaker@{WaveMaker}!Di@{Di}}
+\index{Di@{Di}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Di}{Di}}
+{\footnotesize\ttfamily \label{classWaveMaker_ad90f1e6327703bba6f3f8f4ef6708581} 
+float\texorpdfstring{$\ast$}{*} Wave\+Maker\+::\+Di}
+
+
+
+Magnitude of the source term for each frequency. 
+
+\Hypertarget{classWaveMaker_ad313aa0681f180071508b94fb443188e}\index{WaveMaker@{WaveMaker}!Freq@{Freq}}
+\index{Freq@{Freq}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Freq}{Freq}}
+{\footnotesize\ttfamily \label{classWaveMaker_ad313aa0681f180071508b94fb443188e} 
+float\texorpdfstring{$\ast$}{*} Wave\+Maker\+::\+Freq}
+
+
+
+Frequencies as input by the user. 
+
+\Hypertarget{classWaveMaker_a863046085a672fd4e6c1532dac582c79}\index{WaveMaker@{WaveMaker}!K@{K}}
+\index{K@{K}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{K}{K}}
+{\footnotesize\ttfamily \label{classWaveMaker_a863046085a672fd4e6c1532dac582c79} 
+float\texorpdfstring{$\ast$}{*} Wave\+Maker\+::K}
+
+
+
+Wavenumbers computed from the angular frequencies. 
+
+\Hypertarget{classWaveMaker_ad81c3af5c9ecbe817e8487f5321a6593}\index{WaveMaker@{WaveMaker}!Kp@{Kp}}
+\index{Kp@{Kp}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Kp}{Kp}}
+{\footnotesize\ttfamily \label{classWaveMaker_ad81c3af5c9ecbe817e8487f5321a6593} 
+float Wave\+Maker\+::\+Kp}
+
+
+
+Wavenumber corresponding to the peak frequency. 
+
+\Hypertarget{classWaveMaker_ae03cdb6bf0dd246bfc0ec488f67bb007}\index{WaveMaker@{WaveMaker}!N@{N}}
+\index{N@{N}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \label{classWaveMaker_ae03cdb6bf0dd246bfc0ec488f67bb007} 
+unsigned int Wave\+Maker\+::N}
+
+
+
+Number of grid points. 
+
+\Hypertarget{classWaveMaker_a8462cbfe6b53792189f99f170c45e59b}\index{WaveMaker@{WaveMaker}!Nf@{Nf}}
+\index{Nf@{Nf}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Nf}{Nf}}
+{\footnotesize\ttfamily \label{classWaveMaker_a8462cbfe6b53792189f99f170c45e59b} 
+unsigned int Wave\+Maker\+::\+Nf}
+
+
+
+Number of frequencies. 
+
+\Hypertarget{classWaveMaker_a23f5ff9b36abf66bb9571517b8de6c7f}\index{WaveMaker@{WaveMaker}!Ns@{Ns}}
+\index{Ns@{Ns}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Ns}{Ns}}
+{\footnotesize\ttfamily \label{classWaveMaker_a23f5ff9b36abf66bb9571517b8de6c7f} 
+unsigned int Wave\+Maker\+::\+Ns}
+
+
+
+Number of grid points for the wavemaker. 
+
+\Hypertarget{classWaveMaker_a863082fc821e741b31d73a3dbbab4aac}\index{WaveMaker@{WaveMaker}!Omg@{Omg}}
+\index{Omg@{Omg}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Omg}{Omg}}
+{\footnotesize\ttfamily \label{classWaveMaker_a863082fc821e741b31d73a3dbbab4aac} 
+float\texorpdfstring{$\ast$}{*} Wave\+Maker\+::\+Omg}
+
+
+
+Angular frequencies computed from the input frequencies. 
+
+\Hypertarget{classWaveMaker_a34c3ffd9b7a2735b1b5bcbb86d425d05}\index{WaveMaker@{WaveMaker}!Phase@{Phase}}
+\index{Phase@{Phase}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{Phase}{Phase}}
+{\footnotesize\ttfamily \label{classWaveMaker_a34c3ffd9b7a2735b1b5bcbb86d425d05} 
+float\texorpdfstring{$\ast$}{*} Wave\+Maker\+::\+Phase}
+
+
+
+Phases as input by the user. 
+
+\Hypertarget{classWaveMaker_a1dce60f8d2ca99f5c471044e86e67d76}\index{WaveMaker@{WaveMaker}!posWM@{posWM}}
+\index{posWM@{posWM}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{posWM}{posWM}}
+{\footnotesize\ttfamily \label{classWaveMaker_a1dce60f8d2ca99f5c471044e86e67d76} 
+unsigned int Wave\+Maker\+::pos\+WM}
+
+
+
+Position of the wavemaker in the grid. 
+
+\Hypertarget{classWaveMaker_a1493e19950984f465869c648bc776466}\index{WaveMaker@{WaveMaker}!SourceTerm@{SourceTerm}}
+\index{SourceTerm@{SourceTerm}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{SourceTerm}{SourceTerm}}
+{\footnotesize\ttfamily \label{classWaveMaker_a1493e19950984f465869c648bc776466} 
+float\texorpdfstring{$\ast$}{*} Wave\+Maker\+::\+Source\+Term}
+
+Source term for the wavemaker, computed for each grid point inside the wavemaker \Hypertarget{classWaveMaker_a9be062dde81f30b4664313857160f40a}\index{WaveMaker@{WaveMaker}!width@{width}}
+\index{width@{width}!WaveMaker@{WaveMaker}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \label{classWaveMaker_a9be062dde81f30b4664313857160f40a} 
+float Wave\+Maker\+::width}
+
+Width of the wavemaker, computed from the peak wavelength as 0.\+5\texorpdfstring{$\ast$}{*}\+Lp 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/include/\mbox{\hyperlink{Wavemaker_8h}{Wavemaker.\+h}}\item 
+code/src/\mbox{\hyperlink{Wavemaker_8cpp}{Wavemaker.\+cpp}}\end{DoxyCompactItemize}

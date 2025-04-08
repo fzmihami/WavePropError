@@ -1,0 +1,78 @@
+\doxysection{code/src/\+Read\+User\+Input.cpp File Reference}
+\hypertarget{ReadUserInput_8cpp}{}\label{ReadUserInput_8cpp}\index{code/src/ReadUserInput.cpp@{code/src/ReadUserInput.cpp}}
+
+
+Implements the \doxylink{classInput}{Input} class for reading and handling user-\/defined parameters in the numerical wave solver.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Global\+Variables.\+h"{}}\newline
+{\ttfamily \#include "{}Read\+User\+Input.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}} \mbox{\hyperlink{ReadUserInput_8cpp_a979af3a6dbf69541b297d53581c424ef}{convert\+Scheme}} (std\+::string string1)
+\begin{DoxyCompactList}\small\item\em Converts a string to an enumeration value of the scheme type. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{ReadUserInput_8cpp_a3b44780a014089188e34196475b06538}{convert\+Index\+Gauges}} (std\+::string string1, float dx)
+\begin{DoxyCompactList}\small\item\em Converts a string to a vector of unsigned integers representing gauge indices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the \doxylink{classInput}{Input} class for reading and handling user-\/defined parameters in the numerical wave solver. 
+
+This file provides the implementation of the \doxylink{classInput}{Input} class, which is responsible for\+:
+\begin{DoxyItemize}
+\item Reading and parsing user-\/defined parameters from an input file,
+\item Converting string values to the appropriate data types,
+\item Logging the input configuration to the console for verification. 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ReadUserInput_8cpp_a3b44780a014089188e34196475b06538}\index{ReadUserInput.cpp@{ReadUserInput.cpp}!convertIndexGauges@{convertIndexGauges}}
+\index{convertIndexGauges@{convertIndexGauges}!ReadUserInput.cpp@{ReadUserInput.cpp}}
+\doxysubsubsection{\texorpdfstring{convertIndexGauges()}{convertIndexGauges()}}
+{\footnotesize\ttfamily \label{ReadUserInput_8cpp_a3b44780a014089188e34196475b06538} 
+std\+::vector$<$ unsigned int $>$ convert\+Index\+Gauges (\begin{DoxyParamCaption}\item[{std\+::string}]{string1}{, }\item[{float}]{dx}{}\end{DoxyParamCaption})}
+
+
+
+Converts a string to a vector of unsigned integers representing gauge indices. 
+
+This function takes a string representation of gauge indices and converts it to a vector of unsigned integers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string1} & The string representation of the gauge indices. \\
+\hline
+{\em dx} & The grid spacing used for the simulation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of unsigned integers representing the gauge indices. 
+\end{DoxyReturn}
+\Hypertarget{ReadUserInput_8cpp_a979af3a6dbf69541b297d53581c424ef}\index{ReadUserInput.cpp@{ReadUserInput.cpp}!convertScheme@{convertScheme}}
+\index{convertScheme@{convertScheme}!ReadUserInput.cpp@{ReadUserInput.cpp}}
+\doxysubsubsection{\texorpdfstring{convertScheme()}{convertScheme()}}
+{\footnotesize\ttfamily \label{ReadUserInput_8cpp_a979af3a6dbf69541b297d53581c424ef} 
+\mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}} convert\+Scheme (\begin{DoxyParamCaption}\item[{std\+::string}]{string1}{}\end{DoxyParamCaption})}
+
+
+
+Converts a string to an enumeration value of the scheme type. 
+
+This function takes a string representation of a numerical scheme and converts it to the corresponding enumeration value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string1} & The string representation of the numerical scheme. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corresponding enumeration value of the scheme type. 
+\end{DoxyReturn}

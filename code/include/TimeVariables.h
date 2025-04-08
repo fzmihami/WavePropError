@@ -2,14 +2,14 @@
 
 /**
  * @file TimeVariables.h
- * @brief Header file defining the State class and functions for managing time
- * variables in the numerical wave solver.
+ * @brief Implements the State class and related functions for managing time-dependent
+ *        variables in the numerical wave solver.
  *
- * The State class represents the state variables (i.e., water height, velocity,
- * etc.) at the current time step. It includes methods for updating the state
- * and managing memory. The file also contains functions for printing progress
- * the progress of the simulation, recording time series data at defined gauges,
- * and saving the simulation results to binary files.
+ * This file defines the State class, which stores the primary state variables
+ * (e.g., water height, velocity) at each time step. It includes methods for
+ * updating the state and handling memory allocation. Additional functions manage
+ * simulation progress reporting, record time series data at gauge points, and
+ * save results in binary format.
  */
 
 #define PBSTR "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||"

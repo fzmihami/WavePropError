@@ -1,0 +1,285 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classflux" kind="class" language="C++" prot="public">
+    <compoundname>flux</compoundname>
+    <includes refid="FluxComputation_8h" local="no">FluxComputation.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classflux_1a238ea1541242c332a0086dbeb0b65c7c" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int flux::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <qualifiedname>flux::N</qualifiedname>
+        <briefdescription>
+<para>Number of grid points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="29" column="16" bodyfile="code/include/FluxComputation.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classflux_1a0bed9e6ca693154d6db8c6574b50bb60" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::WS</definition>
+        <argsstring></argsstring>
+        <name>WS</name>
+        <qualifiedname>flux::WS</qualifiedname>
+        <briefdescription>
+<para>Wave speed for the CFL computation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="32" column="9" bodyfile="code/include/FluxComputation.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1a4ed77c0022f6c88683401962047eb0af" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::Hn</definition>
+        <argsstring></argsstring>
+        <name>Hn</name>
+        <qualifiedname>flux::Hn</qualifiedname>
+        <briefdescription>
+<para>Water height at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="33" column="9" bodyfile="code/include/FluxComputation.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1af3266be4d4330ef110a0cc8065df608c" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::Qn</definition>
+        <argsstring></argsstring>
+        <name>Qn</name>
+        <qualifiedname>flux::Qn</qualifiedname>
+        <briefdescription>
+<para>Momentum (Hn*Un) at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="34" column="9" bodyfile="code/include/FluxComputation.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1af99086969bd3966c3fc28bcb8fc478b4" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::HL</definition>
+        <argsstring></argsstring>
+        <name>HL</name>
+        <qualifiedname>flux::HL</qualifiedname>
+        <briefdescription>
+<para>Water height at the left cell interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="35" column="9" bodyfile="code/include/FluxComputation.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1ac99fb062e3d35e84297c5f9163b80332" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::HR</definition>
+        <argsstring></argsstring>
+        <name>HR</name>
+        <qualifiedname>flux::HR</qualifiedname>
+        <briefdescription>
+<para>Water height at the right cell interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="36" column="9" bodyfile="code/include/FluxComputation.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1a39216f37660192a5ea9aa2cd2b16e28e" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::QL</definition>
+        <argsstring></argsstring>
+        <name>QL</name>
+        <qualifiedname>flux::QL</qualifiedname>
+        <briefdescription>
+<para>Momentum (Hn*Un) at the left cell interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="37" column="9" bodyfile="code/include/FluxComputation.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1ad0098376f298fb5ba4ec7648feabfd46" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::QR</definition>
+        <argsstring></argsstring>
+        <name>QR</name>
+        <qualifiedname>flux::QR</qualifiedname>
+        <briefdescription>
+<para>Momentum (Hn*Un) at the right cell interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="38" column="9" bodyfile="code/include/FluxComputation.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1adfdcb49efed897bd7006b9d1f20e3c71" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::FluxH</definition>
+        <argsstring></argsstring>
+        <name>FluxH</name>
+        <qualifiedname>flux::FluxH</qualifiedname>
+        <briefdescription>
+<para>Flux of water height at the cell interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="39" column="9" bodyfile="code/include/FluxComputation.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux_1a6527f04e525e156d0753409d9769924e" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux::FluxU</definition>
+        <argsstring></argsstring>
+        <name>FluxU</name>
+        <qualifiedname>flux::FluxU</qualifiedname>
+        <briefdescription>
+<para>Flux of momentum at the cell interface. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="40" column="9" bodyfile="code/include/FluxComputation.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classflux_1ad12f9ebd94d5fc3acc6bc9ab0546b947" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>flux::flux</definition>
+        <argsstring>(unsigned int N)</argsstring>
+        <name>flux</name>
+        <qualifiedname>flux::flux</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the flux class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the flux class with the number of grid points and allocates memory for the flux variables.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points in the computational domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="51" column="3" bodyfile="code/src/FluxComputation.cpp" bodystart="116" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classflux_1a5bbf9064fed1080784110a2e9318ad36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void flux::ComputeFlux</definition>
+        <argsstring>(const State &amp;state, const scheme &amp;Scheme, const unsigned int &amp;OrderReconstruction)</argsstring>
+        <name>ComputeFlux</name>
+        <qualifiedname>flux::ComputeFlux</qualifiedname>
+        <param>
+          <type>const <ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const <ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref> &amp;</type>
+          <declname>Scheme</declname>
+        </param>
+        <param>
+          <type>const unsigned int &amp;</type>
+          <declname>OrderReconstruction</declname>
+        </param>
+        <briefdescription>
+<para>Computes the fluxes for the Shallow Water Equations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the fluxes using the specified reconstruction order and scheme.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a <ref refid="classState" kindref="compound">State</ref> object containing the current state of the system. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Scheme</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flux computation scheme to be used (e.g., HLL, HLLC). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OrderReconstruction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The order of reconstruction to be used (1, 2, 3, or 5). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="65" column="8" bodyfile="code/src/FluxComputation.cpp" bodystart="150" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="classflux_1ad6c3e1f342c841e8b0914e61bc833083" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>flux::~flux</definition>
+        <argsstring>()</argsstring>
+        <name>~flux</name>
+        <qualifiedname>flux::~flux</qualifiedname>
+        <briefdescription>
+<para>Destructor for the flux class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleans up dynamically allocated memory for the flux variables. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="73" column="3" bodyfile="code/src/FluxComputation.cpp" bodystart="138" bodyend="148"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Computes the fluxes for the Shallow Water Equations in a collocated grid. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput>flux</computeroutput> class is responsible for computing the fluxes in the shallow water equations using Finite Volume Godunov&apos;s method. It includes different reconstruction orders and flux computation schemes. The class also computes the wave speed for the CFL condition. </para>
+    </detaileddescription>
+    <location file="code/include/FluxComputation.h" line="27" column="1" bodyfile="code/include/FluxComputation.h" bodystart="27" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classflux_1a5bbf9064fed1080784110a2e9318ad36" prot="public" virt="non-virtual"><scope>flux</scope><name>ComputeFlux</name></member>
+      <member refid="classflux_1ad12f9ebd94d5fc3acc6bc9ab0546b947" prot="public" virt="non-virtual"><scope>flux</scope><name>flux</name></member>
+      <member refid="classflux_1adfdcb49efed897bd7006b9d1f20e3c71" prot="public" virt="non-virtual"><scope>flux</scope><name>FluxH</name></member>
+      <member refid="classflux_1a6527f04e525e156d0753409d9769924e" prot="public" virt="non-virtual"><scope>flux</scope><name>FluxU</name></member>
+      <member refid="classflux_1af99086969bd3966c3fc28bcb8fc478b4" prot="public" virt="non-virtual"><scope>flux</scope><name>HL</name></member>
+      <member refid="classflux_1a4ed77c0022f6c88683401962047eb0af" prot="public" virt="non-virtual"><scope>flux</scope><name>Hn</name></member>
+      <member refid="classflux_1ac99fb062e3d35e84297c5f9163b80332" prot="public" virt="non-virtual"><scope>flux</scope><name>HR</name></member>
+      <member refid="classflux_1a238ea1541242c332a0086dbeb0b65c7c" prot="private" virt="non-virtual"><scope>flux</scope><name>N</name></member>
+      <member refid="classflux_1a39216f37660192a5ea9aa2cd2b16e28e" prot="public" virt="non-virtual"><scope>flux</scope><name>QL</name></member>
+      <member refid="classflux_1af3266be4d4330ef110a0cc8065df608c" prot="public" virt="non-virtual"><scope>flux</scope><name>Qn</name></member>
+      <member refid="classflux_1ad0098376f298fb5ba4ec7648feabfd46" prot="public" virt="non-virtual"><scope>flux</scope><name>QR</name></member>
+      <member refid="classflux_1a0bed9e6ca693154d6db8c6574b50bb60" prot="public" virt="non-virtual"><scope>flux</scope><name>WS</name></member>
+      <member refid="classflux_1ad6c3e1f342c841e8b0914e61bc833083" prot="public" virt="non-virtual"><scope>flux</scope><name>~flux</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

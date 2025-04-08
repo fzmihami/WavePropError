@@ -1,0 +1,838 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="TimeVariables_8cpp" kind="file" language="C++">
+    <compoundname>TimeVariables.cpp</compoundname>
+    <includes local="no">cmath</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="TimeVariables_8h" local="yes">TimeVariables.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ReadUserInput.h</label>
+        <link refid="ReadUserInput_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>TimeVariables.h</label>
+        <link refid="TimeVariables_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>code/src/TimeVariables.cpp</label>
+        <link refid="TimeVariables_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cmath</label>
+      </node>
+      <node id="8">
+        <label>cstring</label>
+      </node>
+      <node id="9">
+        <label>fstream</label>
+      </node>
+      <node id="10">
+        <label>iomanip</label>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="12">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="TimeVariables_8cpp_1a7fe4c0c6db0a7f2f67527d8f55ac5f97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void swap_pointers</definition>
+        <argsstring>(float **a, float **b)</argsstring>
+        <name>swap_pointers</name>
+        <param>
+          <type>float **</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float **</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="56" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="56" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1a99c2abde7b24b24ef7a0e6850f830b13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printbin</definition>
+        <argsstring>(float *ptr, int size, std::string namefile1)</argsstring>
+        <name>printbin</name>
+        <param>
+          <type>float *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>namefile1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="81" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="81" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1a6299f999304f86c4caf62e98802e4bb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printINFO</definition>
+        <argsstring>(const Input &amp;In)</argsstring>
+        <name>printINFO</name>
+        <param>
+          <type>const <ref refid="classInput" kindref="compound">Input</ref> &amp;</type>
+          <declname>In</declname>
+        </param>
+        <briefdescription>
+<para>Prints the simulation parameters to a binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function prints the simulation parameters to a binary file for reference and documentation purposes. The parameters include the grid size, time step, and other relevant information.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classInput" kindref="compound">Input</ref> object containing user-defined parameters for the simulation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="95" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="95" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1a5ac26d30d4e3e06e81531abaf2e89662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PrintVariables</definition>
+        <argsstring>(State &amp;S0, State &amp;S2, const Input &amp;In, const float &amp;t1, const float &amp;dt1, unsigned int &amp;Kprint, float &amp;Tprint)</argsstring>
+        <name>PrintVariables</name>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>S0</declname>
+        </param>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>S2</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classInput" kindref="compound">Input</ref> &amp;</type>
+          <declname>In</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>t1</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>dt1</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>Kprint</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>Tprint</declname>
+        </param>
+        <briefdescription>
+<para>Saves the simulation results (Water surface elevation) to binary files at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function saves the water surface elevation data to binary files at the current time step. The files are named according to the current time step and are stored in the specified output folder.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classState" kindref="compound">State</ref> object containing the current state variables. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>S2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classState" kindref="compound">State</ref> object containing the newly computed state variables: <formula id="36">$ t + \Delta t $</formula>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classInput" kindref="compound">Input</ref> object containing user-defined parameters for the simulation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current time step. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time step size. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Kprint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter for the number of printouts. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Tprint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time interval for printouts.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The function performs linear interpolation between the current and new state variables to obtain the water surface elevation at the specified output time. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="117" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="117" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1ab02e6eff2f5a6566d4c54fbd64a83f1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RecordTimeSeries</definition>
+        <argsstring>(State &amp;S0, State &amp;S2, const Input &amp;In, std::vector&lt; float &gt; *Hgauges, const float &amp;t1, const float &amp;dt1, unsigned int &amp;Kgauges, float &amp;Tgauges)</argsstring>
+        <name>RecordTimeSeries</name>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>S0</declname>
+        </param>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>S2</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classInput" kindref="compound">Input</ref> &amp;</type>
+          <declname>In</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; float &gt; *</type>
+          <declname>Hgauges</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>t1</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>dt1</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>Kgauges</declname>
+        </param>
+        <param>
+          <type>float &amp;</type>
+          <declname>Tgauges</declname>
+        </param>
+        <briefdescription>
+<para>Records time series data at specified gauges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function records the water surface elevation at specified gauges over time. The data is stored in a vector for each gauge and can be printed later.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classState" kindref="compound">State</ref> object containing the current state variables. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>S2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classState" kindref="compound">State</ref> object containing the newly computed state variables: <formula id="36">$ t + \Delta t $</formula>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classInput" kindref="compound">Input</ref> object containing user-defined parameters for the simulation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Hgauges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a vector of floats for storing the water surface elevation at the gauges. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current time step. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time step size. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Kgauges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Counter for the number of gauges. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Tgauges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time interval for recording gauges.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The function performs linear interpolation between the current and new state variables to obtain the water surface elevation at the specified gauges. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="135" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="135" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1a44fb1c7752f15d1dcfe6e68731e4ab4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PrintTimeSeries</definition>
+        <argsstring>(std::vector&lt; float &gt; *Hgauges, const Input &amp;In)</argsstring>
+        <name>PrintTimeSeries</name>
+        <param>
+          <type>std::vector&lt; float &gt; *</type>
+          <declname>Hgauges</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classInput" kindref="compound">Input</ref> &amp;</type>
+          <declname>In</declname>
+        </param>
+        <briefdescription>
+<para>Prints the recorded time series data to binary files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function prints the recorded time series data for each gauge to binary files. The files are named according to the gauge index and are stored in the specified output folder.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Hgauges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a vector of floats for storing the water surface elevation at the gauges. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the <ref refid="classInput" kindref="compound">Input</ref> object containing user-defined parameters for the simulation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="153" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="153" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1aa5509f31ef9b645c138dc622b48e5bf6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void linear_interpolation</definition>
+        <argsstring>(float *H1, float *H2, unsigned int N, const float &amp;t, const float &amp;dt, const float &amp;Tprint)</argsstring>
+        <name>linear_interpolation</name>
+        <param>
+          <type>float *</type>
+          <declname>H1</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>H2</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>Tprint</declname>
+        </param>
+        <briefdescription>
+<para>Performs linear interpolation between two state variables. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the interpolated value of a state variable at a given time step using linear interpolation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>H1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the state variable at the current time step. It will be updated with the interpolated value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>H2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the state variable at the next time step:  <formula id="37">$ t + \Delta
+t $</formula>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current time step. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time step size. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Tprint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time interval for printouts specified in the input file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="161" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="161" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1a29f60631590f10a98b879ade5e28cdf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float linear_interpolation</definition>
+        <argsstring>(float value1, float value2, const float &amp;t, const float &amp;dt, const float &amp;Tprint)</argsstring>
+        <name>linear_interpolation</name>
+        <param>
+          <type>float</type>
+          <declname>value1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>value2</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>Tprint</declname>
+        </param>
+        <briefdescription>
+<para>Performs linear interpolation between two float values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the interpolated value of a float variable at a given time step using linear interpolation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the current time step. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the next time step: <formula id="36">$ t + \Delta t $</formula>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current time step. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dt</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time step size. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Tprint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time interval for printouts specified in the input file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The interpolated value at the specified time. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="169" column="7" bodyfile="code/src/TimeVariables.cpp" bodystart="169" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1aaf56a21b99f1eac435bd924b0357b8b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string intToStringWithLeadingZeros</definition>
+        <argsstring>(int number, int totalLength)</argsstring>
+        <name>intToStringWithLeadingZeros</name>
+        <param>
+          <type>int</type>
+          <declname>number</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totalLength</declname>
+        </param>
+        <briefdescription>
+<para>Converts an integer to a string with leading zeros. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function converts an integer to a string and pads it with leading zeros to ensure it has a specified total length.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The integer to convert. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>totalLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The total length of the resulting string (including leading zeros). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The formatted string with leading zeros. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="174" column="13" bodyfile="code/src/TimeVariables.cpp" bodystart="174" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="TimeVariables_8cpp_1a9d3b483a858efb84ce776bed255b6dd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void printProgress</definition>
+        <argsstring>(double percentage)</argsstring>
+        <name>printProgress</name>
+        <param>
+          <type>double</type>
+          <declname>percentage</declname>
+        </param>
+        <briefdescription>
+<para>Prints the progress of the simulation to the console. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function displays a progress bar in the console, indicating the percentage of completion of the simulation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>percentage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The percentage of completion (0.0 to 1.0). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/TimeVariables.cpp" line="180" column="6" bodyfile="code/src/TimeVariables.cpp" bodystart="180" bodyend="186"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implements the <ref refid="classState" kindref="compound">State</ref> class and related functions for managing time-dependent variables in the numerical wave solver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file defines the <ref refid="classState" kindref="compound">State</ref> class, which stores the primary state variables (e.g., water height, velocity) at each time step. It includes methods for updating the state and handling memory allocation. Additional functions manage simulation progress reporting, record time series data at gauge points, and save results in binary format. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TimeVariables_8h" kindref="compound">TimeVariables.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="classState_1aebb5064c773ed46e56204d477a1e7228" kindref="member">State::State</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classInput" kindref="compound">Input</ref><sp/>&amp;In)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><ref refid="classState_1a9003679c6515e8b96d63bbf9a74ac0fa" kindref="member">dx</ref><sp/>=<sp/>In.<ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><ref refid="classState_1a3a9010910d0d229557f5d4a196180f70" kindref="member">dx_1</ref><sp/>=<sp/>1.0<sp/>/<sp/><ref refid="classState_1a9003679c6515e8b96d63bbf9a74ac0fa" kindref="member">dx</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>=<sp/>round(In.<ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref><sp/>/<sp/><ref refid="classState_1a9003679c6515e8b96d63bbf9a74ac0fa" kindref="member">dx</ref>)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><ref refid="classState_1a9a7fd7b6579d141f3d0dc2d74adf9b14" kindref="member">depth</ref><sp/>=<sp/>In.<ref refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kindref="member">WaterDepth</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(In.<ref refid="classInput_1a01d6c51d16a2e0f3941d9bab08f1e3ad" kindref="member">Scheme</ref><sp/>==<sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968aca2badb5a8cc56cfab889a69c9e0cef6" kindref="member">scheme::conservative_staggered</ref>)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1ada483a41be06c799e60b0d32edb9a79e" kindref="member">Grid</ref><sp/>=<sp/><ref refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900" kindref="member">grid::staggered</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1ada483a41be06c799e60b0d32edb9a79e" kindref="member">Grid</ref><sp/>=<sp/><ref refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa307d3d3a7cd6e82d0df1ea89bdaa3156" kindref="member">grid::collocated</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>allocate<sp/>memory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref>];</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>memset(<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>,<sp/>0,<sp/><ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><ref refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" kindref="member">Hn</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref>];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>memset(<ref refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" kindref="member">Hn</ref>,<sp/>0,<sp/><ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><ref refid="classState_1a40dda08f046cda018543a53e8bcea15f" kindref="member">Zn</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref>];</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>memset(<ref refid="classState_1a40dda08f046cda018543a53e8bcea15f" kindref="member">Zn</ref>,<sp/>0,<sp/><ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classState_1ada483a41be06c799e60b0d32edb9a79e" kindref="member">Grid</ref><sp/>==<sp/><ref refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4aa76cd586ddbfd4198a38e9b4ed4ebf900" kindref="member">grid::staggered</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kindref="member">Un</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<ref refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kindref="member">Un</ref>,<sp/>0,<sp/>(<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>+<sp/>1)<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1a6f17867499b4093f2447815f90719ecb" kindref="member">Pn</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>+<sp/>1];</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<ref refid="classState_1a6f17867499b4093f2447815f90719ecb" kindref="member">Pn</ref>,<sp/>0,<sp/>(<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>+<sp/>1)<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kindref="member">Un</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref>];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<ref refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kindref="member">Un</ref>,<sp/>0,<sp/><ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1a6f17867499b4093f2447815f90719ecb" kindref="member">Pn</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">[<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref>];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(<ref refid="classState_1a6f17867499b4093f2447815f90719ecb" kindref="member">Pn</ref>,<sp/>0,<sp/><ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref><sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>initial<sp/>conditions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref>;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" kindref="member">Hn</ref>[i]<sp/>=<sp/><ref refid="classState_1a9a7fd7b6579d141f3d0dc2d74adf9b14" kindref="member">depth</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classState_1a40dda08f046cda018543a53e8bcea15f" kindref="member">Zn</ref>[i]<sp/>=<sp/>-<ref refid="classState_1a9a7fd7b6579d141f3d0dc2d74adf9b14" kindref="member">depth</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1a7fe4c0c6db0a7f2f67527d8f55ac5f97" kindref="member">swap_pointers</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>**a,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>**b)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*tmp<sp/>=<sp/>*a;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>*a<sp/>=<sp/>*b;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>*b<sp/>=<sp/>tmp;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>tmp<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classState_1a33bb353c38aad953bc3f2bfd5c1c3ac5" kindref="member">State::Update</ref>(<ref refid="classState" kindref="compound">State</ref><sp/>&amp;other)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><ref refid="TimeVariables_8cpp_1a7fe4c0c6db0a7f2f67527d8f55ac5f97" kindref="member">swap_pointers</ref>(&amp;<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>,<sp/>&amp;other.<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><ref refid="TimeVariables_8cpp_1a7fe4c0c6db0a7f2f67527d8f55ac5f97" kindref="member">swap_pointers</ref>(&amp;<ref refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" kindref="member">Hn</ref>,<sp/>&amp;other.<ref refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" kindref="member">Hn</ref>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><ref refid="TimeVariables_8cpp_1a7fe4c0c6db0a7f2f67527d8f55ac5f97" kindref="member">swap_pointers</ref>(&amp;<ref refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kindref="member">Un</ref>,<sp/>&amp;other.<ref refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kindref="member">Un</ref>);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="TimeVariables_8cpp_1a7fe4c0c6db0a7f2f67527d8f55ac5f97" kindref="member">swap_pointers</ref>(&amp;<ref refid="classState_1a6f17867499b4093f2447815f90719ecb" kindref="member">Pn</ref>,<sp/>&amp;other.<ref refid="classState_1a6f17867499b4093f2447815f90719ecb" kindref="member">Pn</ref>);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><ref refid="classState_1afab438d92b90dc18d194dbd9c9c8bab3" kindref="member">State::~State</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" kindref="member">Hn</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" kindref="member">Un</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classState_1a6f17867499b4093f2447815f90719ecb" kindref="member">Pn</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classState_1a40dda08f046cda018543a53e8bcea15f" kindref="member">Zn</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="comment">//<sp/>//////////////////////////////////////////////////////////////////////////////////////////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1a99c2abde7b24b24ef7a0e6850f830b13" kindref="member">printbin</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*ptr,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size,<sp/>std::string<sp/>namefile1)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>FILE<sp/>*fptr;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*namefile<sp/>=<sp/>namefile1.c_str();</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((fptr<sp/>=<sp/>fopen(namefile,<sp/></highlight><highlight class="stringliteral">&quot;wb&quot;</highlight><highlight class="normal">))<sp/>==<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Error!<sp/>opening<sp/>file&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>fwrite(ptr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">),<sp/>size,<sp/>fptr);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>fclose(fptr);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1a6299f999304f86c4caf62e98802e4bb6" kindref="member">printINFO</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classInput" kindref="compound">Input</ref><sp/>&amp;In)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>info[10];</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>info[0]<sp/>=<sp/>In.<ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>info[1]<sp/>=<sp/>In.<ref refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" kindref="member">dtOutput</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>info[2]<sp/>=<sp/>round(In.<ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref><sp/>/<sp/>In.<ref refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" kindref="member">dtOutput</ref>)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>info[3]<sp/>=<sp/>In.<ref refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" kindref="member">dtGauges</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>info[4]<sp/>=<sp/>round(In.<ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref><sp/>/<sp/>In.<ref refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" kindref="member">dtGauges</ref>)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>info[5]<sp/>=<sp/>In.<ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>info[6]<sp/>=<sp/>In.<ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>info[7]<sp/>=<sp/>round(In.<ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref><sp/>/<sp/>In.<ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>)<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>info[8]<sp/>=<sp/>In.<ref refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kindref="member">WaterDepth</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>info[9]<sp/>=<sp/><ref refid="GlobalVariables_8h_1a402c4b48d21417b113c1bdbc078d4b93" kindref="member">positionWM</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>std::string<sp/>namefile<sp/>=<sp/>In.<ref refid="classInput_1acf4707403f56c6bed9967bf97b93cf1d" kindref="member">ResFolder</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/info.bin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><ref refid="TimeVariables_8cpp_1a99c2abde7b24b24ef7a0e6850f830b13" kindref="member">printbin</ref>(info,<sp/>10,<sp/>namefile);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1a5ac26d30d4e3e06e81531abaf2e89662" kindref="member">PrintVariables</ref>(<ref refid="classState" kindref="compound">State</ref><sp/>&amp;S0,<sp/><ref refid="classState" kindref="compound">State</ref><sp/>&amp;S2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classInput" kindref="compound">Input</ref><sp/>&amp;In,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t1,</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;dt1,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;Kprint,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;Tprint)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N<sp/>=<sp/>S0.<ref refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" kindref="member">N</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(t1<sp/>&lt;=<sp/>Tprint<sp/>&amp;&amp;<sp/>t1<sp/>+<sp/>dt1<sp/>&gt;=<sp/>Tprint<sp/>&amp;&amp;<sp/>Tprint<sp/>&lt;=<sp/>In.<ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TimeVariables_8cpp_1aa5509f31ef9b645c138dc622b48e5bf6" kindref="member">linear_interpolation</ref>(S0.<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>,<sp/>S2.<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>,<sp/>N,<sp/>t1,<sp/>dt1,</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Tprint);<sp/></highlight><highlight class="comment">//<sp/>The<sp/>intrpolated<sp/>value<sp/>is<sp/>saved<sp/>in<sp/>Eta<sp/>-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>wont<sp/>be<sp/>used<sp/>later<sp/>Memory<sp/>recycling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>namefile<sp/>=<sp/>In.<ref refid="classInput_1acf4707403f56c6bed9967bf97b93cf1d" kindref="member">ResFolder</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/FreeSurface/H_&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TimeVariables_8cpp_1aaf56a21b99f1eac435bd924b0357b8b4" kindref="member">intToStringWithLeadingZeros</ref>(Kprint,<sp/>6)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.bin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TimeVariables_8cpp_1a99c2abde7b24b24ef7a0e6850f830b13" kindref="member">printbin</ref>(S0.<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>,<sp/>N,<sp/>namefile);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>Kprint++;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>Tprint<sp/>=<sp/>Kprint<sp/>*<sp/>In.<ref refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" kindref="member">dtOutput</ref>;<sp/></highlight><highlight class="comment">//<sp/>Better<sp/>in<sp/>terms<sp/>of<sp/>floating<sp/>precision</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1ab02e6eff2f5a6566d4c54fbd64a83f1d" kindref="member">RecordTimeSeries</ref>(<ref refid="classState" kindref="compound">State</ref><sp/>&amp;S0,<sp/><ref refid="classState" kindref="compound">State</ref><sp/>&amp;S2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classInput" kindref="compound">Input</ref><sp/>&amp;In,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;float&gt;<sp/>*Hgauges,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t1,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;dt1,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;Kgauges,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;Tgauges)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(t1<sp/>&lt;=<sp/>Tgauges<sp/>&amp;&amp;<sp/>t1<sp/>+<sp/>dt1<sp/>&gt;=<sp/>Tgauges<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(Tgauges<sp/>&lt;=<sp/>In.<ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref><sp/>||<sp/>std::abs(Tgauges<sp/>-<sp/>In.<ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref>)<sp/>&lt;<sp/>5e-5))<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>In.<ref refid="classInput_1ae182944bc095662bd11c5fd42d46a74d" kindref="member">IndexGauges</ref>.size();<sp/>k++)<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>In.<ref refid="classInput_1ae182944bc095662bd11c5fd42d46a74d" kindref="member">IndexGauges</ref>[k];</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value<sp/>=</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="TimeVariables_8cpp_1aa5509f31ef9b645c138dc622b48e5bf6" kindref="member">linear_interpolation</ref>(S0.<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>[i],<sp/>S2.<ref refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" kindref="member">Eta</ref>[i],<sp/>t1,<sp/>dt1,<sp/>Tgauges);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Hgauges[k].push_back(value);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>Kgauges++;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>Tgauges<sp/>=<sp/>Kgauges<sp/>*<sp/>In.<ref refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" kindref="member">dtGauges</ref>;<sp/></highlight><highlight class="comment">//<sp/>Better<sp/>in<sp/>terms<sp/>of<sp/>floating<sp/>precision</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1a44fb1c7752f15d1dcfe6e68731e4ab4e" kindref="member">PrintTimeSeries</ref>(std::vector&lt;float&gt;<sp/>*Hgauges,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classInput" kindref="compound">Input</ref><sp/>&amp;In)<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>In.<ref refid="classInput_1ae182944bc095662bd11c5fd42d46a74d" kindref="member">IndexGauges</ref>.size();<sp/>k++)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>namefile<sp/>=</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>In.<ref refid="classInput_1acf4707403f56c6bed9967bf97b93cf1d" kindref="member">ResFolder</ref><sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/TimeSeries/Gauge_&quot;</highlight><highlight class="normal"><sp/>+<sp/>std::to_string(k)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.bin&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="TimeVariables_8cpp_1a99c2abde7b24b24ef7a0e6850f830b13" kindref="member">printbin</ref>(&amp;Hgauges[k][0],<sp/>Hgauges[k].size(),<sp/>namefile);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1aa5509f31ef9b645c138dc622b48e5bf6" kindref="member">linear_interpolation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*H1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*H2,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;dt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;Tprint)<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>omp<sp/>parallel<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>k<sp/>=<sp/>0;<sp/>k<sp/>&lt;<sp/>N;<sp/>k++)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>H1[k]<sp/>=<sp/>(H2[k]<sp/>-<sp/>H1[k])<sp/>*<sp/>(Tprint<sp/>-<sp/>t)<sp/>/<sp/>dt<sp/>+<sp/>H1[k];</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1aa5509f31ef9b645c138dc622b48e5bf6" kindref="member">linear_interpolation</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>value2,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;t,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;dt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>&amp;Tprint)<sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(value2<sp/>-<sp/>value1)<sp/>*<sp/>(Tprint<sp/>-<sp/>t)<sp/>/<sp/>dt<sp/>+<sp/>value1;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal">std::string<sp/><ref refid="TimeVariables_8cpp_1aaf56a21b99f1eac435bd924b0357b8b4" kindref="member">intToStringWithLeadingZeros</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>totalLength)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::string(totalLength<sp/>-<sp/>std::to_string(number).length(),<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>+</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::to_string(number);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">//<sp/>//////////////////////////////////////////////////////////////////////////////////////////</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="TimeVariables_8cpp_1a9d3b483a858efb84ce776bed255b6dd6" kindref="member">printProgress</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>percentage)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val<sp/>=<sp/>(int)(percentage<sp/>*<sp/>100);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lpad<sp/>=<sp/>(int)(percentage<sp/>*<sp/><ref refid="TimeVariables_8h_1a69793e71975c25754a8236df29896e15" kindref="member">PBWIDTH</ref>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rpad<sp/>=<sp/><ref refid="TimeVariables_8h_1a69793e71975c25754a8236df29896e15" kindref="member">PBWIDTH</ref><sp/>-<sp/>lpad;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\r%3d%%<sp/>[%.*s%*s]&quot;</highlight><highlight class="normal">,<sp/>val,<sp/>lpad,<sp/><ref refid="TimeVariables_8h_1a93f03159397f25c687840129b18c972d" kindref="member">PBSTR</ref>,<sp/>rpad,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>fflush(stdout);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="code/src/TimeVariables.cpp"/>
+  </compounddef>
+</doxygen>

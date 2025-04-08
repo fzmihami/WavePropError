@@ -2,8 +2,12 @@
 
 /**
  * @file Boundaries.h
- * @brief Header file defining functions for applying the sponge-layer boundary
- * condition in the numerical wave solver to absorb incoming waves.
+ * @brief Implements the sponge-layer boundary condition to absorb incoming waves in the numerical wave solver.
+ *
+ * This file contains the implementation of the `ApplySpongeLayer` function,
+ * which applies a sponge layer to the left and right boundaries of the
+ * computational domain. The sponge layer is used to absorb incoming waves and
+ * prevent reflections from the boundaries.
  */
 
 #include <iostream>

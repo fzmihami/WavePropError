@@ -2,12 +2,13 @@
 
 /**
  * @file ReadUserInput.h
- * @brief Header file defining the Input class and functions for reading user
- * input in the numerical wave solver.
+ * @brief Implements the Input class for reading and handling user-defined parameters
+ *        in the numerical wave solver.
  *
- * The Input class contains methods for reading user-defined parameters from an
- * input file, including simulation parameters, grid properties, wave data, and
- * scheme properties.
+ * This file provides the implementation of the Input class, which is responsible for:
+ * - Reading and parsing user-defined parameters from an input file,
+ * - Converting string values to the appropriate data types,
+ * - Logging the input configuration to the console for verification.
  */
 
 #include <cstring>

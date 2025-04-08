@@ -1,12 +1,12 @@
 /**
  * @file ReadUserInput.cpp
- * @brief Implementation of the Input class and functions for reading user input
- * in the numerical wave solver.
+ * @brief Implements the Input class for reading and handling user-defined parameters
+ *        in the numerical wave solver.
  *
- * The file contains the implementation of the Input class, which is responsible
- * for reading user-defined parameters from an input file. It includes methods
- * for parsing the input file, converting string values to appropriate data
- * types, and logging the input parameters to the console.
+ * This file provides the implementation of the Input class, which is responsible for:
+ * - Reading and parsing user-defined parameters from an input file,
+ * - Converting string values to the appropriate data types,
+ * - Logging the input configuration to the console for verification.
  */
 
 #include <algorithm>

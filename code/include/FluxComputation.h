@@ -2,14 +2,14 @@
 
 /**
  * @file FluxComputation.h
- * @brief Header file defining the flux computation classes and functions.
+ * @brief Implementation of flux computation classes for the Shallow Water Equations 
+ *        on both collocated and staggered grids.
  *
- * The `flux` class computes the Shallow Water Equations fluxes for a collocated
- * grid using Finite Volume Godunov's method. It includes different
- * reconstruction orders and flux computation schemes. The `flux_staggered`
- * class computes the Shallow Water Equations fluxes for a staggered grid using
- * a conservative staggered scheme (Stelling and Duinmeijer, 2003). This flux
- * computation is based on second-order reconstruction.
+ * This file defines the `flux` and `flux_staggered` classes used to compute 
+ * fluxes in the Shallow Water Equations. The `flux` class supports collocated 
+ * grids using the Finite Volume Godunov method, while the `flux_staggered` 
+ * class is designed for staggered grids, implementing a conservative staggered 
+ * scheme based on Stelling and Duinmeijer (2003).
  */
 
 #include "TimeVariables.h"
@@ -113,7 +113,7 @@ public:
    * the system.
    * @param OrderReconstruction The order of reconstruction to be used (1 or 2).
    *
-   * @cite Stelling and Duinmeijer (2003)
+   * Refrence: Stelling and Duinmeijer (2003)
    */
   void ComputeFlux(const State &state, const unsigned int &OrderReconstruction);
 
@@ -141,7 +141,7 @@ public:
  * \f[
  * U_R^{i+1/2} = U_{i+1}
  * \f]
- * where \( U_L \) and \( U_R \) are the left and right states at the interface.
+ * where \f$ U_L \f$ and \f$ U_R \f$ are the left and right states at the interface.
  *
  * @param[in]  Hn  Pointer to the array of state variables at cell centers (size
  * N).
@@ -184,7 +184,7 @@ void Recontruction_Order1(float *Hn, float *Hl, float *Hr, unsigned int N);
  * \phi (r, \theta) = \max \left(0, \min \left( \theta r, \frac{1 + r}{2},
  * \theta \right) \right) \f]
  *
- * the value of \theta is deined as a constant in GlobalVariables.cpp file.
+ * the value of \f$\theta\f$ is defined as a constant in GlobalVariables.cpp file.
  *
  * @param[in]  Hn  Pointer to the array of state variables at cell centers (size
  * N).
@@ -283,7 +283,7 @@ void Recontruction_Order3(float *Hn, float *Hl, float *Hr, unsigned int N);
  * @warning Ensure `Hl` and `Hr` arrays have at least `N-1` elements to avoid
  * out-of-bounds errors.
  *
- * @cite Kim and Kim (2005)
+ * Refrence: Kim and Kim (2005)
  */
 void Recontruction_Order5(float *Hn, float *Hl, float *Hr, unsigned int N);
 
@@ -306,7 +306,7 @@ void Recontruction_Order5(float *Hn, float *Hl, float *Hr, unsigned int N);
  * the three.
  * - Otherwise, it returns zero to avoid introducing new extrema.
  *
- * @cite Kim and Kim (2005)
+ * Reference: Kim and Kim (2005)
  */
 float minmod(float a, float b, float c);
 
@@ -399,8 +399,7 @@ float upwind(float V, float Q1, float Q2, float Q3, float Q4);
  * a_L = \min\left(0, u_R - \sqrt{G H_R}, u_L - \sqrt{G H_L}\right)
  * \f]
  *
- * @cite Kurganov, A., & Petrova, G. (2007). Central-upwind schemes for the
- shallow water equations.
+ * Reference: Kurganov, A., & Petrova, G. (2007).
  */
 void Flux_CentralUpwind(float *Hl, float *Hr, float *Ql, float *Qr,
                         float *FluxH, float *FluxQ, unsigned int N);
@@ -419,12 +418,15 @@ void Flux_CentralUpwind(float *Hl, float *Hr, float *Ql, float *Qr,
  * following expressions:
  *
  * \f[
+ * \begin{aligned}
  * F_{h}^{i+1/2} =
  * \begin{cases}
  * F_{hL}, & \text{if } s_L > 0 \\
  * F_{hR}, & \text{if } s_R < 0 \\
  * \frac{s_R F_{hL} - s_L F_{hR} + (s_L s_R) (H_R - H_L)}{s_R - s_L}, &
- * \text{otherwise} \end{cases} \f]
+ * \text{otherwise} \end{cases} 
+ * \end{aligned}
+ * \f]
  *
  * \f[
  * F_{Q}^{i+1/2} =
@@ -435,13 +437,13 @@ void Flux_CentralUpwind(float *Hl, float *Hr, float *Ql, float *Qr,
  * \text{otherwise} \end{cases} \f]
  *
  * where:
- * - \( s_L \) is the left wave speed,
- * - \( s_R \) is the right wave speed,
- * - \( F_{hL}, F_{hR} \) are the fluxes for height,
- * - \( F_{Q_L}, F_{Q_R} \) are the fluxes for momentum.
+ * - \f$ s_L \f$ is the left wave speed,
+ * - \f$ s_R \f$ is the right wave speed,
+ * - \f$ F_{hL}, F_{hR} \f$ are the fluxes for height,
+ * - \f$ F_{Q_L}, F_{Q_R} \f$ are the fluxes for momentum.
  *
- * The wave speeds \( s_L \) and \( s_R \) are computed based on the local
- * states and the characteristic speed of the system. The value \( h0 \) is
+ * The wave speeds \f$ s_L \f$ and \f$ s_R \f$ are computed based on the local
+ * states and the characteristic speed of the system. The value \f$ h0 \f$ is
  * computed based on the formulation in Toro (2009).
  *
  * @param Hl The array of left state values for the height (h).
@@ -454,9 +456,7 @@ void Flux_CentralUpwind(float *Hl, float *Hr, float *Ql, float *Qr,
  * stored.
  * @param N The number of cells.
  *
- * @cite Harten, A., Lax, P. D., & van Leer, B. (1983).
- *       "On Upstream Differencing and Godunov-Type Schemes for Hyperbolic
- * Conservation Laws." SIAM Review, 25(1), 35-61.
+ * Reference: Harten, A., Lax, P. D., & van Leer, B. (1983).
  */
 void Flux_HLL(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH,
               float *FluxQ, unsigned int N);
@@ -478,6 +478,7 @@ void Flux_HLL(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH,
  * following expressions:
  *
  * \f[
+ * \begin{aligned}
  * F_{h}^{i+1/2} =
  * \begin{cases}
  * F_{hL}, & \text{if } s_L > 0 \\
@@ -485,6 +486,7 @@ void Flux_HLL(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH,
  * F_{hL} + s_L (h^*L - h_L), & \text{if } 0 \leq s_0 \\
  * F_{hR} + s_R (h^*R - h_R), & \text{if } s_0 < 0
  * \end{cases}
+ * \end{aligned}
  * \f]
  *
  * \f[
@@ -498,19 +500,19 @@ void Flux_HLL(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH,
  * \f]
  *
  * where:
- * - \( s_L \) is the left wave speed,
- * - \( s_R \) is the right wave speed,
- * - \( s_0 \) is the middle wave speed (contact wave),
- * - \( F_{hL}, F_{hR} \) are the fluxes for height,
- * - \( F_{Q_L}, F_{Q_R} \) are the fluxes for momentum,
- * - \( h^*L, h^*R \) are the star variables for height at the left and right
+ * - \f$ s_L \f$ is the left wave speed,
+ * - \f$ s_R \f$ is the right wave speed,
+ * - \f$ s_0 \f$ is the middle wave speed (contact wave),
+ * - \f$ F_{hL}, F_{hR} \f$ are the fluxes for height,
+ * - \f$ F_{Q_L}, F_{Q_R} \f$ are the fluxes for momentum,
+ * - \f$ h^*L, h^*R \f$ are the star variables for height at the left and right
  * states,
- * - \( q^*L, q^*R \) are the star variables for momentum at the left and right
+ * - \f$ q^*L, q^*R \f$ are the star variables for momentum at the left and right
  * states.
  *
- * The function uses intermediate variables, including \( h0 \) (the averaged
- * height), \( u0 \) (the averaged velocity), and calculates the middle wave
- * speed \( s_0 \) based on the expressions presented in Toro (2001).
+ * The function uses intermediate variables, including \f$ h_0 \f$ (the averaged
+ * height), \f$ u_0 \f$ (the averaged velocity), and calculates the middle wave
+ * speed \f$ s_0 \f$ based on the expressions presented in Toro (2001).
  *
  * @param Hl The array of left state values for the height (h).
  * @param Hr The array of right state values for the height (h).
@@ -522,7 +524,7 @@ void Flux_HLL(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH,
  * stored.
  * @param N The number of cells.
  *
- * @cite Toro, 2001.
+ * Reference: Toro, 2001.
  *       "Shock-capturing methods for free-surface shallow flows."
  */
 void Flux_HLLC(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH,

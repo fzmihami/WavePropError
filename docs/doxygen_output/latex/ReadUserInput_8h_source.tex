@@ -1,0 +1,45 @@
+\doxysection{Read\+User\+Input.\+h}
+\hypertarget{ReadUserInput_8h_source}{}\label{ReadUserInput_8h_source}\index{code/include/ReadUserInput.h@{code/include/ReadUserInput.h}}
+\mbox{\hyperlink{ReadUserInput_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <cstring>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GlobalVariables_8h}{GlobalVariables.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classInput_ae25a2db2d3fee019fcd582f769614f9e}{Input}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}}\ \mbox{\hyperlink{classInput_a01d6c51d16a2e0f3941d9bab08f1e3ad}{Scheme}};\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \mbox{\hyperlink{classInput_a79c9872ba0b9d45323432f66ff93920f}{OrderReconstruction}};\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \mbox{\hyperlink{classInput_a846c82d3220d2603b3816ee835080fb5}{OrderTime}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInput_ac733778f3f08c0e53d87c713b1f89e0e}{CourantNumber}};\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInput_a5e15ca9be77766091e67936bb7e9cbb9}{dx}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInput_ab894ff82367728f57ff63718cce01d48}{LengthDomain}};\ \ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInput_ac65083cc5383b36aabf5fa42fd8c0399}{WaterDepth}};\ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInput_abd36e9f26228b62a0e78f537f5902556}{Time}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInput_abd29177ebf424d7d43211f62e0c01f8e}{dtOutput}};\ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classInput_a6ffa011bea67f92d44c00cf93b1bf7c2}{dtGauges}};\ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ std::vector<unsigned\ int>\ \mbox{\hyperlink{classInput_ae182944bc095662bd11c5fd42d46a74d}{IndexGauges}};\ }
+\DoxyCodeLine{00048\ \ \ std::vector<std::vector<float>>}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \mbox{\hyperlink{classInput_a9aaa34d407bcadb04e9a057d392cc5f3}{WaveInput}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ std::string\ \mbox{\hyperlink{classInput_acf4707403f56c6bed9967bf97b93cf1d}{ResFolder}};\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{classInput_ae25a2db2d3fee019fcd582f769614f9e}{Input}}(std::string\ nametest);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classInput_aa679c8f40bb7645ffbe6e8dbbe71b9d6}{LOGOUT}}();}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00080\ \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}}\ \mbox{\hyperlink{ReadUserInput_8h_a979af3a6dbf69541b297d53581c424ef}{convertScheme}}(std::string\ string1);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00093\ std::vector<unsigned\ int>\ \mbox{\hyperlink{ReadUserInput_8h_a3b44780a014089188e34196475b06538}{convertIndexGauges}}(std::string\ string1,\ \textcolor{keywordtype}{float}\ dx);}
+
+\end{DoxyCode}

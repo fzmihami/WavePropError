@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="ReadUserInput_8h" kind="file" language="C++">
+    <compoundname>ReadUserInput.h</compoundname>
+    <includes local="no">cstring</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">iomanip</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes refid="GlobalVariables_8h" local="yes">GlobalVariables.h</includes>
+    <includedby refid="SolveEquation_8h" local="yes">code/include/SolveEquation.h</includedby>
+    <includedby refid="TimeVariables_8h" local="yes">code/include/TimeVariables.h</includedby>
+    <includedby refid="Wavemaker_8h" local="yes">code/include/Wavemaker.h</includedby>
+    <includedby refid="ReadUserInput_8cpp" local="yes">code/src/ReadUserInput.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">code/src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="7">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>code/include/ReadUserInput.h</label>
+        <link refid="ReadUserInput_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>cstring</label>
+      </node>
+      <node id="3">
+        <label>fstream</label>
+      </node>
+      <node id="4">
+        <label>iomanip</label>
+      </node>
+      <node id="8">
+        <label>iostream</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="6">
+        <label>code/include/Boundaries.h</label>
+        <link refid="Boundaries_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>code/include/Dispersion.h</label>
+        <link refid="Dispersion_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>code/include/FluxComputation.h</label>
+        <link refid="FluxComputation_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>code/include/ReadUserInput.h</label>
+        <link refid="ReadUserInput_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>code/include/SolveEquation.h</label>
+        <link refid="SolveEquation_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>code/include/TimeVariables.h</label>
+        <link refid="TimeVariables_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>code/include/Wavemaker.h</label>
+        <link refid="Wavemaker_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>code/src/Boundaries.cpp</label>
+        <link refid="Boundaries_8cpp"/>
+      </node>
+      <node id="9">
+        <label>code/src/Dispersion.cpp</label>
+        <link refid="Dispersion_8cpp"/>
+      </node>
+      <node id="11">
+        <label>code/src/FluxComputation.cpp</label>
+        <link refid="FluxComputation_8cpp"/>
+      </node>
+      <node id="15">
+        <label>code/src/ReadUserInput.cpp</label>
+        <link refid="ReadUserInput_8cpp"/>
+      </node>
+      <node id="3">
+        <label>code/src/SolveEquation.cpp</label>
+        <link refid="SolveEquation_8cpp"/>
+      </node>
+      <node id="12">
+        <label>code/src/TimeVariables.cpp</label>
+        <link refid="TimeVariables_8cpp"/>
+      </node>
+      <node id="14">
+        <label>code/src/Wavemaker.cpp</label>
+        <link refid="Wavemaker_8cpp"/>
+      </node>
+      <node id="4">
+        <label>code/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classInput" prot="public">Input</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="ReadUserInput_8h_1a979af3a6dbf69541b297d53581c424ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref></type>
+        <definition>scheme convertScheme</definition>
+        <argsstring>(std::string string1)</argsstring>
+        <name>convertScheme</name>
+        <param>
+          <type>std::string</type>
+          <declname>string1</declname>
+        </param>
+        <briefdescription>
+<para>Converts a string to an enumeration value of the scheme type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a string representation of a numerical scheme and converts it to the corresponding enumeration value.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string representation of the numerical scheme. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The corresponding enumeration value of the scheme type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/ReadUserInput.h" line="80" column="8" bodyfile="code/src/ReadUserInput.cpp" bodystart="121" bodyend="140" declfile="code/include/ReadUserInput.h" declline="80" declcolumn="8"/>
+      </memberdef>
+      <memberdef kind="function" id="ReadUserInput_8h_1a3b44780a014089188e34196475b06538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt; unsigned int &gt; convertIndexGauges</definition>
+        <argsstring>(std::string string1, float dx)</argsstring>
+        <name>convertIndexGauges</name>
+        <param>
+          <type>std::string</type>
+          <declname>string1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>dx</declname>
+        </param>
+        <briefdescription>
+<para>Converts a string to a vector of unsigned integers representing gauge indices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a string representation of gauge indices and converts it to a vector of unsigned integers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string representation of the gauge indices. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The grid spacing used for the simulation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of unsigned integers representing the gauge indices. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/ReadUserInput.h" line="93" column="13" bodyfile="code/src/ReadUserInput.cpp" bodystart="143" bodyend="172" declfile="code/include/ReadUserInput.h" declline="93" declcolumn="13"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implements the <ref refid="classInput" kindref="compound">Input</ref> class for reading and handling user-defined parameters in the numerical wave solver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file provides the implementation of the <ref refid="classInput" kindref="compound">Input</ref> class, which is responsible for:<itemizedlist>
+<listitem><para>Reading and parsing user-defined parameters from an input file,</para>
+</listitem><listitem><para>Converting string values to the appropriate data types,</para>
+</listitem><listitem><para>Logging the input configuration to the console for verification. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iomanip&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GlobalVariables_8h" kindref="compound">GlobalVariables.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="classInput" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classInput_1ae25a2db2d3fee019fcd582f769614f9e" kindref="member">Input</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34" refid="classInput_1a01d6c51d16a2e0f3941d9bab08f1e3ad" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref><sp/><ref refid="classInput_1a01d6c51d16a2e0f3941d9bab08f1e3ad" kindref="member">Scheme</ref>;<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="classInput_1a79c9872ba0b9d45323432f66ff93920f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1a79c9872ba0b9d45323432f66ff93920f" kindref="member">OrderReconstruction</ref>;<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="classInput_1a846c82d3220d2603b3816ee835080fb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1a846c82d3220d2603b3816ee835080fb5" kindref="member">OrderTime</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="classInput_1ac733778f3f08c0e53d87c713b1f89e0e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classInput_1ac733778f3f08c0e53d87c713b1f89e0e" kindref="member">CourantNumber</ref>;<sp/></highlight></codeline>
+<codeline lineno="41" refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="42" refid="classInput_1ab894ff82367728f57ff63718cce01d48" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="43" refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kindref="member">WaterDepth</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="44" refid="classInput_1abd36e9f26228b62a0e78f537f5902556" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45" refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" kindref="member">dtOutput</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46" refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" kindref="member">dtGauges</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="47" refid="classInput_1ae182944bc095662bd11c5fd42d46a74d" refkind="member"><highlight class="normal"><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/><ref refid="classInput_1ae182944bc095662bd11c5fd42d46a74d" kindref="member">IndexGauges</ref>;<sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>std::vector&lt;std::vector&lt;float&gt;&gt;</highlight></codeline>
+<codeline lineno="49" refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50" refid="classInput_1acf4707403f56c6bed9967bf97b93cf1d" refkind="member"><highlight class="normal"><sp/><sp/>std::string<sp/><ref refid="classInput_1acf4707403f56c6bed9967bf97b93cf1d" kindref="member">ResFolder</ref>;<sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><ref refid="classInput_1ae25a2db2d3fee019fcd582f769614f9e" kindref="member">Input</ref>(std::string<sp/>nametest);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classInput_1aa679c8f40bb7645ffbe6e8dbbe71b9d6" kindref="member">LOGOUT</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref><sp/><ref refid="ReadUserInput_8h_1a979af3a6dbf69541b297d53581c424ef" kindref="member">convertScheme</ref>(std::string<sp/>string1);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">std::vector&lt;unsigned<sp/>int&gt;<sp/><ref refid="ReadUserInput_8h_1a3b44780a014089188e34196475b06538" kindref="member">convertIndexGauges</ref>(std::string<sp/>string1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dx);</highlight></codeline>
+    </programlisting>
+    <location file="code/include/ReadUserInput.h"/>
+  </compounddef>
+</doxygen>

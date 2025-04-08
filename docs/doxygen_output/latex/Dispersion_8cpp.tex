@@ -1,0 +1,50 @@
+\doxysection{code/src/\+Dispersion.cpp File Reference}
+\hypertarget{Dispersion_8cpp}{}\label{Dispersion_8cpp}\index{code/src/Dispersion.cpp@{code/src/Dispersion.cpp}}
+
+
+Defines the \doxylink{classDispersion}{Dispersion} class for computing dispersive terms in the numerical wave solver.  
+
+
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include "{}Dispersion.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Dispersion_8cpp_a5a035cdd8f6decd41a4650e0828110e9}{Thomas\+Algorithm}} (const float \texorpdfstring{$\ast$}{*}a, const float \texorpdfstring{$\ast$}{*}b, const float \texorpdfstring{$\ast$}{*}c, float \texorpdfstring{$\ast$}{*}d, int n)
+\begin{DoxyCompactList}\small\item\em Solves a tridiagonal system of equations using the Thomas algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{classDispersion}{Dispersion} class for computing dispersive terms in the numerical wave solver. 
+
+This file contains the implementation of the \doxylink{classDispersion}{Dispersion} class, which handles the calculation and application of dispersive terms in both the continuity and momentum equations. It also includes a method for solving a tridiagonal system using the Thomas algorithm to compute the velocity field. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Dispersion_8cpp_a5a035cdd8f6decd41a4650e0828110e9}\index{Dispersion.cpp@{Dispersion.cpp}!ThomasAlgorithm@{ThomasAlgorithm}}
+\index{ThomasAlgorithm@{ThomasAlgorithm}!Dispersion.cpp@{Dispersion.cpp}}
+\doxysubsubsection{\texorpdfstring{ThomasAlgorithm()}{ThomasAlgorithm()}}
+{\footnotesize\ttfamily \label{Dispersion_8cpp_a5a035cdd8f6decd41a4650e0828110e9} 
+void Thomas\+Algorithm (\begin{DoxyParamCaption}\item[{const float \texorpdfstring{$\ast$}{*}}]{a}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{b}{, }\item[{const float \texorpdfstring{$\ast$}{*}}]{c}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{d}{, }\item[{int}]{n}{}\end{DoxyParamCaption})}
+
+
+
+Solves a tridiagonal system of equations using the Thomas algorithm. 
+
+This function modifies the input arrays {\ttfamily d} in place to contain the solution to the system.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Lower diagonal coefficients of the tridiagonal matrix \\
+\hline
+{\em b} & Main diagonal coefficients of the tridiagonal matrix \\
+\hline
+{\em c} & Upper diagonal coefficients of the tridiagonal matrix \\
+\hline
+{\em d} & Right-\/hand side vector \\
+\hline
+{\em n} & Size of the system \\
+\hline
+\end{DoxyParams}

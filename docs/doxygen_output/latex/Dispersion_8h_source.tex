@@ -1,0 +1,38 @@
+\doxysection{Dispersion.\+h}
+\hypertarget{Dispersion_8h_source}{}\label{Dispersion_8h_source}\index{code/include/Dispersion.h@{code/include/Dispersion.h}}
+\mbox{\hyperlink{Dispersion_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{GlobalVariables_8h}{GlobalVariables.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TimeVariables_8h}{TimeVariables.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDispersion_a65c18a6718364baa8411208b43591504}{Dispersion}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N;\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classDispersion_a0a97fe146fa93ff5596d2c5aa2ed6be2}{PhiC}};\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classDispersion_a6d366770689c550765e3ccea7ed17034}{PhiM}};\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classDispersion_a0558a889fa184573627f6c6f7ad2ae72}{Uxx}};\ \ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classDispersion_ae49bffaf5c4d3d5323e54ce42d8a4127}{D1}};\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classDispersion_abfaf79e98f25c390ebaacc26ad59310e}{D2}};\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classDispersion_afb9ae6690fa9deb41081640ff64d0500}{D3}};\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classDispersion_a65c18a6718364baa8411208b43591504}{Dispersion}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classState}{State}}\ \&S0);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDispersion_a47a0c75361054ac95fcf4ef6d1be60ac}{ComputeDispersion}}(\mbox{\hyperlink{classState}{State}}\ \&S0);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDispersion_a37aff1717dbf3526460d162ffd1de9fb}{SolveTridiagonalMatrix}}(\mbox{\hyperlink{classState}{State}}\ \&S1);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classDispersion_a686beccff78fed61a363efa654fd3446}{\string~Dispersion}}();}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{Dispersion_8h_a5a035cdd8f6decd41a4650e0828110e9}{ThomasAlgorithm}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *b,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ *c,\ \textcolor{keywordtype}{float}\ *d,}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n);}
+
+\end{DoxyCode}

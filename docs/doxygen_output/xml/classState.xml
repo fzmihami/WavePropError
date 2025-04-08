@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classState" kind="class" language="C++" prot="public">
+    <compoundname>State</compoundname>
+    <includes refid="TimeVariables_8h" local="no">TimeVariables.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classState_1a92c45c45d00a0c31904d49a70940a4c0" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int State::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <qualifiedname>State::N</qualifiedname>
+        <briefdescription>
+<para>Number of grid points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="31" column="16" bodyfile="code/include/TimeVariables.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a9003679c6515e8b96d63bbf9a74ac0fa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float State::dx</definition>
+        <argsstring></argsstring>
+        <name>dx</name>
+        <qualifiedname>State::dx</qualifiedname>
+        <briefdescription>
+<para>Grid spacing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="32" column="9" bodyfile="code/include/TimeVariables.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a3a9010910d0d229557f5d4a196180f70" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float State::dx_1</definition>
+        <argsstring></argsstring>
+        <name>dx_1</name>
+        <qualifiedname>State::dx_1</qualifiedname>
+        <briefdescription>
+<para>Inverse of grid spacing. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="33" column="9" bodyfile="code/include/TimeVariables.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a9a7fd7b6579d141f3d0dc2d74adf9b14" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float State::depth</definition>
+        <argsstring></argsstring>
+        <name>depth</name>
+        <qualifiedname>State::depth</qualifiedname>
+        <briefdescription>
+<para>Water depth, which is constant in the domain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="34" column="9" bodyfile="code/include/TimeVariables.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1ada483a41be06c799e60b0d32edb9a79e" prot="public" static="no" mutable="no">
+        <type><ref refid="GlobalVariables_8h_1a52bdd18b63ba2ec1780aecd91679ee4a" kindref="member">grid</ref></type>
+        <definition>grid State::Grid</definition>
+        <argsstring></argsstring>
+        <name>Grid</name>
+        <qualifiedname>State::Grid</qualifiedname>
+        <briefdescription>
+<para>Grid type (collocated or staggered) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="35" column="8" bodyfile="code/include/TimeVariables.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* State::Hn</definition>
+        <argsstring></argsstring>
+        <name>Hn</name>
+        <qualifiedname>State::Hn</qualifiedname>
+        <briefdescription>
+<para>Water height at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="38" column="9" bodyfile="code/include/TimeVariables.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a2094315fb752fa99dbe6fcf5b373db76" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* State::Eta</definition>
+        <argsstring></argsstring>
+        <name>Eta</name>
+        <qualifiedname>State::Eta</qualifiedname>
+        <briefdescription>
+<para>Water surface elevation at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="39" column="9" bodyfile="code/include/TimeVariables.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a40dda08f046cda018543a53e8bcea15f" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* State::Zn</definition>
+        <argsstring></argsstring>
+        <name>Zn</name>
+        <qualifiedname>State::Zn</qualifiedname>
+        <briefdescription>
+<para>Bottom elevation at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="40" column="9" bodyfile="code/include/TimeVariables.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1a6f17867499b4093f2447815f90719ecb" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* State::Pn</definition>
+        <argsstring></argsstring>
+        <name>Pn</name>
+        <qualifiedname>State::Pn</qualifiedname>
+        <briefdescription>
+<para>Conserved momentum in Nwogu&apos;s equation at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="42" column="7" bodyfile="code/include/TimeVariables.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* State::Un</definition>
+        <argsstring></argsstring>
+        <name>Un</name>
+        <qualifiedname>State::Un</qualifiedname>
+        <briefdescription>
+<para>Velocity at the current time step. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="43" column="9" bodyfile="code/include/TimeVariables.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classState_1aebb5064c773ed46e56204d477a1e7228" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>State::State</definition>
+        <argsstring>(const Input &amp;In)</argsstring>
+        <name>State</name>
+        <qualifiedname>State::State</qualifiedname>
+        <param>
+          <type>const <ref refid="classInput" kindref="compound">Input</ref> &amp;</type>
+          <declname>In</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="classState" kindref="compound">State</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the state variables using the initial conditions provided in the input file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to an <ref refid="classInput" kindref="compound">Input</ref> object containing user-defined parameters for the simulation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="55" column="3" bodyfile="code/src/TimeVariables.cpp" bodystart="19" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1afab438d92b90dc18d194dbd9c9c8bab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>State::~State</definition>
+        <argsstring>()</argsstring>
+        <name>~State</name>
+        <qualifiedname>State::~State</qualifiedname>
+        <briefdescription>
+<para>Destructor for the <ref refid="classState" kindref="compound">State</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleans up dynamically allocated memory for the state variables. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="62" column="3" bodyfile="code/src/TimeVariables.cpp" bodystart="70" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classState_1a33bb353c38aad953bc3f2bfd5c1c3ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void State::Update</definition>
+        <argsstring>(State &amp;other)</argsstring>
+        <name>Update</name>
+        <qualifiedname>State::Update</qualifiedname>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+<para>Swaps the pointers of two <ref refid="classState" kindref="compound">State</ref> objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function swaps the pointers of the state variables between two <ref refid="classState" kindref="compound">State</ref> objects, effectively updating their values. This is useful for updating the state variables at each time step without copying the data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>other</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to another <ref refid="classState" kindref="compound">State</ref> object to swap with. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/TimeVariables.h" line="73" column="8" bodyfile="code/src/TimeVariables.cpp" bodystart="63" bodyend="68"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents the state variables of the numerical wave solver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="classState" kindref="compound">State</ref></computeroutput> class contains the state variables (i.e., water height, velocity, etc.) at the current time step. It includes methods for updating the state and managing memory. </para>
+    </detaileddescription>
+    <location file="code/include/TimeVariables.h" line="29" column="1" bodyfile="code/include/TimeVariables.h" bodystart="29" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classState_1a9a7fd7b6579d141f3d0dc2d74adf9b14" prot="public" virt="non-virtual"><scope>State</scope><name>depth</name></member>
+      <member refid="classState_1a9003679c6515e8b96d63bbf9a74ac0fa" prot="public" virt="non-virtual"><scope>State</scope><name>dx</name></member>
+      <member refid="classState_1a3a9010910d0d229557f5d4a196180f70" prot="public" virt="non-virtual"><scope>State</scope><name>dx_1</name></member>
+      <member refid="classState_1a2094315fb752fa99dbe6fcf5b373db76" prot="public" virt="non-virtual"><scope>State</scope><name>Eta</name></member>
+      <member refid="classState_1ada483a41be06c799e60b0d32edb9a79e" prot="public" virt="non-virtual"><scope>State</scope><name>Grid</name></member>
+      <member refid="classState_1a28f63f0cd7b0d7943e2cf5c9e1028ae1" prot="public" virt="non-virtual"><scope>State</scope><name>Hn</name></member>
+      <member refid="classState_1a92c45c45d00a0c31904d49a70940a4c0" prot="public" virt="non-virtual"><scope>State</scope><name>N</name></member>
+      <member refid="classState_1a6f17867499b4093f2447815f90719ecb" prot="public" virt="non-virtual"><scope>State</scope><name>Pn</name></member>
+      <member refid="classState_1aebb5064c773ed46e56204d477a1e7228" prot="public" virt="non-virtual"><scope>State</scope><name>State</name></member>
+      <member refid="classState_1aa769a173d9fe2757c1e5fc8fc2ca6ece" prot="public" virt="non-virtual"><scope>State</scope><name>Un</name></member>
+      <member refid="classState_1a33bb353c38aad953bc3f2bfd5c1c3ac5" prot="public" virt="non-virtual"><scope>State</scope><name>Update</name></member>
+      <member refid="classState_1a40dda08f046cda018543a53e8bcea15f" prot="public" virt="non-virtual"><scope>State</scope><name>Zn</name></member>
+      <member refid="classState_1afab438d92b90dc18d194dbd9c9c8bab3" prot="public" virt="non-virtual"><scope>State</scope><name>~State</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,78 @@
+\doxysection{code/include/\+Wavemaker.h File Reference}
+\hypertarget{Wavemaker_8h}{}\label{Wavemaker_8h}\index{code/include/Wavemaker.h@{code/include/Wavemaker.h}}
+
+
+Implements the \doxylink{classWaveMaker}{Wave\+Maker} class for generating wave forcing through a source term.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}Global\+Variables.\+h"{}}\newline
+{\ttfamily \#include "{}Read\+User\+Input.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classWaveMaker}{Wave\+Maker}}
+\begin{DoxyCompactList}\small\item\em Computes the source term for the wavemaker. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{Wavemaker_8h_a2f568fde6174ae53ea014cbc418d2edc}{Secondorder\+Equation}} (float a, float b, float c)
+\begin{DoxyCompactList}\small\item\em Solves a second-\/order equation of the form ax\texorpdfstring{$^\wedge$}{\string^}2 + bx + c = 0. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{Wavemaker_8h_ad2b6f722fc7edfe06e4f317c47b18456}{wavelength}} (float omega, float depth)
+\begin{DoxyCompactList}\small\item\em Computes the wavelength from the angular frequency and water depth. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the \doxylink{classWaveMaker}{Wave\+Maker} class for generating wave forcing through a source term. 
+
+This file provides the implementation of the \doxylink{classWaveMaker}{Wave\+Maker} class, which computes the source term used to generate waves within the computational domain. It also manages and stores the relevant wavemaker parameters. The wave forcing is constructed by superimposing contributions from multiple frequency components.
+
+Reference\+: Wei et al. (1999) 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Wavemaker_8h_a2f568fde6174ae53ea014cbc418d2edc}\index{Wavemaker.h@{Wavemaker.h}!SecondorderEquation@{SecondorderEquation}}
+\index{SecondorderEquation@{SecondorderEquation}!Wavemaker.h@{Wavemaker.h}}
+\doxysubsubsection{\texorpdfstring{SecondorderEquation()}{SecondorderEquation()}}
+{\footnotesize\ttfamily \label{Wavemaker_8h_a2f568fde6174ae53ea014cbc418d2edc} 
+float Secondorder\+Equation (\begin{DoxyParamCaption}\item[{float}]{a}{, }\item[{float}]{b}{, }\item[{float}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Solves a second-\/order equation of the form ax\texorpdfstring{$^\wedge$}{\string^}2 + bx + c = 0. 
+
+This function computes the roots of the quadratic equation using the quadratic formula.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Coefficient of x\texorpdfstring{$^\wedge$}{\string^}2 \\
+\hline
+{\em b} & Coefficient of x \\
+\hline
+{\em c} & Constant term \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The root of the equation. 
+\end{DoxyReturn}
+\Hypertarget{Wavemaker_8h_ad2b6f722fc7edfe06e4f317c47b18456}\index{Wavemaker.h@{Wavemaker.h}!wavelength@{wavelength}}
+\index{wavelength@{wavelength}!Wavemaker.h@{Wavemaker.h}}
+\doxysubsubsection{\texorpdfstring{wavelength()}{wavelength()}}
+{\footnotesize\ttfamily \label{Wavemaker_8h_ad2b6f722fc7edfe06e4f317c47b18456} 
+float wavelength (\begin{DoxyParamCaption}\item[{float}]{omega}{, }\item[{float}]{depth}{}\end{DoxyParamCaption})}
+
+
+
+Computes the wavelength from the angular frequency and water depth. 
+
+This function calculates the wavelength based on the dispersion relation from Nwogu\textquotesingle{}s equation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em omega} & Angular frequency \\
+\hline
+{\em depth} & Water depth \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed wavelength. 
+\end{DoxyReturn}

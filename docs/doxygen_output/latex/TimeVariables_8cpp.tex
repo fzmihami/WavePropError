@@ -1,0 +1,251 @@
+\doxysection{code/src/\+Time\+Variables.cpp File Reference}
+\hypertarget{TimeVariables_8cpp}{}\label{TimeVariables_8cpp}\index{code/src/TimeVariables.cpp@{code/src/TimeVariables.cpp}}
+
+
+Implements the \doxylink{classState}{State} class and related functions for managing time-\/dependent variables in the numerical wave solver.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}Time\+Variables.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_a7fe4c0c6db0a7f2f67527d8f55ac5f97}{swap\+\_\+pointers}} (float \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}a, float \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}b)
+\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_a99c2abde7b24b24ef7a0e6850f830b13}{printbin}} (float \texorpdfstring{$\ast$}{*}ptr, int size, std\+::string namefile1)
+\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_a6299f999304f86c4caf62e98802e4bb6}{print\+INFO}} (const \mbox{\hyperlink{classInput}{Input}} \&In)
+\begin{DoxyCompactList}\small\item\em Prints the simulation parameters to a binary file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_a5ac26d30d4e3e06e81531abaf2e89662}{Print\+Variables}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S2, const \mbox{\hyperlink{classInput}{Input}} \&In, const float \&t1, const float \&dt1, unsigned int \&Kprint, float \&Tprint)
+\begin{DoxyCompactList}\small\item\em Saves the simulation results (Water surface elevation) to binary files at the current time step. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_ab02e6eff2f5a6566d4c54fbd64a83f1d}{Record\+Time\+Series}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S2, const \mbox{\hyperlink{classInput}{Input}} \&In, std\+::vector$<$ float $>$ \texorpdfstring{$\ast$}{*}Hgauges, const float \&t1, const float \&dt1, unsigned int \&Kgauges, float \&Tgauges)
+\begin{DoxyCompactList}\small\item\em Records time series data at specified gauges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_a44fb1c7752f15d1dcfe6e68731e4ab4e}{Print\+Time\+Series}} (std\+::vector$<$ float $>$ \texorpdfstring{$\ast$}{*}Hgauges, const \mbox{\hyperlink{classInput}{Input}} \&In)
+\begin{DoxyCompactList}\small\item\em Prints the recorded time series data to binary files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_aa5509f31ef9b645c138dc622b48e5bf6}{linear\+\_\+interpolation}} (float \texorpdfstring{$\ast$}{*}H1, float \texorpdfstring{$\ast$}{*}H2, unsigned int N, const float \&t, const float \&dt, const float \&Tprint)
+\begin{DoxyCompactList}\small\item\em Performs linear interpolation between two state variables. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{TimeVariables_8cpp_a29f60631590f10a98b879ade5e28cdf7}{linear\+\_\+interpolation}} (float value1, float value2, const float \&t, const float \&dt, const float \&Tprint)
+\begin{DoxyCompactList}\small\item\em Performs linear interpolation between two float values. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{TimeVariables_8cpp_aaf56a21b99f1eac435bd924b0357b8b4}{int\+To\+String\+With\+Leading\+Zeros}} (int number, int total\+Length)
+\begin{DoxyCompactList}\small\item\em Converts an integer to a string with leading zeros. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{TimeVariables_8cpp_a9d3b483a858efb84ce776bed255b6dd6}{print\+Progress}} (double percentage)
+\begin{DoxyCompactList}\small\item\em Prints the progress of the simulation to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the \doxylink{classState}{State} class and related functions for managing time-\/dependent variables in the numerical wave solver. 
+
+This file defines the \doxylink{classState}{State} class, which stores the primary state variables (e.\+g., water height, velocity) at each time step. It includes methods for updating the state and handling memory allocation. Additional functions manage simulation progress reporting, record time series data at gauge points, and save results in binary format. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{TimeVariables_8cpp_aaf56a21b99f1eac435bd924b0357b8b4}\index{TimeVariables.cpp@{TimeVariables.cpp}!intToStringWithLeadingZeros@{intToStringWithLeadingZeros}}
+\index{intToStringWithLeadingZeros@{intToStringWithLeadingZeros}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{intToStringWithLeadingZeros()}{intToStringWithLeadingZeros()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_aaf56a21b99f1eac435bd924b0357b8b4} 
+std\+::string int\+To\+String\+With\+Leading\+Zeros (\begin{DoxyParamCaption}\item[{int}]{number}{, }\item[{int}]{total\+Length}{}\end{DoxyParamCaption})}
+
+
+
+Converts an integer to a string with leading zeros. 
+
+This function converts an integer to a string and pads it with leading zeros to ensure it has a specified total length.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The integer to convert. \\
+\hline
+{\em total\+Length} & The total length of the resulting string (including leading zeros). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The formatted string with leading zeros. 
+\end{DoxyReturn}
+\Hypertarget{TimeVariables_8cpp_aa5509f31ef9b645c138dc622b48e5bf6}\index{TimeVariables.cpp@{TimeVariables.cpp}!linear\_interpolation@{linear\_interpolation}}
+\index{linear\_interpolation@{linear\_interpolation}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{linear\_interpolation()}{linear\_interpolation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_aa5509f31ef9b645c138dc622b48e5bf6} 
+void linear\+\_\+interpolation (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{H1}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{H2}{, }\item[{unsigned int}]{N}{, }\item[{const float \&}]{t}{, }\item[{const float \&}]{dt}{, }\item[{const float \&}]{Tprint}{}\end{DoxyParamCaption})}
+
+
+
+Performs linear interpolation between two state variables. 
+
+This function computes the interpolated value of a state variable at a given time step using linear interpolation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em H1} & Pointer to the state variable at the current time step. It will be updated with the interpolated value. \\
+\hline
+{\em H2} & Pointer to the state variable at the next time step\+:  $ t + \Delta
+t $. \\
+\hline
+{\em N} & Number of grid points. \\
+\hline
+{\em t} & Current time step. \\
+\hline
+{\em dt} & Time step size. \\
+\hline
+{\em Tprint} & Time interval for printouts specified in the input file. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{TimeVariables_8cpp_a29f60631590f10a98b879ade5e28cdf7}\index{TimeVariables.cpp@{TimeVariables.cpp}!linear\_interpolation@{linear\_interpolation}}
+\index{linear\_interpolation@{linear\_interpolation}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{linear\_interpolation()}{linear\_interpolation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_a29f60631590f10a98b879ade5e28cdf7} 
+float linear\+\_\+interpolation (\begin{DoxyParamCaption}\item[{float}]{value1}{, }\item[{float}]{value2}{, }\item[{const float \&}]{t}{, }\item[{const float \&}]{dt}{, }\item[{const float \&}]{Tprint}{}\end{DoxyParamCaption})}
+
+
+
+Performs linear interpolation between two float values. 
+
+This function computes the interpolated value of a float variable at a given time step using linear interpolation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value1} & The value at the current time step. \\
+\hline
+{\em value2} & The value at the next time step\+: $ t + \Delta t $. \\
+\hline
+{\em t} & Current time step. \\
+\hline
+{\em dt} & Time step size. \\
+\hline
+{\em Tprint} & Time interval for printouts specified in the input file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The interpolated value at the specified time. 
+\end{DoxyReturn}
+\Hypertarget{TimeVariables_8cpp_a99c2abde7b24b24ef7a0e6850f830b13}\index{TimeVariables.cpp@{TimeVariables.cpp}!printbin@{printbin}}
+\index{printbin@{printbin}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{printbin()}{printbin()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_a99c2abde7b24b24ef7a0e6850f830b13} 
+void printbin (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{ptr}{, }\item[{int}]{size}{, }\item[{std\+::string}]{namefile1}{}\end{DoxyParamCaption})}
+
+\Hypertarget{TimeVariables_8cpp_a6299f999304f86c4caf62e98802e4bb6}\index{TimeVariables.cpp@{TimeVariables.cpp}!printINFO@{printINFO}}
+\index{printINFO@{printINFO}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{printINFO()}{printINFO()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_a6299f999304f86c4caf62e98802e4bb6} 
+void print\+INFO (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{}\end{DoxyParamCaption})}
+
+
+
+Prints the simulation parameters to a binary file. 
+
+This function prints the simulation parameters to a binary file for reference and documentation purposes. The parameters include the grid size, time step, and other relevant information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em In} & Reference to the \doxylink{classInput}{Input} object containing user-\/defined parameters for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{TimeVariables_8cpp_a9d3b483a858efb84ce776bed255b6dd6}\index{TimeVariables.cpp@{TimeVariables.cpp}!printProgress@{printProgress}}
+\index{printProgress@{printProgress}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{printProgress()}{printProgress()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_a9d3b483a858efb84ce776bed255b6dd6} 
+void print\+Progress (\begin{DoxyParamCaption}\item[{double}]{percentage}{}\end{DoxyParamCaption})}
+
+
+
+Prints the progress of the simulation to the console. 
+
+This function displays a progress bar in the console, indicating the percentage of completion of the simulation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em percentage} & The percentage of completion (0.\+0 to 1.\+0). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{TimeVariables_8cpp_a44fb1c7752f15d1dcfe6e68731e4ab4e}\index{TimeVariables.cpp@{TimeVariables.cpp}!PrintTimeSeries@{PrintTimeSeries}}
+\index{PrintTimeSeries@{PrintTimeSeries}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{PrintTimeSeries()}{PrintTimeSeries()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_a44fb1c7752f15d1dcfe6e68731e4ab4e} 
+void Print\+Time\+Series (\begin{DoxyParamCaption}\item[{std\+::vector$<$ float $>$ \texorpdfstring{$\ast$}{*}}]{Hgauges}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{}\end{DoxyParamCaption})}
+
+
+
+Prints the recorded time series data to binary files. 
+
+This function prints the recorded time series data for each gauge to binary files. The files are named according to the gauge index and are stored in the specified output folder.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Hgauges} & Pointer to a vector of floats for storing the water surface elevation at the gauges. \\
+\hline
+{\em In} & Reference to the \doxylink{classInput}{Input} object containing user-\/defined parameters for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{TimeVariables_8cpp_a5ac26d30d4e3e06e81531abaf2e89662}\index{TimeVariables.cpp@{TimeVariables.cpp}!PrintVariables@{PrintVariables}}
+\index{PrintVariables@{PrintVariables}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{PrintVariables()}{PrintVariables()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_a5ac26d30d4e3e06e81531abaf2e89662} 
+void Print\+Variables (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S2}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{const float \&}]{t1}{, }\item[{const float \&}]{dt1}{, }\item[{unsigned int \&}]{Kprint}{, }\item[{float \&}]{Tprint}{}\end{DoxyParamCaption})}
+
+
+
+Saves the simulation results (Water surface elevation) to binary files at the current time step. 
+
+This function saves the water surface elevation data to binary files at the current time step. The files are named according to the current time step and are stored in the specified output folder.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & Reference to the \doxylink{classState}{State} object containing the current state variables. \\
+\hline
+{\em S2} & Reference to the \doxylink{classState}{State} object containing the newly computed state variables\+: $ t + \Delta t $. \\
+\hline
+{\em In} & Reference to the \doxylink{classInput}{Input} object containing user-\/defined parameters for the simulation. \\
+\hline
+{\em t1} & Current time step. \\
+\hline
+{\em dt1} & Time step size. \\
+\hline
+{\em Kprint} & Counter for the number of printouts. \\
+\hline
+{\em Tprint} & Time interval for printouts.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The function performs linear interpolation between the current and new state variables to obtain the water surface elevation at the specified output time. 
+\end{DoxyNote}
+\Hypertarget{TimeVariables_8cpp_ab02e6eff2f5a6566d4c54fbd64a83f1d}\index{TimeVariables.cpp@{TimeVariables.cpp}!RecordTimeSeries@{RecordTimeSeries}}
+\index{RecordTimeSeries@{RecordTimeSeries}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{RecordTimeSeries()}{RecordTimeSeries()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_ab02e6eff2f5a6566d4c54fbd64a83f1d} 
+void Record\+Time\+Series (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S2}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{std\+::vector$<$ float $>$ \texorpdfstring{$\ast$}{*}}]{Hgauges}{, }\item[{const float \&}]{t1}{, }\item[{const float \&}]{dt1}{, }\item[{unsigned int \&}]{Kgauges}{, }\item[{float \&}]{Tgauges}{}\end{DoxyParamCaption})}
+
+
+
+Records time series data at specified gauges. 
+
+This function records the water surface elevation at specified gauges over time. The data is stored in a vector for each gauge and can be printed later.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & Reference to the \doxylink{classState}{State} object containing the current state variables. \\
+\hline
+{\em S2} & Reference to the \doxylink{classState}{State} object containing the newly computed state variables\+: $ t + \Delta t $. \\
+\hline
+{\em In} & Reference to the \doxylink{classInput}{Input} object containing user-\/defined parameters for the simulation. \\
+\hline
+{\em Hgauges} & Pointer to a vector of floats for storing the water surface elevation at the gauges. \\
+\hline
+{\em t1} & Current time step. \\
+\hline
+{\em dt1} & Time step size. \\
+\hline
+{\em Kgauges} & Counter for the number of gauges. \\
+\hline
+{\em Tgauges} & Time interval for recording gauges.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The function performs linear interpolation between the current and new state variables to obtain the water surface elevation at the specified gauges. 
+\end{DoxyNote}
+\Hypertarget{TimeVariables_8cpp_a7fe4c0c6db0a7f2f67527d8f55ac5f97}\index{TimeVariables.cpp@{TimeVariables.cpp}!swap\_pointers@{swap\_pointers}}
+\index{swap\_pointers@{swap\_pointers}!TimeVariables.cpp@{TimeVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{swap\_pointers()}{swap\_pointers()}}
+{\footnotesize\ttfamily \label{TimeVariables_8cpp_a7fe4c0c6db0a7f2f67527d8f55ac5f97} 
+void swap\+\_\+pointers (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{a}{, }\item[{float \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{b}{}\end{DoxyParamCaption})}
+

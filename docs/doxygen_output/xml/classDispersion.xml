@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classDispersion" kind="class" language="C++" prot="public">
+    <compoundname>Dispersion</compoundname>
+    <includes refid="Dispersion_8h" local="no">Dispersion.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDispersion_1a966258f232e7b8ab41412c15d0b0c394" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int Dispersion::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <qualifiedname>Dispersion::N</qualifiedname>
+        <briefdescription>
+<para>Number of grid points in the computational domain. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="28" column="16" bodyfile="code/include/Dispersion.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classDispersion_1a0a97fe146fa93ff5596d2c5aa2ed6be2" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* Dispersion::PhiC</definition>
+        <argsstring></argsstring>
+        <name>PhiC</name>
+        <qualifiedname>Dispersion::PhiC</qualifiedname>
+        <briefdescription>
+<para>Dispersive term for the continuity equation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="31" column="9" bodyfile="code/include/Dispersion.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDispersion_1a6d366770689c550765e3ccea7ed17034" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* Dispersion::PhiM</definition>
+        <argsstring></argsstring>
+        <name>PhiM</name>
+        <qualifiedname>Dispersion::PhiM</qualifiedname>
+        <briefdescription>
+<para>Dispersive term for the momentum equation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="32" column="9" bodyfile="code/include/Dispersion.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDispersion_1a0558a889fa184573627f6c6f7ad2ae72" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* Dispersion::Uxx</definition>
+        <argsstring></argsstring>
+        <name>Uxx</name>
+        <qualifiedname>Dispersion::Uxx</qualifiedname>
+        <briefdescription>
+<para>Second-order derivative of the velocity field. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="33" column="9" bodyfile="code/include/Dispersion.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDispersion_1ae49bffaf5c4d3d5323e54ce42d8a4127" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* Dispersion::D1</definition>
+        <argsstring></argsstring>
+        <name>D1</name>
+        <qualifiedname>Dispersion::D1</qualifiedname>
+        <briefdescription>
+<para>Lower diagonal terms of the tridiagonal matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="35" column="9" bodyfile="code/include/Dispersion.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDispersion_1abfaf79e98f25c390ebaacc26ad59310e" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* Dispersion::D2</definition>
+        <argsstring></argsstring>
+        <name>D2</name>
+        <qualifiedname>Dispersion::D2</qualifiedname>
+        <briefdescription>
+<para>Upper diagonal terms of the tridiagonal matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="36" column="9" bodyfile="code/include/Dispersion.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDispersion_1afb9ae6690fa9deb41081640ff64d0500" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* Dispersion::D3</definition>
+        <argsstring></argsstring>
+        <name>D3</name>
+        <qualifiedname>Dispersion::D3</qualifiedname>
+        <briefdescription>
+<para>Diagonal terms of the tridiagonal matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="37" column="9" bodyfile="code/include/Dispersion.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDispersion_1a65c18a6718364baa8411208b43591504" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dispersion::Dispersion</definition>
+        <argsstring>(const State &amp;S0)</argsstring>
+        <name>Dispersion</name>
+        <qualifiedname>Dispersion::Dispersion</qualifiedname>
+        <param>
+          <type>const <ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>S0</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="classDispersion" kindref="compound">Dispersion</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the dispersion terms and precomputes the diagonal terms of the tridiagonal matrix.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a <ref refid="classState" kindref="compound">State</ref> object containing wave field variables at the current time step. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="49" column="3" bodyfile="code/src/Dispersion.cpp" bodystart="19" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classDispersion_1a47a0c75361054ac95fcf4ef6d1be60ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dispersion::ComputeDispersion</definition>
+        <argsstring>(State &amp;S0)</argsstring>
+        <name>ComputeDispersion</name>
+        <qualifiedname>Dispersion::ComputeDispersion</qualifiedname>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>S0</declname>
+        </param>
+        <briefdescription>
+<para>Computes the dispersive terms for the continuity and momentum equations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function calculates the second-order derivative of the velocity field and updates the dispersive terms.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a <ref refid="classState" kindref="compound">State</ref> object containing wave field variables at the current time step. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="61" column="8" bodyfile="code/src/Dispersion.cpp" bodystart="73" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classDispersion_1a37aff1717dbf3526460d162ffd1de9fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dispersion::SolveTridiagonalMatrix</definition>
+        <argsstring>(State &amp;S1)</argsstring>
+        <name>SolveTridiagonalMatrix</name>
+        <qualifiedname>Dispersion::SolveTridiagonalMatrix</qualifiedname>
+        <param>
+          <type><ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>S1</declname>
+        </param>
+        <briefdescription>
+<para>Solves the tridiagonal matrix using the Thomas algorithm. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the velocity variable by solving the tridiagonal system.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>S1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a <ref refid="classState" kindref="compound">State</ref> object containing wave field variables at the current time step. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="72" column="8" bodyfile="code/src/Dispersion.cpp" bodystart="114" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classDispersion_1a686beccff78fed61a363efa654fd3446" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Dispersion::~Dispersion</definition>
+        <argsstring>()</argsstring>
+        <name>~Dispersion</name>
+        <qualifiedname>Dispersion::~Dispersion</qualifiedname>
+        <briefdescription>
+<para>Destructor for the <ref refid="classDispersion" kindref="compound">Dispersion</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleans up dynamically allocated memory for the dispersion terms and tridiagonal matrix. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Dispersion.h" line="80" column="3" bodyfile="code/src/Dispersion.cpp" bodystart="67" bodyend="71"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Stores and computes dispersive terms for the numerical wave solver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="classDispersion" kindref="compound">Dispersion</ref></computeroutput> class calculates and applies dispersive terms in the continuity and momentum equations. It also provides functionality for solving a tridiagonal system using the Thomas algorithm. </para>
+    </detaileddescription>
+    <location file="code/include/Dispersion.h" line="26" column="1" bodyfile="code/include/Dispersion.h" bodystart="26" bodyend="81"/>
+    <listofallmembers>
+      <member refid="classDispersion_1a47a0c75361054ac95fcf4ef6d1be60ac" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>ComputeDispersion</name></member>
+      <member refid="classDispersion_1ae49bffaf5c4d3d5323e54ce42d8a4127" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>D1</name></member>
+      <member refid="classDispersion_1abfaf79e98f25c390ebaacc26ad59310e" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>D2</name></member>
+      <member refid="classDispersion_1afb9ae6690fa9deb41081640ff64d0500" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>D3</name></member>
+      <member refid="classDispersion_1a65c18a6718364baa8411208b43591504" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>Dispersion</name></member>
+      <member refid="classDispersion_1a966258f232e7b8ab41412c15d0b0c394" prot="private" virt="non-virtual"><scope>Dispersion</scope><name>N</name></member>
+      <member refid="classDispersion_1a0a97fe146fa93ff5596d2c5aa2ed6be2" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>PhiC</name></member>
+      <member refid="classDispersion_1a6d366770689c550765e3ccea7ed17034" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>PhiM</name></member>
+      <member refid="classDispersion_1a37aff1717dbf3526460d162ffd1de9fb" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>SolveTridiagonalMatrix</name></member>
+      <member refid="classDispersion_1a0558a889fa184573627f6c6f7ad2ae72" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>Uxx</name></member>
+      <member refid="classDispersion_1a686beccff78fed61a363efa654fd3446" prot="public" virt="non-virtual"><scope>Dispersion</scope><name>~Dispersion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,402 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classWaveMaker" kind="class" language="C++" prot="public">
+    <compoundname>WaveMaker</compoundname>
+    <includes refid="Wavemaker_8h" local="no">Wavemaker.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int WaveMaker::Nf</definition>
+        <argsstring></argsstring>
+        <name>Nf</name>
+        <qualifiedname>WaveMaker::Nf</qualifiedname>
+        <briefdescription>
+<para>Number of frequencies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="28" column="16" bodyfile="code/include/Wavemaker.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1ae03cdb6bf0dd246bfc0ec488f67bb007" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int WaveMaker::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <qualifiedname>WaveMaker::N</qualifiedname>
+        <briefdescription>
+<para>Number of grid points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="29" column="16" bodyfile="code/include/Wavemaker.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float WaveMaker::Beta</definition>
+        <argsstring></argsstring>
+        <name>Beta</name>
+        <qualifiedname>WaveMaker::Beta</qualifiedname>
+        <briefdescription>
+<para>Beta parameter for the source term. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="30" column="9" bodyfile="code/include/Wavemaker.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int WaveMaker::posWM</definition>
+        <argsstring></argsstring>
+        <name>posWM</name>
+        <qualifiedname>WaveMaker::posWM</qualifiedname>
+        <briefdescription>
+<para>Position of the wavemaker in the grid. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="31" column="16" bodyfile="code/include/Wavemaker.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1abe5bef6fb25b4d353a57906fa3a57125" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float WaveMaker::depth</definition>
+        <argsstring></argsstring>
+        <name>depth</name>
+        <qualifiedname>WaveMaker::depth</qualifiedname>
+        <briefdescription>
+<para>Water depth at the wavemaker. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="32" column="9" bodyfile="code/include/Wavemaker.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a9be062dde81f30b4664313857160f40a" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float WaveMaker::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>WaveMaker::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Width of the wavemaker, computed from the peak wavelength as 0.5*Lp </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="33" column="9" bodyfile="code/include/Wavemaker.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a23f5ff9b36abf66bb9571517b8de6c7f" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int WaveMaker::Ns</definition>
+        <argsstring></argsstring>
+        <name>Ns</name>
+        <qualifiedname>WaveMaker::Ns</qualifiedname>
+        <briefdescription>
+<para>Number of grid points for the wavemaker. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="35" column="16" bodyfile="code/include/Wavemaker.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1ad81c3af5c9ecbe817e8487f5321a6593" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float WaveMaker::Kp</definition>
+        <argsstring></argsstring>
+        <name>Kp</name>
+        <qualifiedname>WaveMaker::Kp</qualifiedname>
+        <briefdescription>
+<para>Wavenumber corresponding to the peak frequency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="37" column="9" bodyfile="code/include/Wavemaker.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1ad313aa0681f180071508b94fb443188e" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* WaveMaker::Freq</definition>
+        <argsstring></argsstring>
+        <name>Freq</name>
+        <qualifiedname>WaveMaker::Freq</qualifiedname>
+        <briefdescription>
+<para>Frequencies as input by the user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="49" column="9" bodyfile="code/include/Wavemaker.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* WaveMaker::Amp</definition>
+        <argsstring></argsstring>
+        <name>Amp</name>
+        <qualifiedname>WaveMaker::Amp</qualifiedname>
+        <briefdescription>
+<para>Amplitudes as input by the user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="50" column="9" bodyfile="code/include/Wavemaker.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* WaveMaker::Phase</definition>
+        <argsstring></argsstring>
+        <name>Phase</name>
+        <qualifiedname>WaveMaker::Phase</qualifiedname>
+        <briefdescription>
+<para>Phases as input by the user. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="51" column="9" bodyfile="code/include/Wavemaker.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* WaveMaker::Omg</definition>
+        <argsstring></argsstring>
+        <name>Omg</name>
+        <qualifiedname>WaveMaker::Omg</qualifiedname>
+        <briefdescription>
+<para>Angular frequencies computed from the input frequencies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="52" column="9" bodyfile="code/include/Wavemaker.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* WaveMaker::K</definition>
+        <argsstring></argsstring>
+        <name>K</name>
+        <qualifiedname>WaveMaker::K</qualifiedname>
+        <briefdescription>
+<para>Wavenumbers computed from the angular frequencies. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="53" column="9" bodyfile="code/include/Wavemaker.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* WaveMaker::Di</definition>
+        <argsstring></argsstring>
+        <name>Di</name>
+        <qualifiedname>WaveMaker::Di</qualifiedname>
+        <briefdescription>
+<para>Magnitude of the source term for each frequency. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="54" column="9" bodyfile="code/include/Wavemaker.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a1493e19950984f465869c648bc776466" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* WaveMaker::SourceTerm</definition>
+        <argsstring></argsstring>
+        <name>SourceTerm</name>
+        <qualifiedname>WaveMaker::SourceTerm</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Source term for the wavemaker, computed for each grid point inside the wavemaker </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="56" column="9" bodyfile="code/include/Wavemaker.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classWaveMaker_1a85b262bc82ab9ae299aa9dbdb70a2103" prot="private" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float WaveMaker::de</definition>
+        <argsstring></argsstring>
+        <name>de</name>
+        <qualifiedname>WaveMaker::de</qualifiedname>
+        <initializer>= 0.5f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wavemaker constant based on the formulation described by Wei et al. 1999 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="40" column="15" bodyfile="code/include/Wavemaker.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWaveMaker_1a1361b9d5047e63d047145e36ce48e7cb" prot="private" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float WaveMaker::alpha3</definition>
+        <argsstring></argsstring>
+        <name>alpha3</name>
+        <qualifiedname>WaveMaker::alpha3</qualifiedname>
+        <initializer>=
+      <ref refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kindref="member">alpha1</ref> +
+      float(1.0 /
+            3.0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>alpha3 constant defined as alpha1 + 1/3, where alpha1 is the dispersion coefficient in Nwogu&apos;s equation </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="42" column="15" bodyfile="code/include/Wavemaker.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classWaveMaker_1a22cf52c5cf4a8b9c1dd72f262a8c36d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WaveMaker::WaveMaker</definition>
+        <argsstring>(const Input &amp;In, const unsigned int &amp;N)</argsstring>
+        <name>WaveMaker</name>
+        <qualifiedname>WaveMaker::WaveMaker</qualifiedname>
+        <param>
+          <type>const <ref refid="classInput" kindref="compound">Input</ref> &amp;</type>
+          <declname>In</declname>
+        </param>
+        <param>
+          <type>const unsigned int &amp;</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="classWaveMaker" kindref="compound">WaveMaker</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the wavemaker parameters and computes the source term for the wavemaker.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>In</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to an <ref refid="classInput" kindref="compound">Input</ref> object containing user-defined parameters for the wavemaker such as frequencies, amplitudes, and phases. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points in the computational domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="70" column="3" bodyfile="code/src/Wavemaker.cpp" bodystart="19" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classWaveMaker_1aa298adc2d35dcc76d8dfb5b27009bb72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WaveMaker::ComputeSourceTerm</definition>
+        <argsstring>(const float &amp;t, const float &amp;dx)</argsstring>
+        <name>ComputeSourceTerm</name>
+        <qualifiedname>WaveMaker::ComputeSourceTerm</qualifiedname>
+        <param>
+          <type>const float &amp;</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>const float &amp;</type>
+          <declname>dx</declname>
+        </param>
+        <briefdescription>
+<para>Computes the source term that will be added to the momentum equation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the source term for the wavemaker based on the input parameters and adds it to the momentum equation.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Current time step. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Grid spacing in the computational domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="82" column="8" bodyfile="code/src/Wavemaker.cpp" bodystart="101" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classWaveMaker_1a3e383af6629bb2f3a2f4bb02840c10cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WaveMaker::~WaveMaker</definition>
+        <argsstring>()</argsstring>
+        <name>~WaveMaker</name>
+        <qualifiedname>WaveMaker::~WaveMaker</qualifiedname>
+        <briefdescription>
+<para>Destructor for the <ref refid="classWaveMaker" kindref="compound">WaveMaker</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleans up dynamically allocated memory for the wavemaker parameters. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/Wavemaker.h" line="89" column="3" bodyfile="code/src/Wavemaker.cpp" bodystart="91" bodyend="99"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Computes the source term for the wavemaker. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="classWaveMaker" kindref="compound">WaveMaker</ref></computeroutput> class is responsible for computing the source term for the wavemaker and adding the term to the momnentum equation. </para>
+    </detaileddescription>
+    <location file="code/include/Wavemaker.h" line="26" column="1" bodyfile="code/include/Wavemaker.h" bodystart="26" bodyend="90"/>
+    <listofallmembers>
+      <member refid="classWaveMaker_1a1361b9d5047e63d047145e36ce48e7cb" prot="private" virt="non-virtual"><scope>WaveMaker</scope><name>alpha3</name></member>
+      <member refid="classWaveMaker_1afb093f6036f4a6bf7e23b2a3e43c8b88" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Amp</name></member>
+      <member refid="classWaveMaker_1aaee7c6343a70be527b67f9a8753f57af" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Beta</name></member>
+      <member refid="classWaveMaker_1aa298adc2d35dcc76d8dfb5b27009bb72" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>ComputeSourceTerm</name></member>
+      <member refid="classWaveMaker_1a85b262bc82ab9ae299aa9dbdb70a2103" prot="private" virt="non-virtual"><scope>WaveMaker</scope><name>de</name></member>
+      <member refid="classWaveMaker_1abe5bef6fb25b4d353a57906fa3a57125" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>depth</name></member>
+      <member refid="classWaveMaker_1ad90f1e6327703bba6f3f8f4ef6708581" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Di</name></member>
+      <member refid="classWaveMaker_1ad313aa0681f180071508b94fb443188e" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Freq</name></member>
+      <member refid="classWaveMaker_1a863046085a672fd4e6c1532dac582c79" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>K</name></member>
+      <member refid="classWaveMaker_1ad81c3af5c9ecbe817e8487f5321a6593" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Kp</name></member>
+      <member refid="classWaveMaker_1ae03cdb6bf0dd246bfc0ec488f67bb007" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>N</name></member>
+      <member refid="classWaveMaker_1a8462cbfe6b53792189f99f170c45e59b" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Nf</name></member>
+      <member refid="classWaveMaker_1a23f5ff9b36abf66bb9571517b8de6c7f" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Ns</name></member>
+      <member refid="classWaveMaker_1a863082fc821e741b31d73a3dbbab4aac" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Omg</name></member>
+      <member refid="classWaveMaker_1a34c3ffd9b7a2735b1b5bcbb86d425d05" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>Phase</name></member>
+      <member refid="classWaveMaker_1a1dce60f8d2ca99f5c471044e86e67d76" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>posWM</name></member>
+      <member refid="classWaveMaker_1a1493e19950984f465869c648bc776466" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>SourceTerm</name></member>
+      <member refid="classWaveMaker_1a22cf52c5cf4a8b9c1dd72f262a8c36d4" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>WaveMaker</name></member>
+      <member refid="classWaveMaker_1a9be062dde81f30b4664313857160f40a" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>width</name></member>
+      <member refid="classWaveMaker_1a3e383af6629bb2f3a2f4bb02840c10cf" prot="public" virt="non-virtual"><scope>WaveMaker</scope><name>~WaveMaker</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

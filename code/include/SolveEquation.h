@@ -2,12 +2,11 @@
 
 /**
  * @file SolveEquation.h
- * @brief Header file defining functions for solving the conservative form of
- * the Nwogu's equation.
+ * @brief Implements functions for solving the conservative form of Nwogu's equations.
  *
- * This file contains function declarations for solving the wave equations using
- * both staggered and collocated grids. The functions are designed to handle
- * different time-stepping methods and numerical schemes.
+ * This file provides the implementation of solver routines for Nwogu's equations,
+ * supporting both staggered and collocated grid configurations. It includes logic
+ * for handling various time integration methods and numerical flux schemes.
  */
 
 #include "Dispersion.h"

@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scripts.exact_solution &mdash; WavePropError v1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=e160b93e"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            WavePropError
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/scheme_description.html">Description of Numerical Schemes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/scripts.html">Python Scripts Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/code.html">C++ Code Documentation</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">WavePropError</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">scripts.exact_solution</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for scripts.exact_solution</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains functions to compute the exact solution for wave propagation in a channel based on linearized Nwogu&#39;s equations, as well as the Airy wave theory.</span>
+
+<span class="sd">It includes functions to compute both the exact solution for a single sine wave and spectral wave propagation.</span>
+
+<span class="sd">Constants</span>
+<span class="sd">---------</span>
+<span class="sd">G : float</span>
+<span class="sd">    Acceleration due to gravity [m/s^2].</span>
+<span class="sd">alpha1 : float</span>
+<span class="sd">    Constant used in Nwogu&#39;s equations to achieve optimized dispersion properties for kh in the range [0, pi].</span>
+<span class="sd">    default: alpha1 = -0.39</span>
+
+<span class="sd">Functions</span>
+<span class="sd">---------</span>
+<span class="sd">sine_wave_exact_solution :</span>
+<span class="sd">    Computes the exact solution for a sine wave based on linearized Nwogu&#39;s equations or Airy wave theory.</span>
+
+<span class="sd">spectral_wave_exact_solution :</span>
+<span class="sd">    Computes the exact solution for spectral wave propagation using either Nwogu&#39;s equations or Airy wave theory.</span>
+
+<span class="sd">wavelength_nwogu :</span>
+<span class="sd">    Computes the wavelength based on the dispersion relation of linearized Nwogu&#39;s equations.</span>
+
+<span class="sd">waveperiod_nwogu :</span>
+<span class="sd">    Computes the wave period based on the dispersion relation of linearized Nwogu&#39;s equations.</span>
+
+<span class="sd">wavelength_airy :</span>
+<span class="sd">    Computes the wavelength based on the exact Airy wave theory.</span>
+
+<span class="sd">Classes</span>
+<span class="sd">-------</span>
+<span class="sd">exact_type : Enum</span>
+<span class="sd">    Enum to choose between Airy and Nwogu&#39;s exact solution types.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scripts.empirical_spec</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">G</span> <span class="o">=</span> <span class="mf">9.81</span>  <span class="c1"># m/s^2</span>
+<span class="n">alpha1</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.39</span>  <span class="c1"># Nwogu&#39;s constant</span>
+
+
+<div class="viewcode-block" id="exact_type">
+<a class="viewcode-back" href="../../modules/scripts.html#scripts.exact_solution.exact_type">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">exact_type</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">airy</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">nwogu</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+
+<div class="viewcode-block" id="sine_wave_exact_solution">
+<a class="viewcode-back" href="../../modules/scripts.html#scripts.exact_solution.sine_wave_exact_solution">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">sine_wave_exact_solution</span><span class="p">(</span>
+    <span class="n">water_depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">wave_amplitude</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">wave_period</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">time</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">time_gauges</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">index_gauges</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">exact_type</span><span class="p">:</span> <span class="n">exact_type</span> <span class="o">=</span> <span class="n">exact_type</span><span class="o">.</span><span class="n">nwogu</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the exact solution for wave propagation in a channel based on linearized Nwogu&#39;s equations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    water_depth : float</span>
+<span class="sd">        Water depth [m].</span>
+<span class="sd">    wave_amplitude : float</span>
+<span class="sd">        Wave amplitude [m].</span>
+<span class="sd">    wave_period : float</span>
+<span class="sd">        Wave period [s].</span>
+<span class="sd">    time : np.ndarray</span>
+<span class="sd">        Time array [s].</span>
+<span class="sd">    x : np.ndarray</span>
+<span class="sd">        x axis [m].</span>
+<span class="sd">    time_gauges : np.ndarray</span>
+<span class="sd">        Time array for the gauges [s].</span>
+<span class="sd">    index_gauges : np.ndarray</span>
+<span class="sd">        Locations of the gauges as indices.</span>
+<span class="sd">    exact_type : exact_type</span>
+<span class="sd">        Type of exact solution to use.</span>
+<span class="sd">        default: exact_type.nwogu</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ds : xarray.Dataset</span>
+<span class="sd">        Dataset with the exact solution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># compute the wavelength</span>
+    <span class="k">if</span> <span class="n">exact_type</span> <span class="o">==</span> <span class="n">exact_type</span><span class="o">.</span><span class="n">airy</span><span class="p">:</span>
+        <span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength_airy</span><span class="p">(</span><span class="n">wave_period</span><span class="p">,</span> <span class="n">water_depth</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">exact_type</span> <span class="o">==</span> <span class="n">exact_type</span><span class="o">.</span><span class="n">nwogu</span><span class="p">:</span>
+        <span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength_nwogu</span><span class="p">(</span><span class="n">wave_period</span><span class="p">,</span> <span class="n">water_depth</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid exact solution type&quot;</span><span class="p">)</span>
+
+    <span class="c1"># compute the wave number</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">wavelength</span>
+
+    <span class="c1"># compute the angular frequency</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">wave_period</span>
+
+    <span class="c1"># free surface elevation</span>
+    <span class="n">eta_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+        <span class="n">eta_all</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">wave_amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1"># timeseries at the gauges</span>
+    <span class="n">eta_gauges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">time_gauges</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">index_gauges</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_gauges</span><span class="p">)):</span>
+        <span class="n">eta_gauges</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">wave_amplitude</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span>
+            <span class="n">k</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">index_gauges</span><span class="p">]</span> <span class="o">-</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">time_gauges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="p">)</span>
+
+    <span class="c1"># create the dataset</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;eta&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">],</span>
+                <span class="n">eta_all</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Free surface elevation&quot;</span><span class="p">},</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;eta_gauges&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;time_gauges&quot;</span><span class="p">,</span> <span class="s2">&quot;gauges&quot;</span><span class="p">],</span>
+                <span class="n">eta_gauges</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Free surface timeseries at the gauges&quot;</span><span class="p">},</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;index_gauges&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;gauges&quot;</span><span class="p">],</span>
+                <span class="n">index_gauges</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Index of the position of the gauges&quot;</span><span class="p">},</span>
+            <span class="p">),</span>
+        <span class="p">},</span>
+        <span class="n">coords</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">time</span><span class="p">,</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
+            <span class="s2">&quot;time_gauges&quot;</span><span class="p">:</span> <span class="n">time_gauges</span><span class="p">,</span>
+            <span class="s2">&quot;gauges&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">index_gauges</span><span class="p">)),</span>
+        <span class="p">},</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;name_run&quot;</span><span class="p">:</span> <span class="s2">&quot;exact_solution&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;water_depth&quot;</span><span class="p">:</span> <span class="n">water_depth</span><span class="p">,</span>
+            <span class="s2">&quot;wave_amplitude&quot;</span><span class="p">:</span> <span class="n">wave_amplitude</span><span class="p">,</span>
+            <span class="s2">&quot;wave_period&quot;</span><span class="p">:</span> <span class="n">wave_period</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ds</span></div>
+
+
+
+<div class="viewcode-block" id="spectral_wave_exact_solution">
+<a class="viewcode-back" href="../../modules/scripts.html#scripts.exact_solution.spectral_wave_exact_solution">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">spectral_wave_exact_solution</span><span class="p">(</span>
+    <span class="n">water_depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">spec_type</span><span class="p">:</span> <span class="n">spec</span><span class="p">,</span>
+    <span class="n">significant_wave_height</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">peak_wave_period</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">time</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">time_gauges</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">index_gauges</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span>
+    <span class="n">exact_type</span><span class="p">:</span> <span class="n">exact_type</span> <span class="o">=</span> <span class="n">exact_type</span><span class="o">.</span><span class="n">nwogu</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the exact solution for spectral wave propagation in a channel based on linearized Nwogu&#39;s equations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    water_depth : float</span>
+<span class="sd">        Water depth [m].</span>
+<span class="sd">    spec_type : spec</span>
+<span class="sd">        Type of empirical spectrum.</span>
+<span class="sd">    significant_wave_height : float</span>
+<span class="sd">        Significant wave height [m].</span>
+<span class="sd">    peak_wave_period : float</span>
+<span class="sd">        Peak wave period [s].</span>
+<span class="sd">    time : np.ndarray</span>
+<span class="sd">        Time array [s].</span>
+<span class="sd">    x : np.ndarray</span>
+<span class="sd">        x axis [m].</span>
+<span class="sd">    time_gauges : np.ndarray</span>
+<span class="sd">        Time array for the gauges [s].</span>
+<span class="sd">    index_gauges : np.ndarray</span>
+<span class="sd">        Locations of the gauges as indices.</span>
+<span class="sd">    exact_type : exact_type</span>
+<span class="sd">        Type of exact solution to use.</span>
+<span class="sd">        default: exact_type.nwogu</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ds : xarray.Dataset</span>
+<span class="sd">        Dataset with the exact solution.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># compute the empirical spectrum</span>
+    <span class="n">spec_array</span> <span class="o">=</span> <span class="n">create_empirical_spec</span><span class="p">(</span>
+        <span class="n">spec_type</span><span class="p">,</span> <span class="n">significant_wave_height</span><span class="p">,</span> <span class="n">peak_wave_period</span><span class="p">,</span> <span class="n">water_depth</span><span class="p">,</span> <span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">spec_array</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">density</span> <span class="o">=</span> <span class="n">spec_array</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">amp</span> <span class="o">=</span> <span class="n">spec_array</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">spec_array</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)):</span>
+
+        <span class="k">if</span> <span class="n">exact_type</span> <span class="o">==</span> <span class="n">exact_type</span><span class="o">.</span><span class="n">airy</span><span class="p">:</span>
+            <span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength_airy</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">freq</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">water_depth</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">exact_type</span> <span class="o">==</span> <span class="n">exact_type</span><span class="o">.</span><span class="n">nwogu</span><span class="p">:</span>
+            <span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength_nwogu</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">freq</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">water_depth</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Invalid exact solution type&quot;</span><span class="p">)</span>
+
+        <span class="n">k</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">wavelength</span>
+
+    <span class="c1"># compute the free surface elevation</span>
+    <span class="n">eta_all</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+            <span class="n">eta_all</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+                <span class="n">amp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">freq</span> <span class="o">*</span> <span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">phase</span><span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="c1"># compute the timeseries at the gauges</span>
+    <span class="n">eta_gauges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">time_gauges</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">index_gauges</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_gauges</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">index_gauges</span><span class="p">)):</span>
+            <span class="n">eta_gauges</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+                <span class="n">amp</span>
+                <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span>
+                    <span class="n">k</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">index_gauges</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">freq</span> <span class="o">*</span> <span class="n">time_gauges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">phase</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+    <span class="c1"># create the dataset</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;eta&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">],</span>
+                <span class="n">eta_all</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Free surface elevation&quot;</span><span class="p">},</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;eta_gauges&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;time_gauges&quot;</span><span class="p">,</span> <span class="s2">&quot;gauges&quot;</span><span class="p">],</span>
+                <span class="n">eta_gauges</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Free surface timeseries at the gauges&quot;</span><span class="p">},</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;index_gauges&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;gauges&quot;</span><span class="p">],</span>
+                <span class="n">index_gauges</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Index of the position of the gauges&quot;</span><span class="p">},</span>
+            <span class="p">),</span>
+            <span class="s2">&quot;spectral_density&quot;</span><span class="p">:</span> <span class="p">(</span>
+                <span class="p">[</span><span class="s2">&quot;frequency&quot;</span><span class="p">],</span>
+                <span class="n">density</span><span class="p">,</span>
+                <span class="p">{</span><span class="s2">&quot;units&quot;</span><span class="p">:</span> <span class="s2">&quot;m^2/Hz&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Spectral density&quot;</span><span class="p">},</span>
+            <span class="p">),</span>
+        <span class="p">},</span>
+        <span class="n">coords</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">time</span><span class="p">,</span>
+            <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
+            <span class="s2">&quot;time_gauges&quot;</span><span class="p">:</span> <span class="n">time_gauges</span><span class="p">,</span>
+            <span class="s2">&quot;gauges&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">index_gauges</span><span class="p">)),</span>
+            <span class="s2">&quot;frequency&quot;</span><span class="p">:</span> <span class="n">freq</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">attrs</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;name_run&quot;</span><span class="p">:</span> <span class="s2">&quot;exact_solution&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;water_depth&quot;</span><span class="p">:</span> <span class="n">water_depth</span><span class="p">,</span>
+            <span class="s2">&quot;significant_wave_height&quot;</span><span class="p">:</span> <span class="n">significant_wave_height</span><span class="p">,</span>
+            <span class="s2">&quot;peak_wave_period&quot;</span><span class="p">:</span> <span class="n">peak_wave_period</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ds</span></div>
+
+
+
+<div class="viewcode-block" id="wavelength_nwogu">
+<a class="viewcode-back" href="../../modules/scripts.html#scripts.exact_solution.wavelength_nwogu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wavelength_nwogu</span><span class="p">(</span><span class="n">wave_period</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">water_depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the wavelength based on the dispersion relation of linearized Nwogu&#39;s equations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wave_period : float</span>
+<span class="sd">        Wave period [s].</span>
+<span class="sd">    water_depth : float</span>
+<span class="sd">        Water depth [m].</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wavelength : float</span>
+<span class="sd">        Wavenumber [m].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">wave_period</span>
+    <span class="n">beta1</span> <span class="o">=</span> <span class="n">alpha1</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mf">3.0</span>
+
+    <span class="c1"># solve second order equation with a b and c coefficients</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">beta1</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">water_depth</span> <span class="o">*</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">alpha1</span> <span class="o">+</span> <span class="n">G</span><span class="p">)</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">water_depth</span> <span class="o">*</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+
+    <span class="c1"># compute the wavenumber</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.0</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="n">water_depth</span>
+
+    <span class="c1"># compute the wavelength</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">k</span></div>
+
+
+
+<div class="viewcode-block" id="waveperiod_nwogu">
+<a class="viewcode-back" href="../../modules/scripts.html#scripts.exact_solution.waveperiod_nwogu">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">waveperiod_nwogu</span><span class="p">(</span><span class="n">wavelength</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">water_depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the wave period based on the dispersion relation of linearized Nwogu&#39;s equations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wavelength : float</span>
+<span class="sd">        Wavelength [m].</span>
+<span class="sd">    water_depth : float</span>
+<span class="sd">        Water depth [m].</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wave_period : float</span>
+<span class="sd">        Wave period [s].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">water_depth</span>
+    <span class="n">beta1</span> <span class="o">=</span> <span class="n">alpha1</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mi">3</span>
+    <span class="n">K1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">wavelength</span>
+    <span class="n">KH2</span> <span class="o">=</span> <span class="p">(</span><span class="n">K1</span> <span class="o">*</span> <span class="n">d</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">K1</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">d</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">beta1</span> <span class="o">*</span> <span class="n">KH2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha1</span> <span class="o">*</span> <span class="n">KH2</span><span class="p">)</span>
+
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">omega</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">omega</span></div>
+
+
+
+<div class="viewcode-block" id="wavelength_airy">
+<a class="viewcode-back" href="../../modules/scripts.html#scripts.exact_solution.wavelength_airy">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">wavelength_airy</span><span class="p">(</span>
+    <span class="n">wave_period</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">water_depth</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the wavelength based on the exact Airy wave theory.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    wave_period : float</span>
+<span class="sd">        Wave period [s].</span>
+<span class="sd">    water_depth : float</span>
+<span class="sd">        Water depth [m].</span>
+<span class="sd">    tol : float, optional</span>
+<span class="sd">        Tolerance for the iteration.</span>
+<span class="sd">        default: 1e-6</span>
+<span class="sd">    max_iter : int, optional</span>
+<span class="sd">        Maximum number of iterations.</span>
+<span class="sd">        default: 1000</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    wavelength : float</span>
+<span class="sd">        Wavenumber [m].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">wave_period</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">G</span>  <span class="c1"># Initial guess for k</span>
+
+    <span class="c1"># Iterate to refine the value of k using the dispersion relation</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+        <span class="n">k_new</span> <span class="o">=</span> <span class="n">omega</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">water_depth</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">k_new</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="n">k_new</span>
+            <span class="k">break</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="n">k_new</span>
+
+    <span class="n">lambda_</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">k</span>
+    <span class="k">return</span> <span class="n">lambda_</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Fatima-Zahra Mihami.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

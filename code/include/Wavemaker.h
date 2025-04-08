@@ -1,12 +1,14 @@
 #pragma once
-
 /**
  * @file Wavemaker.h
- * @brief Header file defining the WaveMaker class for computing the source term
- * for the wavemaker.
+ * @brief Implements the WaveMaker class for generating wave forcing through a source term.
  *
- * The WaveMaker class is responsible for computing the source term for the
- * wavemaker source term.
+ * This file provides the implementation of the WaveMaker class, which computes
+ * the source term used to generate waves within the computational domain. It also
+ * manages and stores the relevant wavemaker parameters. The wave forcing is
+ * constructed by superimposing contributions from multiple frequency components.
+ * 
+ * Reference: Wei et al. (1999)
  */
 
 #include <iostream>

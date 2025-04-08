@@ -1,0 +1,199 @@
+\doxysection{flux Class Reference}
+\hypertarget{classflux}{}\label{classflux}\index{flux@{flux}}
+
+
+Computes the fluxes for the Shallow Water Equations in a collocated grid.  
+
+
+
+
+{\ttfamily \#include $<$Flux\+Computation.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classflux_ad12f9ebd94d5fc3acc6bc9ab0546b947}{flux}} (unsigned int N)
+\begin{DoxyCompactList}\small\item\em Constructor for the flux class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classflux_a5bbf9064fed1080784110a2e9318ad36}{Compute\+Flux}} (const \mbox{\hyperlink{classState}{State}} \&state, const \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}} \&Scheme, const unsigned int \&Order\+Reconstruction)
+\begin{DoxyCompactList}\small\item\em Computes the fluxes for the Shallow Water Equations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classflux_ad6c3e1f342c841e8b0914e61bc833083}{\texorpdfstring{$\sim$}{\string~}flux}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the flux class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_a0bed9e6ca693154d6db8c6574b50bb60}{WS}}
+\begin{DoxyCompactList}\small\item\em Wave speed for the CFL computation. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_a4ed77c0022f6c88683401962047eb0af}{Hn}}
+\begin{DoxyCompactList}\small\item\em Water height at the current time step. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_af3266be4d4330ef110a0cc8065df608c}{Qn}}
+\begin{DoxyCompactList}\small\item\em Momentum (Hn\texorpdfstring{$\ast$}{*}\+Un) at the current time step. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_af99086969bd3966c3fc28bcb8fc478b4}{HL}}
+\begin{DoxyCompactList}\small\item\em Water height at the left cell interface. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_ac99fb062e3d35e84297c5f9163b80332}{HR}}
+\begin{DoxyCompactList}\small\item\em Water height at the right cell interface. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_a39216f37660192a5ea9aa2cd2b16e28e}{QL}}
+\begin{DoxyCompactList}\small\item\em Momentum (Hn\texorpdfstring{$\ast$}{*}\+Un) at the left cell interface. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_ad0098376f298fb5ba4ec7648feabfd46}{QR}}
+\begin{DoxyCompactList}\small\item\em Momentum (Hn\texorpdfstring{$\ast$}{*}\+Un) at the right cell interface. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_adfdcb49efed897bd7006b9d1f20e3c71}{FluxH}}
+\begin{DoxyCompactList}\small\item\em Flux of water height at the cell interface. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classflux_a6527f04e525e156d0753409d9769924e}{FluxU}}
+\begin{DoxyCompactList}\small\item\em Flux of momentum at the cell interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the fluxes for the Shallow Water Equations in a collocated grid. 
+
+The {\ttfamily flux} class is responsible for computing the fluxes in the shallow water equations using Finite Volume Godunov\textquotesingle{}s method. It includes different reconstruction orders and flux computation schemes. The class also computes the wave speed for the CFL condition. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classflux_ad12f9ebd94d5fc3acc6bc9ab0546b947}\index{flux@{flux}!flux@{flux}}
+\index{flux@{flux}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{flux()}{flux()}}
+{\footnotesize\ttfamily \label{classflux_ad12f9ebd94d5fc3acc6bc9ab0546b947} 
+flux\+::flux (\begin{DoxyParamCaption}\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the flux class. 
+
+Initializes the flux class with the number of grid points and allocates memory for the flux variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em N} & Number of grid points in the computational domain. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classflux_ad6c3e1f342c841e8b0914e61bc833083}\index{flux@{flux}!````~flux@{\texorpdfstring{$\sim$}{\string~}flux}}
+\index{````~flux@{\texorpdfstring{$\sim$}{\string~}flux}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}flux()}{\string~flux()}}
+{\footnotesize\ttfamily \label{classflux_ad6c3e1f342c841e8b0914e61bc833083} 
+flux\+::\texorpdfstring{$\sim$}{\string~}flux (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destructor for the flux class. 
+
+Cleans up dynamically allocated memory for the flux variables. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classflux_a5bbf9064fed1080784110a2e9318ad36}\index{flux@{flux}!ComputeFlux@{ComputeFlux}}
+\index{ComputeFlux@{ComputeFlux}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{ComputeFlux()}{ComputeFlux()}}
+{\footnotesize\ttfamily \label{classflux_a5bbf9064fed1080784110a2e9318ad36} 
+void flux\+::\+Compute\+Flux (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classState}{State}} \&}]{state}{, }\item[{const \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}} \&}]{Scheme}{, }\item[{const unsigned int \&}]{Order\+Reconstruction}{}\end{DoxyParamCaption})}
+
+
+
+Computes the fluxes for the Shallow Water Equations. 
+
+This function computes the fluxes using the specified reconstruction order and scheme.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Reference to a \doxylink{classState}{State} object containing the current state of the system. \\
+\hline
+{\em Scheme} & The flux computation scheme to be used (e.\+g., HLL, HLLC). \\
+\hline
+{\em Order\+Reconstruction} & The order of reconstruction to be used (1, 2, 3, or 5). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classflux_adfdcb49efed897bd7006b9d1f20e3c71}\index{flux@{flux}!FluxH@{FluxH}}
+\index{FluxH@{FluxH}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{FluxH}{FluxH}}
+{\footnotesize\ttfamily \label{classflux_adfdcb49efed897bd7006b9d1f20e3c71} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+FluxH}
+
+
+
+Flux of water height at the cell interface. 
+
+\Hypertarget{classflux_a6527f04e525e156d0753409d9769924e}\index{flux@{flux}!FluxU@{FluxU}}
+\index{FluxU@{FluxU}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{FluxU}{FluxU}}
+{\footnotesize\ttfamily \label{classflux_a6527f04e525e156d0753409d9769924e} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+FluxU}
+
+
+
+Flux of momentum at the cell interface. 
+
+\Hypertarget{classflux_af99086969bd3966c3fc28bcb8fc478b4}\index{flux@{flux}!HL@{HL}}
+\index{HL@{HL}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{HL}{HL}}
+{\footnotesize\ttfamily \label{classflux_af99086969bd3966c3fc28bcb8fc478b4} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+HL}
+
+
+
+Water height at the left cell interface. 
+
+\Hypertarget{classflux_a4ed77c0022f6c88683401962047eb0af}\index{flux@{flux}!Hn@{Hn}}
+\index{Hn@{Hn}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{Hn}{Hn}}
+{\footnotesize\ttfamily \label{classflux_a4ed77c0022f6c88683401962047eb0af} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+Hn}
+
+
+
+Water height at the current time step. 
+
+\Hypertarget{classflux_ac99fb062e3d35e84297c5f9163b80332}\index{flux@{flux}!HR@{HR}}
+\index{HR@{HR}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{HR}{HR}}
+{\footnotesize\ttfamily \label{classflux_ac99fb062e3d35e84297c5f9163b80332} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+HR}
+
+
+
+Water height at the right cell interface. 
+
+\Hypertarget{classflux_a39216f37660192a5ea9aa2cd2b16e28e}\index{flux@{flux}!QL@{QL}}
+\index{QL@{QL}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{QL}{QL}}
+{\footnotesize\ttfamily \label{classflux_a39216f37660192a5ea9aa2cd2b16e28e} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+QL}
+
+
+
+Momentum (Hn\texorpdfstring{$\ast$}{*}\+Un) at the left cell interface. 
+
+\Hypertarget{classflux_af3266be4d4330ef110a0cc8065df608c}\index{flux@{flux}!Qn@{Qn}}
+\index{Qn@{Qn}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{Qn}{Qn}}
+{\footnotesize\ttfamily \label{classflux_af3266be4d4330ef110a0cc8065df608c} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+Qn}
+
+
+
+Momentum (Hn\texorpdfstring{$\ast$}{*}\+Un) at the current time step. 
+
+\Hypertarget{classflux_ad0098376f298fb5ba4ec7648feabfd46}\index{flux@{flux}!QR@{QR}}
+\index{QR@{QR}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{QR}{QR}}
+{\footnotesize\ttfamily \label{classflux_ad0098376f298fb5ba4ec7648feabfd46} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+QR}
+
+
+
+Momentum (Hn\texorpdfstring{$\ast$}{*}\+Un) at the right cell interface. 
+
+\Hypertarget{classflux_a0bed9e6ca693154d6db8c6574b50bb60}\index{flux@{flux}!WS@{WS}}
+\index{WS@{WS}!flux@{flux}}
+\doxysubsubsection{\texorpdfstring{WS}{WS}}
+{\footnotesize\ttfamily \label{classflux_a0bed9e6ca693154d6db8c6574b50bb60} 
+float\texorpdfstring{$\ast$}{*} flux\+::\+WS}
+
+
+
+Wave speed for the CFL computation. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/include/\mbox{\hyperlink{FluxComputation_8h}{Flux\+Computation.\+h}}\item 
+code/src/\mbox{\hyperlink{FluxComputation_8cpp}{Flux\+Computation.\+cpp}}\end{DoxyCompactItemize}

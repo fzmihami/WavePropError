@@ -1,0 +1,49 @@
+\doxysection{code/src/\+Boundaries.cpp File Reference}
+\hypertarget{Boundaries_8cpp}{}\label{Boundaries_8cpp}\index{code/src/Boundaries.cpp@{code/src/Boundaries.cpp}}
+
+
+Implementation of functions for applying the sponge-\/layer boundary condition in the numerical wave solver to absorb incoming waves.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include "{}Boundaries.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Boundaries_8cpp_a15939cb64e963cfec3ae091f8b888865}{Apply\+Sponge\+Layer}} (\mbox{\hyperlink{classState}{State}} \&S1)
+\begin{DoxyCompactList}\small\item\em Applies the sponge-\/layer boundary condition to the left and right boundaries of the computational domain. This fucntion is based on the approach described in Larsen and Dancy (1983). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of functions for applying the sponge-\/layer boundary condition in the numerical wave solver to absorb incoming waves. 
+
+This file contains the implementation of the {\ttfamily Apply\+Sponge\+Layer} function, which applies a sponge layer to the left and right boundaries of the computational domain. The sponge layer is used to absorb incoming waves and prevent reflections from the boundaries. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Boundaries_8cpp_a15939cb64e963cfec3ae091f8b888865}\index{Boundaries.cpp@{Boundaries.cpp}!ApplySpongeLayer@{ApplySpongeLayer}}
+\index{ApplySpongeLayer@{ApplySpongeLayer}!Boundaries.cpp@{Boundaries.cpp}}
+\doxysubsubsection{\texorpdfstring{ApplySpongeLayer()}{ApplySpongeLayer()}}
+{\footnotesize\ttfamily \label{Boundaries_8cpp_a15939cb64e963cfec3ae091f8b888865} 
+void Apply\+Sponge\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S1}{}\end{DoxyParamCaption})}
+
+
+
+Applies the sponge-\/layer boundary condition to the left and right boundaries of the computational domain. This fucntion is based on the approach described in Larsen and Dancy (1983). 
+
+This function modifies the following variables in the {\ttfamily \doxylink{classState}{State}} object {\ttfamily S1} for grid points inside the sponge layer\+:
+\begin{DoxyItemize}
+\item {\ttfamily S1.\+Eta}\+: The water surface elevation.
+\item {\ttfamily S1.\+Hn}\+: The total water depth.
+\item {\ttfamily S1.\+Un}\+: The horizontal velocity.
+\item {\ttfamily S1.\+Pn}\+: The conserved momentum in Nwogu\textquotesingle{}s equation.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em S1} & Reference to the {\ttfamily \doxylink{classState}{State}} object containing wave field variables at the current time step t. \\
+\hline
+\end{DoxyParams}

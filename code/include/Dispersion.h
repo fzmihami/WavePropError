@@ -2,11 +2,13 @@
 
 /**
  * @file Dispersion.h
- * @brief Header file defining the Dispersion class for computing dispersive
- * terms in the numerical wave solver.
+ * @brief Defines the Dispersion class for computing dispersive terms 
+ *        in the numerical wave solver.
  *
- * The Dispersion class is responsible for calculating the dispersive terms in
- * the continuity and momentum equations.
+ * This file contains the implementation of the Dispersion class, which handles
+ * the calculation and application of dispersive terms in both the continuity 
+ * and momentum equations. It also includes a method for solving a tridiagonal 
+ * system using the Thomas algorithm to compute the velocity field.
  */
 
 #include "GlobalVariables.h"

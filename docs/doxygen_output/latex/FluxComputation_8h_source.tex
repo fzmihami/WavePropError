@@ -1,0 +1,74 @@
+\doxysection{Flux\+Computation.\+h}
+\hypertarget{FluxComputation_8h_source}{}\label{FluxComputation_8h_source}\index{code/include/FluxComputation.h@{code/include/FluxComputation.h}}
+\mbox{\hyperlink{FluxComputation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TimeVariables_8h}{TimeVariables.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflux_ad12f9ebd94d5fc3acc6bc9ab0546b947}{flux}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N;\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_a0bed9e6ca693154d6db8c6574b50bb60}{WS}};\ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_a4ed77c0022f6c88683401962047eb0af}{Hn}};\ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_af3266be4d4330ef110a0cc8065df608c}{Qn}};\ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_af99086969bd3966c3fc28bcb8fc478b4}{HL}};\ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_ac99fb062e3d35e84297c5f9163b80332}{HR}};\ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_a39216f37660192a5ea9aa2cd2b16e28e}{QL}};\ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_ad0098376f298fb5ba4ec7648feabfd46}{QR}};\ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_adfdcb49efed897bd7006b9d1f20e3c71}{FluxH}};\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux_a6527f04e525e156d0753409d9769924e}{FluxU}};\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classflux_ad12f9ebd94d5fc3acc6bc9ab0546b947}{flux}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflux_a5bbf9064fed1080784110a2e9318ad36}{ComputeFlux}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classState}{State}}\ \&state,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}}\ \&Scheme,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&OrderReconstruction);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{classflux_ad6c3e1f342c841e8b0914e61bc833083}{\string~flux}}();}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classflux__staggered_a50d7bab30663331b7203a3b49f4e9c25}{flux\_staggered}}\ \{}
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N;\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux__staggered_a4b056356ee504a8b01be6b746378f81d}{WS}};\ \ \ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux__staggered_ad667361ac320bb15f1c574fca5c0f3cb}{HUn}};\ \ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{classflux__staggered_a2e6fe0d852341d0324e2f5b3e2ab2f30}{HUUn}};\ \textcolor{comment}{//<\ Hn*Un\ approximation\ in\ the\ momentum\ equation}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00104\ \ \ \mbox{\hyperlink{classflux__staggered_a50d7bab30663331b7203a3b49f4e9c25}{flux\_staggered}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classflux__staggered_ac5c4e71e1d64faca3f970ffebe8c8ebe}{ComputeFlux}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classState}{State}}\ \&state,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \&OrderReconstruction);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{classflux__staggered_af346837e589bbbebce50b3f07a204465}{\string~flux\_staggered}}();}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{FluxComputation_8h_a047d256037d27435f4f1218b38685b9b}{Recontruction\_Order1}}(\textcolor{keywordtype}{float}\ *Hn,\ \textcolor{keywordtype}{float}\ *Hl,\ \textcolor{keywordtype}{float}\ *Hr,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{FluxComputation_8h_a0b1b58ffc138adc95d6b8573e56daf77}{Recontruction\_Order2}}(\textcolor{keywordtype}{float}\ *Hn,\ \textcolor{keywordtype}{float}\ *Hl,\ \textcolor{keywordtype}{float}\ *Hr,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00243\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{FluxComputation_8h_a885eac6dccfcc8b73fdb27b433efa00b}{Recontruction\_Order3}}(\textcolor{keywordtype}{float}\ *Hn,\ \textcolor{keywordtype}{float}\ *Hl,\ \textcolor{keywordtype}{float}\ *Hr,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00288\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{FluxComputation_8h_ae61ccf497bda712978ba2fac7e211d13}{Recontruction\_Order5}}(\textcolor{keywordtype}{float}\ *Hn,\ \textcolor{keywordtype}{float}\ *Hl,\ \textcolor{keywordtype}{float}\ *Hr,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00311\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{FluxComputation_8h_a14240127a8376ac6eff63eaca802f766}{minmod}}(\textcolor{keywordtype}{float}\ a,\ \textcolor{keywordtype}{float}\ b,\ \textcolor{keywordtype}{float}\ c);}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00327\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{FluxComputation_8h_ab5374d849e36ba16e42428a4674e16f3}{upwind}}(\textcolor{keywordtype}{float}\ V,\ \textcolor{keywordtype}{float}\ Q1,\ \textcolor{keywordtype}{float}\ Q2);}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00352\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{FluxComputation_8h_ab5374d849e36ba16e42428a4674e16f3}{upwind}}(\textcolor{keywordtype}{float}\ V,\ \textcolor{keywordtype}{float}\ Q1,\ \textcolor{keywordtype}{float}\ Q2,\ \textcolor{keywordtype}{float}\ Q3,\ \textcolor{keywordtype}{float}\ Q4);}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00404\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{FluxComputation_8h_ade1f7f95f720e6c73d063f64fe10f87e}{Flux\_CentralUpwind}}(\textcolor{keywordtype}{float}\ *Hl,\ \textcolor{keywordtype}{float}\ *Hr,\ \textcolor{keywordtype}{float}\ *Ql,\ \textcolor{keywordtype}{float}\ *Qr,}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *FluxH,\ \textcolor{keywordtype}{float}\ *FluxQ,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00461\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{FluxComputation_8h_a1c4a609a92dc39c7441057fcf4a70e2f}{Flux\_HLL}}(\textcolor{keywordtype}{float}\ *Hl,\ \textcolor{keywordtype}{float}\ *Hr,\ \textcolor{keywordtype}{float}\ *Ql,\ \textcolor{keywordtype}{float}\ *Qr,\ \textcolor{keywordtype}{float}\ *FluxH,}
+\DoxyCodeLine{00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *FluxQ,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00530\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{FluxComputation_8h_a06eca82ea44bc6e1f759e96835038d81}{Flux\_HLLC}}(\textcolor{keywordtype}{float}\ *Hl,\ \textcolor{keywordtype}{float}\ *Hr,\ \textcolor{keywordtype}{float}\ *Ql,\ \textcolor{keywordtype}{float}\ *Qr,\ \textcolor{keywordtype}{float}\ *FluxH,}
+\DoxyCodeLine{00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ *FluxQ,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ N);}
+
+\end{DoxyCode}

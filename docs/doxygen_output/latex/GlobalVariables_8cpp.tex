@@ -1,0 +1,127 @@
+\doxysection{code/src/\+Global\+Variables.cpp File Reference}
+\hypertarget{GlobalVariables_8cpp}{}\label{GlobalVariables_8cpp}\index{code/src/GlobalVariables.cpp@{code/src/GlobalVariables.cpp}}
+
+
+This file contains the global constants and variables used in the numerical solver for wave propagation.  
+
+
+{\ttfamily \#include "{}Global\+Variables.\+h"{}}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8cpp_accf9cafc36aeda21688e19a1c2d3888d}{G}} = 9.\+81
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8cpp_aa08a577393243b86dfd2a97e61443673}{PI}} = 3.\+14159265358979323846
+\item 
+float \mbox{\hyperlink{GlobalVariables_8cpp_a777989279445ddc055c317df60b3dd64}{hmin}} = 1e-\/6
+\item 
+const std\+::string \mbox{\hyperlink{GlobalVariables_8cpp_a96a5ba0386e2a1b3b9ec030f12e91e47}{Liste\+Scheme}} \mbox{[}4\mbox{]}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8cpp_aca7f35c8ae5f70eaffe705ebc6766585}{alpha1}} = -\/0.\+39
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8cpp_a8f669f98a450c90b372af97dbe393064}{gamma1}} = -\/0.\+531
+\item 
+float \mbox{\hyperlink{GlobalVariables_8cpp_a7dce376424d554a29a3742d3dbfc7ee3}{alpha\+SP}} = 2
+\item 
+float \mbox{\hyperlink{GlobalVariables_8cpp_a6a322c5e57d95bf50f6478579c28b9cd}{gamma\+SP}} = 0.\+92
+\item 
+unsigned int \mbox{\hyperlink{GlobalVariables_8cpp_a1e55a637d0220456f6caa6823b1efda9}{n\+SP}} = 100
+\item 
+float \mbox{\hyperlink{GlobalVariables_8cpp_a115114c8257e3a44296ac83db835062f}{epsilon\+SP}}
+\item 
+const float \mbox{\hyperlink{GlobalVariables_8cpp_a87f49feba762f3dd933bf0df4b960a2a}{theta\+RC}} = 1.\+0
+\item 
+unsigned \mbox{\hyperlink{GlobalVariables_8cpp_a6d1d85b49b60e43664912620f0c4fa8b}{position\+WM}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the global constants and variables used in the numerical solver for wave propagation. 
+
+The global variables are used throughout the model to define physical constants, numerical scheme settings, and sponge layer parameters. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{GlobalVariables_8cpp_aca7f35c8ae5f70eaffe705ebc6766585}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!alpha1@{alpha1}}
+\index{alpha1@{alpha1}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{alpha1}{alpha1}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_aca7f35c8ae5f70eaffe705ebc6766585} 
+const float alpha1 = -\/0.\+39}
+
+\Hypertarget{GlobalVariables_8cpp_a7dce376424d554a29a3742d3dbfc7ee3}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!alphaSP@{alphaSP}}
+\index{alphaSP@{alphaSP}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{alphaSP}{alphaSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a7dce376424d554a29a3742d3dbfc7ee3} 
+float alpha\+SP = 2}
+
+\Hypertarget{GlobalVariables_8cpp_a115114c8257e3a44296ac83db835062f}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!epsilonSP@{epsilonSP}}
+\index{epsilonSP@{epsilonSP}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{epsilonSP}{epsilonSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a115114c8257e3a44296ac83db835062f} 
+float epsilon\+SP}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ 0.999}
+
+\end{DoxyCode}
+\Hypertarget{GlobalVariables_8cpp_accf9cafc36aeda21688e19a1c2d3888d}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!G@{G}}
+\index{G@{G}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_accf9cafc36aeda21688e19a1c2d3888d} 
+const float G = 9.\+81}
+
+\Hypertarget{GlobalVariables_8cpp_a8f669f98a450c90b372af97dbe393064}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!gamma1@{gamma1}}
+\index{gamma1@{gamma1}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{gamma1}{gamma1}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a8f669f98a450c90b372af97dbe393064} 
+const float gamma1 = -\/0.\+531}
+
+\Hypertarget{GlobalVariables_8cpp_a6a322c5e57d95bf50f6478579c28b9cd}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!gammaSP@{gammaSP}}
+\index{gammaSP@{gammaSP}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{gammaSP}{gammaSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a6a322c5e57d95bf50f6478579c28b9cd} 
+float gamma\+SP = 0.\+92}
+
+\Hypertarget{GlobalVariables_8cpp_a777989279445ddc055c317df60b3dd64}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!hmin@{hmin}}
+\index{hmin@{hmin}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{hmin}{hmin}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a777989279445ddc055c317df60b3dd64} 
+float hmin = 1e-\/6}
+
+\Hypertarget{GlobalVariables_8cpp_a96a5ba0386e2a1b3b9ec030f12e91e47}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!ListeScheme@{ListeScheme}}
+\index{ListeScheme@{ListeScheme}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{ListeScheme}{ListeScheme}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a96a5ba0386e2a1b3b9ec030f12e91e47} 
+const std\+::string Liste\+Scheme\mbox{[}4\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\textcolor{stringliteral}{"{}conservative\_staggered"{}},\ \textcolor{stringliteral}{"{}hllc"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}central\_upwind"{}},\ \textcolor{stringliteral}{"{}hll"{}}\}}
+
+\end{DoxyCode}
+\Hypertarget{GlobalVariables_8cpp_a1e55a637d0220456f6caa6823b1efda9}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!nSP@{nSP}}
+\index{nSP@{nSP}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{nSP}{nSP}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a1e55a637d0220456f6caa6823b1efda9} 
+unsigned int n\+SP = 100}
+
+\Hypertarget{GlobalVariables_8cpp_aa08a577393243b86dfd2a97e61443673}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!PI@{PI}}
+\index{PI@{PI}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_aa08a577393243b86dfd2a97e61443673} 
+const float PI = 3.\+14159265358979323846}
+
+\Hypertarget{GlobalVariables_8cpp_a6d1d85b49b60e43664912620f0c4fa8b}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!positionWM@{positionWM}}
+\index{positionWM@{positionWM}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{positionWM}{positionWM}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a6d1d85b49b60e43664912620f0c4fa8b} 
+unsigned position\+WM = 0}
+
+\Hypertarget{GlobalVariables_8cpp_a87f49feba762f3dd933bf0df4b960a2a}\index{GlobalVariables.cpp@{GlobalVariables.cpp}!thetaRC@{thetaRC}}
+\index{thetaRC@{thetaRC}!GlobalVariables.cpp@{GlobalVariables.cpp}}
+\doxysubsubsection{\texorpdfstring{thetaRC}{thetaRC}}
+{\footnotesize\ttfamily \label{GlobalVariables_8cpp_a87f49feba762f3dd933bf0df4b960a2a} 
+const float theta\+RC = 1.\+0}
+

@@ -1,13 +1,13 @@
 /**
  * @file FluxComputation.cpp
- * @brief Implementation of the Shallow Water Equations flux computation
- * classes, both staggered and collocated.
+ * @brief Implementation of flux computation classes for the Shallow Water Equations 
+ *        on both collocated and staggered grids.
  *
- * This file contains the implementation of the `flux` and `flux_staggered`
- * classes, which are responsible for computing the fluxes in the shallow water
- * equations. The `flux` class is used for collocated grids with Finite Volume
- * Godunov's method, while the `flux_staggered` class is used for staggered
- * grids with a conservative staggered scheme (stelling and Duinmeijer, 2003).
+ * This file defines the `flux` and `flux_staggered` classes used to compute 
+ * fluxes in the Shallow Water Equations. The `flux` class supports collocated 
+ * grids using the Finite Volume Godunov method, while the `flux_staggered` 
+ * class is designed for staggered grids, implementing a conservative staggered 
+ * scheme based on Stelling and Duinmeijer (2003).
  */
 
 #include <cstring>

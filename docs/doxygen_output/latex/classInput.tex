@@ -1,0 +1,220 @@
+\doxysection{Input Class Reference}
+\hypertarget{classInput}{}\label{classInput}\index{Input@{Input}}
+
+
+Represents the user-\/defined input parameters for the numerical wave solver.  
+
+
+
+
+{\ttfamily \#include $<$Read\+User\+Input.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classInput_ae25a2db2d3fee019fcd582f769614f9e}{Input}} (std\+::string nametest)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classInput}{Input} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classInput_aa679c8f40bb7645ffbe6e8dbbe71b9d6}{LOGOUT}} ()
+\begin{DoxyCompactList}\small\item\em Logs the input parameters to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}} \mbox{\hyperlink{classInput_a01d6c51d16a2e0f3941d9bab08f1e3ad}{Scheme}}
+\begin{DoxyCompactList}\small\item\em Numerical scheme used for the simulation. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classInput_a79c9872ba0b9d45323432f66ff93920f}{Order\+Reconstruction}}
+\begin{DoxyCompactList}\small\item\em Order of reconstruction for the numerical scheme. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classInput_a846c82d3220d2603b3816ee835080fb5}{Order\+Time}}
+\begin{DoxyCompactList}\small\item\em Order of time integration for the numerical scheme. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classInput_ac733778f3f08c0e53d87c713b1f89e0e}{Courant\+Number}}
+\item 
+float \mbox{\hyperlink{classInput_a5e15ca9be77766091e67936bb7e9cbb9}{dx}}
+\begin{DoxyCompactList}\small\item\em Grid spacing. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classInput_ab894ff82367728f57ff63718cce01d48}{Length\+Domain}}
+\begin{DoxyCompactList}\small\item\em Length of the domain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classInput_ac65083cc5383b36aabf5fa42fd8c0399}{Water\+Depth}}
+\begin{DoxyCompactList}\small\item\em Water depth, which is constant in the domain. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classInput_abd36e9f26228b62a0e78f537f5902556}{Time}}
+\begin{DoxyCompactList}\small\item\em Total computation time. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classInput_abd29177ebf424d7d43211f62e0c01f8e}{dt\+Output}}
+\begin{DoxyCompactList}\small\item\em Time step for the water surface elevation output. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classInput_a6ffa011bea67f92d44c00cf93b1bf7c2}{dt\+Gauges}}
+\begin{DoxyCompactList}\small\item\em Time step for the gauges. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned int $>$ \mbox{\hyperlink{classInput_ae182944bc095662bd11c5fd42d46a74d}{Index\+Gauges}}
+\begin{DoxyCompactList}\small\item\em Vector of gauges index. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ float $>$ $>$ \mbox{\hyperlink{classInput_a9aaa34d407bcadb04e9a057d392cc5f3}{Wave\+Input}}
+\begin{DoxyCompactList}\small\item\em Vector of wave data (frequency, amplitude, phase) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classInput_acf4707403f56c6bed9967bf97b93cf1d}{Res\+Folder}}
+\begin{DoxyCompactList}\small\item\em Output folder for the simulation results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the user-\/defined input parameters for the numerical wave solver. 
+
+The {\ttfamily \doxylink{classInput}{Input}} class contains methods for reading user-\/defined parameters from an input file, including simulation parameters, grid properties, wave data, and scheme properties. It also includes a method for logging the input parameters to the console. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classInput_ae25a2db2d3fee019fcd582f769614f9e}\index{Input@{Input}!Input@{Input}}
+\index{Input@{Input}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily \label{classInput_ae25a2db2d3fee019fcd582f769614f9e} 
+Input\+::\+Input (\begin{DoxyParamCaption}\item[{std\+::string}]{nametest}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classInput}{Input} class. 
+
+Initializes the input parameters by reading them from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nametest} & Name of the input file containing user-\/defined parameters. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInput_aa679c8f40bb7645ffbe6e8dbbe71b9d6}\index{Input@{Input}!LOGOUT@{LOGOUT}}
+\index{LOGOUT@{LOGOUT}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{LOGOUT()}{LOGOUT()}}
+{\footnotesize\ttfamily \label{classInput_aa679c8f40bb7645ffbe6e8dbbe71b9d6} 
+void Input\+::\+LOGOUT (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Logs the input parameters to the console. 
+
+This method prints the user-\/defined parameters to the console for reference and debugging purposes. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classInput_ac733778f3f08c0e53d87c713b1f89e0e}\index{Input@{Input}!CourantNumber@{CourantNumber}}
+\index{CourantNumber@{CourantNumber}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{CourantNumber}{CourantNumber}}
+{\footnotesize\ttfamily \label{classInput_ac733778f3f08c0e53d87c713b1f89e0e} 
+float Input\+::\+Courant\+Number}
+
+Courant number which will be used to compute the time step \Hypertarget{classInput_a6ffa011bea67f92d44c00cf93b1bf7c2}\index{Input@{Input}!dtGauges@{dtGauges}}
+\index{dtGauges@{dtGauges}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{dtGauges}{dtGauges}}
+{\footnotesize\ttfamily \label{classInput_a6ffa011bea67f92d44c00cf93b1bf7c2} 
+float Input\+::dt\+Gauges}
+
+
+
+Time step for the gauges. 
+
+\Hypertarget{classInput_abd29177ebf424d7d43211f62e0c01f8e}\index{Input@{Input}!dtOutput@{dtOutput}}
+\index{dtOutput@{dtOutput}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{dtOutput}{dtOutput}}
+{\footnotesize\ttfamily \label{classInput_abd29177ebf424d7d43211f62e0c01f8e} 
+float Input\+::dt\+Output}
+
+
+
+Time step for the water surface elevation output. 
+
+\Hypertarget{classInput_a5e15ca9be77766091e67936bb7e9cbb9}\index{Input@{Input}!dx@{dx}}
+\index{dx@{dx}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{dx}{dx}}
+{\footnotesize\ttfamily \label{classInput_a5e15ca9be77766091e67936bb7e9cbb9} 
+float Input\+::dx}
+
+
+
+Grid spacing. 
+
+\Hypertarget{classInput_ae182944bc095662bd11c5fd42d46a74d}\index{Input@{Input}!IndexGauges@{IndexGauges}}
+\index{IndexGauges@{IndexGauges}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{IndexGauges}{IndexGauges}}
+{\footnotesize\ttfamily \label{classInput_ae182944bc095662bd11c5fd42d46a74d} 
+std\+::vector$<$unsigned int$>$ Input\+::\+Index\+Gauges}
+
+
+
+Vector of gauges index. 
+
+\Hypertarget{classInput_ab894ff82367728f57ff63718cce01d48}\index{Input@{Input}!LengthDomain@{LengthDomain}}
+\index{LengthDomain@{LengthDomain}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{LengthDomain}{LengthDomain}}
+{\footnotesize\ttfamily \label{classInput_ab894ff82367728f57ff63718cce01d48} 
+float Input\+::\+Length\+Domain}
+
+
+
+Length of the domain. 
+
+\Hypertarget{classInput_a79c9872ba0b9d45323432f66ff93920f}\index{Input@{Input}!OrderReconstruction@{OrderReconstruction}}
+\index{OrderReconstruction@{OrderReconstruction}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{OrderReconstruction}{OrderReconstruction}}
+{\footnotesize\ttfamily \label{classInput_a79c9872ba0b9d45323432f66ff93920f} 
+unsigned int Input\+::\+Order\+Reconstruction}
+
+
+
+Order of reconstruction for the numerical scheme. 
+
+\Hypertarget{classInput_a846c82d3220d2603b3816ee835080fb5}\index{Input@{Input}!OrderTime@{OrderTime}}
+\index{OrderTime@{OrderTime}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{OrderTime}{OrderTime}}
+{\footnotesize\ttfamily \label{classInput_a846c82d3220d2603b3816ee835080fb5} 
+unsigned int Input\+::\+Order\+Time}
+
+
+
+Order of time integration for the numerical scheme. 
+
+\Hypertarget{classInput_acf4707403f56c6bed9967bf97b93cf1d}\index{Input@{Input}!ResFolder@{ResFolder}}
+\index{ResFolder@{ResFolder}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{ResFolder}{ResFolder}}
+{\footnotesize\ttfamily \label{classInput_acf4707403f56c6bed9967bf97b93cf1d} 
+std\+::string Input\+::\+Res\+Folder}
+
+
+
+Output folder for the simulation results. 
+
+\Hypertarget{classInput_a01d6c51d16a2e0f3941d9bab08f1e3ad}\index{Input@{Input}!Scheme@{Scheme}}
+\index{Scheme@{Scheme}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{Scheme}{Scheme}}
+{\footnotesize\ttfamily \label{classInput_a01d6c51d16a2e0f3941d9bab08f1e3ad} 
+\mbox{\hyperlink{GlobalVariables_8h_a1a1ed40592bd51f9b25af65953320968}{scheme}} Input\+::\+Scheme}
+
+
+
+Numerical scheme used for the simulation. 
+
+\Hypertarget{classInput_abd36e9f26228b62a0e78f537f5902556}\index{Input@{Input}!Time@{Time}}
+\index{Time@{Time}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{Time}{Time}}
+{\footnotesize\ttfamily \label{classInput_abd36e9f26228b62a0e78f537f5902556} 
+float Input\+::\+Time}
+
+
+
+Total computation time. 
+
+\Hypertarget{classInput_ac65083cc5383b36aabf5fa42fd8c0399}\index{Input@{Input}!WaterDepth@{WaterDepth}}
+\index{WaterDepth@{WaterDepth}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{WaterDepth}{WaterDepth}}
+{\footnotesize\ttfamily \label{classInput_ac65083cc5383b36aabf5fa42fd8c0399} 
+float Input\+::\+Water\+Depth}
+
+
+
+Water depth, which is constant in the domain. 
+
+\Hypertarget{classInput_a9aaa34d407bcadb04e9a057d392cc5f3}\index{Input@{Input}!WaveInput@{WaveInput}}
+\index{WaveInput@{WaveInput}!Input@{Input}}
+\doxysubsubsection{\texorpdfstring{WaveInput}{WaveInput}}
+{\footnotesize\ttfamily \label{classInput_a9aaa34d407bcadb04e9a057d392cc5f3} 
+std\+::vector$<$std\+::vector$<$float$>$ $>$ Input\+::\+Wave\+Input}
+
+
+
+Vector of wave data (frequency, amplitude, phase) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/include/\mbox{\hyperlink{ReadUserInput_8h}{Read\+User\+Input.\+h}}\item 
+code/src/\mbox{\hyperlink{ReadUserInput_8cpp}{Read\+User\+Input.\+cpp}}\end{DoxyCompactItemize}

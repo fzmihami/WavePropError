@@ -1,0 +1,1058 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="FluxComputation_8h" kind="file" language="C++">
+    <compoundname>FluxComputation.h</compoundname>
+    <includes refid="TimeVariables_8h" local="yes">TimeVariables.h</includes>
+    <includedby refid="SolveEquation_8h" local="yes">code/include/SolveEquation.h</includedby>
+    <includedby refid="FluxComputation_8cpp" local="yes">code/src/FluxComputation.cpp</includedby>
+    <includedby refid="main_8cpp" local="yes">code/src/main.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>code/include/FluxComputation.h</label>
+        <link refid="FluxComputation_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ReadUserInput.h</label>
+        <link refid="ReadUserInput_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>TimeVariables.h</label>
+        <link refid="TimeVariables_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cstring</label>
+      </node>
+      <node id="7">
+        <label>fstream</label>
+      </node>
+      <node id="8">
+        <label>iomanip</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>string</label>
+      </node>
+      <node id="10">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>code/include/FluxComputation.h</label>
+        <link refid="FluxComputation_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>code/include/SolveEquation.h</label>
+        <link refid="SolveEquation_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>code/src/FluxComputation.cpp</label>
+        <link refid="FluxComputation_8cpp"/>
+      </node>
+      <node id="3">
+        <label>code/src/SolveEquation.cpp</label>
+        <link refid="SolveEquation_8cpp"/>
+      </node>
+      <node id="4">
+        <label>code/src/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classflux" prot="public">flux</innerclass>
+    <innerclass refid="classflux__staggered" prot="public">flux_staggered</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="FluxComputation_8h_1a047d256037d27435f4f1218b38685b9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Recontruction_Order1</definition>
+        <argsstring>(float *Hn, float *Hl, float *Hr, unsigned int N)</argsstring>
+        <name>Recontruction_Order1</name>
+        <param>
+          <type>float *</type>
+          <declname>Hn</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hr</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Performs first-order reconstruction of state variables at cell interfaces. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function approximates the state variables at the interface between computational cells using a first-order upwind reconstruction. It assigns values from the left and right neighboring cells, which can be used as inputs for a local Riemann solver in numerical flux computations.</para>
+<para>The reconstruction follows:   <formula id="0">\[U_L^{i+1/2} = U_i
+\]</formula>   <formula id="1">\[U_R^{i+1/2} = U_{i+1}
+\]</formula> where <formula id="2">$ U_L $</formula> and <formula id="3">$ U_R $</formula> are the left and right states at the interface.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Hn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array of state variables at cell centers (size N). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing left interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing right interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points in the input array Hn.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Ensure that <computeroutput>Hl</computeroutput> and <computeroutput>Hr</computeroutput> arrays have been allocated with at least <computeroutput>N-1</computeroutput> elements. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="157" column="6" bodyfile="code/src/FluxComputation.cpp" bodystart="222" bodyend="228" declfile="code/include/FluxComputation.h" declline="157" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1a0b1b58ffc138adc95d6b8573e56daf77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Recontruction_Order2</definition>
+        <argsstring>(float *Hn, float *Hl, float *Hr, unsigned int N)</argsstring>
+        <name>Recontruction_Order2</name>
+        <param>
+          <type>float *</type>
+          <declname>Hn</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hr</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Performs second-order MUSCL reconstruction of state variables at cell interfaces. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the left and right interface states using the Monotonic Upstream-Centered Scheme for Conservation Laws (MUSCL), which provides a second-order accurate reconstruction with a Total Variation Diminishing (TVD) slope limiter.</para>
+<para>The reconstructed interface values are given by:   <formula id="4">\[U_L^{i+1/2} = U_i + \phi (r_L) (U_i - U_{i-1})
+\]</formula>   <formula id="5">\[U_R^{i+1/2} = U_{i+1} - \phi (r_R) (U_{i+2} - U_{i+1})
+\]</formula></para>
+<para>where the slope ratio is defined as:    <formula id="6">\[r_L = \frac{U_{i+1} - U_i}{U_i - U_{i-1}}, \quad
+r_R = \frac{U_{i+1} - U_i}{U_{i+2} - U_{i+1}}
+\]</formula></para>
+<para>The function uses a Total Variation Diminishing (TVD) slope limiter to prevent oscillations. We use the Van-Leer MinMod limiter, defined as:   <formula id="7">\[\phi (r, \theta) = \max \left(0, \min \left( \theta r, \frac{1 + r}{2},
+\theta \right) \right) \]</formula></para>
+<para>the value of <formula id="8">$\theta$</formula> is defined as a constant in <ref refid="GlobalVariables_8cpp" kindref="compound">GlobalVariables.cpp</ref> file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Hn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array of state variables at cell centers (size N). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing left interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing right interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points in the input array Hn.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>Ensure <computeroutput>Hl</computeroutput> and <computeroutput>Hr</computeroutput> arrays have at least <computeroutput>N-1</computeroutput> elements to avoid out-of-bounds errors. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="200" column="6" bodyfile="code/src/FluxComputation.cpp" bodystart="230" bodyend="247" declfile="code/include/FluxComputation.h" declline="200" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1a885eac6dccfcc8b73fdb27b433efa00b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Recontruction_Order3</definition>
+        <argsstring>(float *Hn, float *Hl, float *Hr, unsigned int N)</argsstring>
+        <name>Recontruction_Order3</name>
+        <param>
+          <type>float *</type>
+          <declname>Hn</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hr</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Performs third-order TVD reconstruction of state variables at cell interfaces. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function implements the third-order Total Variation Diminishing (TVD) interpolation proposed by Kim and Kim (2005) for numerical flux computation. It ensures stability and prevents spurious oscillations using a nonlinear slope limiter.</para>
+<para>The reconstructed interface values are given by:   <formula id="9">\[U_L^{i+1/2} = U_i + \max \left(0, \min \left(2, 2r_{L,i}, \beta_L \right)
+\right) (U_i - U_{i-1}) \]</formula>  <formula id="10">\[ U_R^{i+1/2} = U_{i+1} - \max \left(0, \min
+\left(2, 2r_{R,i+1}, \beta_R \right) \right) (U_{i+2} - U_{i+1}) \]</formula></para>
+<para>where:    <formula id="11">\[\beta_L = \frac{1 + 2r_{L,i}}{3}, \quad
+\beta_R = \frac{1 + 2r_{R,i+1}}{3}
+\]</formula></para>
+<para>and the slope ratios are:    <formula id="12">\[r_{L,i} = \frac{U_{i+1} - U_i}{U_i - U_{i-1}}, \quad
+r_{R,i+1} = \frac{U_{i+1} - U_i}{U_{i+2} - U_{i+1}}
+\]</formula></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Hn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array of state variables at cell centers (size N). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing left interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing right interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points in the input array Hn.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Assumes proper boundary handling for the first and last two grid points.</para>
+</simplesect>
+<simplesect kind="warning"><para>Ensure <computeroutput>Hl</computeroutput> and <computeroutput>Hr</computeroutput> arrays have at least <computeroutput>N-1</computeroutput> elements to avoid out-of-bounds errors. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="243" column="6" bodyfile="code/src/FluxComputation.cpp" bodystart="249" bodyend="288" declfile="code/include/FluxComputation.h" declline="243" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1ae61ccf497bda712978ba2fac7e211d13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Recontruction_Order5</definition>
+        <argsstring>(float *Hn, float *Hl, float *Hr, unsigned int N)</argsstring>
+        <name>Recontruction_Order5</name>
+        <param>
+          <type>float *</type>
+          <declname>Hn</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hr</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Performs fifth-order TVD reconstruction of state variables at cell interfaces. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function implements a fifth-order Total Variation Diminishing (TVD) interpolation for numerical flux computation. It uses a nonlinear slope limiter to prevent spurious oscillations while maintaining high accuracy.</para>
+<para>The reconstructed interface values are given by:   <formula id="13">\[U_L^{i+1/2} = U_i + \frac{1}{2} \max \left(0, \min \left(2, 2r_{L,i}, \beta_L
+\right) \right) (U_i - U_{i-1}) \]</formula>   <formula id="14">\[ U_R^{i+1/2} = U_{i+1} - \frac{1}{2}
+\max \left(0, \min \left(2, 2r_{R,i+1}, \beta_R \right) \right) (U_{i+2} -
+U_{i+1}) \]</formula></para>
+<para>where the slope limiter coefficients are:    <formula id="15">\[\beta_L = \frac{-2/r_{L,i-1} + 11 + 24r_{L,i} - 3r_{L,i}r_{L,i+1}}{30},
+\quad \beta_R = \frac{-2/r_{R,i+2} + 11 + 24r_{R,i+1} -
+3r_{R,i}r_{R,i+1}}{30} \]</formula></para>
+<para>The slope ratios are computed as:    <formula id="16">\[r_{L,i} = \frac{U_{i+1} - U_i}{U_i - U_{i-1}},
+\quad r_{R,i+1} = \frac{U_{i} - U_{i-1}}{U_{i+1} - U_i}
+\]</formula></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">Hn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array of state variables at cell centers (size N). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing left interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">Hr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing right interface values (size N-1). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points in the input array Hn.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Assumes proper boundary handling for the first and last two grid points.</para>
+</simplesect>
+<simplesect kind="warning"><para>Ensure <computeroutput>Hl</computeroutput> and <computeroutput>Hr</computeroutput> arrays have at least <computeroutput>N-1</computeroutput> elements to avoid out-of-bounds errors.</para>
+</simplesect>
+Refrence: Kim and Kim (2005) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="288" column="6" bodyfile="code/src/FluxComputation.cpp" bodystart="290" bodyend="332" declfile="code/include/FluxComputation.h" declline="288" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1a14240127a8376ac6eff63eaca802f766" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float minmod</definition>
+        <argsstring>(float a, float b, float c)</argsstring>
+        <name>minmod</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+<para>Computes the MinMod limiter function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The MinMod function is a slope limiter used in high-resolution schemes to prevent spurious oscillations. It selects the smallest absolute value among the inputs if they have the same sign; otherwise, it returns zero.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First input value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second input value. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Third input value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The MinMod limited value.</para>
+</simplesect>
+The function follows these rules:<itemizedlist>
+<listitem><para>If all three inputs are positive, it returns the minimum of the three.</para>
+</listitem><listitem><para>If all three inputs are negative, it returns the maximum (most negative) of the three.</para>
+</listitem><listitem><para>Otherwise, it returns zero to avoid introducing new extrema.</para>
+</listitem></itemizedlist>
+</para>
+<para>Reference: Kim and Kim (2005) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="311" column="7" bodyfile="code/src/FluxComputation.cpp" bodystart="212" bodyend="220" declfile="code/include/FluxComputation.h" declline="311" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1ab5374d849e36ba16e42428a4674e16f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float upwind</definition>
+        <argsstring>(float V, float Q1, float Q2)</argsstring>
+        <name>upwind</name>
+        <param>
+          <type>float</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Q1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Q2</declname>
+        </param>
+        <briefdescription>
+<para>Upwind function for 1D advection problems. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function implements the basic upwind scheme. It returns one of the two input values, depending on the sign of the velocity.<itemizedlist>
+<listitem><para>If the velocity (V) is positive, the function returns Q1.</para>
+</listitem><listitem><para>If the velocity (V) is negative, the function returns Q2.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The velocity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the left of the interface. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the right of the interface. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value corresponding to the upwind direction based on the velocity. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="327" column="7" bodyfile="code/src/FluxComputation.cpp" bodystart="97" bodyend="102" declfile="code/include/FluxComputation.h" declline="327" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1a03e356ed6b569840b09933d9538d1634" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float upwind</definition>
+        <argsstring>(float V, float Q1, float Q2, float Q3, float Q4)</argsstring>
+        <name>upwind</name>
+        <param>
+          <type>float</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Q1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Q2</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Q3</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>Q4</declname>
+        </param>
+        <briefdescription>
+<para>Upwind function with slope limiting for 1D advection problems. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function implements an upwind scheme with slope limiting, using a higher-order approximation for the advection of the variable.<itemizedlist>
+<listitem><para>If the velocity (V) is positive, the function computes a limited difference between Q2 and Q3, taking into account the values Q1, Q2, and Q3.</para>
+</listitem><listitem><para>If the velocity (V) is negative, the function computes a limited difference between Q3 and Q4, considering Q2, Q3, and Q4.</para>
+</listitem></itemizedlist>
+</para>
+<para>The function uses the MinMod limiter to avoid introducing non-physical oscillations. The limiter is scaled by a factor <computeroutput>thetaRC</computeroutput> which controls the amount of limiting applied. The value of <computeroutput>thetaRC</computeroutput> is defined in the <ref refid="GlobalVariables_8cpp" kindref="compound">GlobalVariables.cpp</ref> file.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The velocity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the first neighboring point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the second neighboring point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the third neighboring point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Q4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value at the fourth neighboring point. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The limited value at the interface. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="352" column="7" bodyfile="code/src/FluxComputation.cpp" bodystart="104" bodyend="111" declfile="code/include/FluxComputation.h" declline="352" declcolumn="7"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1ade1f7f95f720e6c73d063f64fe10f87e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Flux_CentralUpwind</definition>
+        <argsstring>(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH, float *FluxQ, unsigned int N)</argsstring>
+        <name>Flux_CentralUpwind</name>
+        <param>
+          <type>float *</type>
+          <declname>Hl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Ql</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Qr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>FluxH</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>FluxQ</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Central-upwind scheme for numerical flux computation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the numerical fluxes for the variables <computeroutput>h</computeroutput> (height) and <computeroutput>Q</computeroutput> (momentum) using the central-upwind scheme, as described by Kurganov and Petrova (2007).</para>
+<para>The fluxes are calculated for each cell interface based on the left and right states, <computeroutput>Hl</computeroutput>, <computeroutput>Hr</computeroutput>, <computeroutput>Ql</computeroutput>, and <computeroutput>Qr</computeroutput>, and the speed of sound, <computeroutput>aL</computeroutput> and <computeroutput>aR</computeroutput>. The fluxes are computed for both <computeroutput>h</computeroutput> and <computeroutput>Q</computeroutput> using a central-upwind formula with local speeds <computeroutput>aL</computeroutput> and <computeroutput>aR</computeroutput>, and the fluxes are stored in <computeroutput>FluxH</computeroutput> and <computeroutput>FluxQ</computeroutput> respectively.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Hl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of left state values for the height (h). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Hr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of right state values for the height (h). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Ql</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of left state values for the momentum (Q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Qr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of right state values for the momentum (Q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FluxH</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array where the numerical flux for height (h) will be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FluxQ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array where the numerical flux for momentum (Q) will be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of cells.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+The central-upwind numerical flux for each cell interface is computed as:</para>
+<para><formula id="17">\[  F_{h}^{i+1/2} = \frac{a_R F_{hL} - a_L F_{hR}}{a_R - a_L} + \frac{a_R a_L
+(H_r^{i} - H_l^{i})}{a_R - a_L}
+\]</formula></para>
+<para><formula id="18">\[  F_{Q}^{i+1/2} = \frac{a_R F_{uL} - a_L F_{uR}}{a_R - a_L} + \frac{a_R a_L
+(Q_r^{i} - Q_l^{i})}{a_R - a_L}
+\]</formula></para>
+<para>where:</para>
+<para><formula id="19">\[  a_R = \max\left(0, u_R + \sqrt{G H_R}, u_L + \sqrt{G H_L}\right)
+\]</formula></para>
+<para><formula id="20">\[  a_L = \min\left(0, u_R - \sqrt{G H_R}, u_L - \sqrt{G H_L}\right)
+\]</formula></para>
+<para>Reference: Kurganov, A., &amp; Petrova, G. (2007). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="404" column="6" bodyfile="code/src/FluxComputation.cpp" bodystart="336" bodyend="369" declfile="code/include/FluxComputation.h" declline="404" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1a1c4a609a92dc39c7441057fcf4a70e2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Flux_HLL</definition>
+        <argsstring>(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH, float *FluxQ, unsigned int N)</argsstring>
+        <name>Flux_HLL</name>
+        <param>
+          <type>float *</type>
+          <declname>Hl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Ql</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Qr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>FluxH</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>FluxQ</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>HLL (Harten, Lax, and van Leer) scheme for numerical flux computation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the numerical fluxes for the variables <computeroutput>h</computeroutput> (height) and <computeroutput>Q</computeroutput> (momentum) using the HLL scheme (Harten, Lax, and van Leer, 1983).</para>
+<para>The function calculates the fluxes for each cell interface based on the left and right states and local wave speeds, with the fluxes stored in the arrays <computeroutput>FluxH</computeroutput> and <computeroutput>FluxQ</computeroutput>. The fluxes are computed using the HLL algorithm.</para>
+<para>The fluxes for height (<computeroutput>h</computeroutput>) and momentum (<computeroutput>Q</computeroutput>) are calculated using the following expressions:</para>
+<para><formula id="21">\[\begin{aligned}
+F_{h}^{i+1/2} =
+\begin{cases}
+F_{hL}, &amp; \text{if } s_L &gt; 0 \\
+F_{hR}, &amp; \text{if } s_R &lt; 0 \\
+\frac{s_R F_{hL} - s_L F_{hR} + (s_L s_R) (H_R - H_L)}{s_R - s_L}, &amp;
+\text{otherwise} \end{cases} 
+\end{aligned}
+\]</formula></para>
+<para><formula id="22">\[F_{Q}^{i+1/2} =
+\begin{cases}
+F_{Q_L}, &amp; \text{if } s_L &gt; 0 \\
+F_{Q_R}, &amp; \text{if } s_R &lt; 0 \\
+\frac{s_R F_{Q_L} - s_L F_{Q_R} + (s_L s_R) (Q_R - Q_L)}{s_R - s_L}, &amp;
+\text{otherwise} \end{cases} \]</formula></para>
+<para>where:<itemizedlist>
+<listitem><para><formula id="23">$ s_L $</formula> is the left wave speed,</para>
+</listitem><listitem><para><formula id="24">$ s_R $</formula> is the right wave speed,</para>
+</listitem><listitem><para><formula id="25">$ F_{hL}, F_{hR} $</formula> are the fluxes for height,</para>
+</listitem><listitem><para><formula id="26">$ F_{Q_L}, F_{Q_R} $</formula> are the fluxes for momentum.</para>
+</listitem></itemizedlist>
+</para>
+<para>The wave speeds <formula id="23">$ s_L $</formula> and <formula id="24">$ s_R $</formula> are computed based on the local states and the characteristic speed of the system. The value <formula id="27">$ h0 $</formula> is computed based on the formulation in Toro (2009).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Hl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of left state values for the height (h). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Hr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of right state values for the height (h). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Ql</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of left state values for the momentum (Q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Qr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of right state values for the momentum (Q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FluxH</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array where the numerical flux for height (h) will be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FluxQ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array where the numerical flux for momentum (Q) will be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of cells.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Reference: Harten, A., Lax, P. D., &amp; van Leer, B. (1983). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="461" column="6" bodyfile="code/src/FluxComputation.cpp" bodystart="371" bodyend="429" declfile="code/include/FluxComputation.h" declline="461" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="FluxComputation_8h_1a06eca82ea44bc6e1f759e96835038d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Flux_HLLC</definition>
+        <argsstring>(float *Hl, float *Hr, float *Ql, float *Qr, float *FluxH, float *FluxQ, unsigned int N)</argsstring>
+        <name>Flux_HLLC</name>
+        <param>
+          <type>float *</type>
+          <declname>Hl</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Hr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Ql</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>Qr</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>FluxH</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>FluxQ</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>HLLC (Harten, Lax, van Leer, and Contact) scheme for numerical flux computation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the numerical fluxes for the variables <computeroutput>h</computeroutput> (height) and <computeroutput>Q</computeroutput> (momentum) using the HLLC scheme (Harten, Lax, van Leer, and Contact, 1983). The HLLC scheme is a modification of the HLL scheme, which incorporates a contact wave and resolves the Riemann problem by considering three waves: a left and right moving wave, and a contact wave.</para>
+<para>The function computes the fluxes for each cell interface based on the left and right states (<computeroutput>Hl</computeroutput>, <computeroutput>Hr</computeroutput>, <computeroutput>Ql</computeroutput>, <computeroutput>Qr</computeroutput>) and the corresponding wave speeds.</para>
+<para>The fluxes for height (<computeroutput>h</computeroutput>) and momentum (<computeroutput>Q</computeroutput>) are calculated using the following expressions:</para>
+<para><formula id="28">\[\begin{aligned}
+F_{h}^{i+1/2} =
+\begin{cases}
+F_{hL}, &amp; \text{if } s_L &gt; 0 \\
+F_{hR}, &amp; \text{if } s_R &lt; 0 \\
+F_{hL} + s_L (h^*L - h_L), &amp; \text{if } 0 \leq s_0 \\
+F_{hR} + s_R (h^*R - h_R), &amp; \text{if } s_0 &lt; 0
+\end{cases}
+\end{aligned}
+\]</formula></para>
+<para><formula id="29">\[F_{Q}^{i+1/2} =
+\begin{cases}
+F_{Q_L}, &amp; \text{if } s_L &gt; 0 \\
+F_{Q_R}, &amp; \text{if } s_R &lt; 0 \\
+F_{Q_L} + s_L (q^*L - h_L u_L), &amp; \text{if } 0 \leq s_0 \\
+F_{Q_R} + s_R (q^*R - h_R u_R), &amp; \text{if } s_0 &lt; 0
+\end{cases}
+\]</formula></para>
+<para>where:<itemizedlist>
+<listitem><para><formula id="23">$ s_L $</formula> is the left wave speed,</para>
+</listitem><listitem><para><formula id="24">$ s_R $</formula> is the right wave speed,</para>
+</listitem><listitem><para><formula id="30">$ s_0 $</formula> is the middle wave speed (contact wave),</para>
+</listitem><listitem><para><formula id="25">$ F_{hL}, F_{hR} $</formula> are the fluxes for height,</para>
+</listitem><listitem><para><formula id="26">$ F_{Q_L}, F_{Q_R} $</formula> are the fluxes for momentum,</para>
+</listitem><listitem><para><formula id="31">$ h^*L, h^*R $</formula> are the star variables for height at the left and right states,</para>
+</listitem><listitem><para><formula id="32">$ q^*L, q^*R $</formula> are the star variables for momentum at the left and right states.</para>
+</listitem></itemizedlist>
+</para>
+<para>The function uses intermediate variables, including <formula id="33">$ h_0 $</formula> (the averaged height), <formula id="34">$ u_0 $</formula> (the averaged velocity), and calculates the middle wave speed <formula id="30">$ s_0 $</formula> based on the expressions presented in Toro (2001).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Hl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of left state values for the height (h). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Hr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of right state values for the height (h). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Ql</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of left state values for the momentum (Q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Qr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array of right state values for the momentum (Q). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FluxH</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array where the numerical flux for height (h) will be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>FluxQ</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array where the numerical flux for momentum (Q) will be stored. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of cells.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Reference: Toro, 2001. &quot;Shock-capturing methods for free-surface shallow flows.&quot; </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="530" column="6" bodyfile="code/src/FluxComputation.cpp" bodystart="431" bodyend="511" declfile="code/include/FluxComputation.h" declline="530" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implementation of flux computation classes for the Shallow Water Equations on both collocated and staggered grids. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file defines the <computeroutput>flux</computeroutput> and <computeroutput><ref refid="classflux__staggered" kindref="compound">flux_staggered</ref></computeroutput> classes used to compute fluxes in the Shallow Water Equations. The <computeroutput>flux</computeroutput> class supports collocated grids using the Finite Volume Godunov method, while the <computeroutput><ref refid="classflux__staggered" kindref="compound">flux_staggered</ref></computeroutput> class is designed for staggered grids, implementing a conservative staggered scheme based on Stelling and Duinmeijer (2003). </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="TimeVariables_8h" kindref="compound">TimeVariables.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classflux" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classflux_1ad12f9ebd94d5fc3acc6bc9ab0546b947" kindref="member">flux</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="32" refid="classflux_1a0bed9e6ca693154d6db8c6574b50bb60" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1a0bed9e6ca693154d6db8c6574b50bb60" kindref="member">WS</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="33" refid="classflux_1a4ed77c0022f6c88683401962047eb0af" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1a4ed77c0022f6c88683401962047eb0af" kindref="member">Hn</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34" refid="classflux_1af3266be4d4330ef110a0cc8065df608c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1af3266be4d4330ef110a0cc8065df608c" kindref="member">Qn</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35" refid="classflux_1af99086969bd3966c3fc28bcb8fc478b4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1af99086969bd3966c3fc28bcb8fc478b4" kindref="member">HL</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36" refid="classflux_1ac99fb062e3d35e84297c5f9163b80332" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1ac99fb062e3d35e84297c5f9163b80332" kindref="member">HR</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37" refid="classflux_1a39216f37660192a5ea9aa2cd2b16e28e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1a39216f37660192a5ea9aa2cd2b16e28e" kindref="member">QL</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38" refid="classflux_1ad0098376f298fb5ba4ec7648feabfd46" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1ad0098376f298fb5ba4ec7648feabfd46" kindref="member">QR</ref>;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="classflux_1adfdcb49efed897bd7006b9d1f20e3c71" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1adfdcb49efed897bd7006b9d1f20e3c71" kindref="member">FluxH</ref>;<sp/></highlight></codeline>
+<codeline lineno="40" refid="classflux_1a6527f04e525e156d0753409d9769924e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux_1a6527f04e525e156d0753409d9769924e" kindref="member">FluxU</ref>;<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><ref refid="classflux_1ad12f9ebd94d5fc3acc6bc9ab0546b947" kindref="member">flux</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classflux_1a5bbf9064fed1080784110a2e9318ad36" kindref="member">ComputeFlux</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classState" kindref="compound">State</ref><sp/>&amp;state,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref><sp/>&amp;Scheme,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;OrderReconstruction);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><ref refid="classflux_1ad6c3e1f342c841e8b0914e61bc833083" kindref="member">~flux</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="classflux__staggered" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classflux__staggered_1a50d7bab30663331b7203a3b49f4e9c25" kindref="member">flux_staggered</ref><sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N;<sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="91" refid="classflux__staggered_1a4b056356ee504a8b01be6b746378f81d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux__staggered_1a4b056356ee504a8b01be6b746378f81d" kindref="member">WS</ref>;<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="92" refid="classflux__staggered_1ad667361ac320bb15f1c574fca5c0f3cb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux__staggered_1ad667361ac320bb15f1c574fca5c0f3cb" kindref="member">HUn</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="93" refid="classflux__staggered_1a2e6fe0d852341d0324e2f5b3e2ab2f30" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*<ref refid="classflux__staggered_1a2e6fe0d852341d0324e2f5b3e2ab2f30" kindref="member">HUUn</ref>;<sp/></highlight><highlight class="comment">//&lt;<sp/>Hn*Un<sp/>approximation<sp/>in<sp/>the<sp/>momentum<sp/>equation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><ref refid="classflux__staggered_1a50d7bab30663331b7203a3b49f4e9c25" kindref="member">flux_staggered</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classflux__staggered_1ac5c4e71e1d64faca3f970ffebe8c8ebe" kindref="member">ComputeFlux</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classState" kindref="compound">State</ref><sp/>&amp;state,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>&amp;OrderReconstruction);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><ref refid="classflux__staggered_1af346837e589bbbebce50b3f07a204465" kindref="member">~flux_staggered</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1a047d256037d27435f4f1218b38685b9b" kindref="member">Recontruction_Order1</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hn,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hr,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1a0b1b58ffc138adc95d6b8573e56daf77" kindref="member">Recontruction_Order2</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hn,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hr,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1a885eac6dccfcc8b73fdb27b433efa00b" kindref="member">Recontruction_Order3</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hn,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hr,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1ae61ccf497bda712978ba2fac7e211d13" kindref="member">Recontruction_Order5</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hn,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hr,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1a14240127a8376ac6eff63eaca802f766" kindref="member">minmod</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>a,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>c);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1ab5374d849e36ba16e42428a4674e16f3" kindref="member">upwind</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Q1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Q2);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1ab5374d849e36ba16e42428a4674e16f3" kindref="member">upwind</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>V,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Q1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Q2,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Q3,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>Q4);</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1ade1f7f95f720e6c73d063f64fe10f87e" kindref="member">Flux_CentralUpwind</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hr,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Ql,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Qr,</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*FluxH,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*FluxQ,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1a1c4a609a92dc39c7441057fcf4a70e2f" kindref="member">Flux_HLL</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hr,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Ql,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Qr,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*FluxH,</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*FluxQ,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+<codeline lineno="463"><highlight class="normal"></highlight></codeline>
+<codeline lineno="530"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="FluxComputation_8h_1a06eca82ea44bc6e1f759e96835038d81" kindref="member">Flux_HLLC</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hl,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Hr,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Ql,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*Qr,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*FluxH,</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>*FluxQ,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>N);</highlight></codeline>
+    </programlisting>
+    <location file="code/include/FluxComputation.h"/>
+  </compounddef>
+</doxygen>

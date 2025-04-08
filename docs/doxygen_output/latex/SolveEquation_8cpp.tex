@@ -1,0 +1,217 @@
+\doxysection{code/src/\+Solve\+Equation.cpp File Reference}
+\hypertarget{SolveEquation_8cpp}{}\label{SolveEquation_8cpp}\index{code/src/SolveEquation.cpp@{code/src/SolveEquation.cpp}}
+
+
+Implements functions for solving the conservative form of Nwogu\textquotesingle{}s equations.  
+
+
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}Boundaries.\+h"{}}\newline
+{\ttfamily \#include "{}Solve\+Equation.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{SolveEquation_8cpp_a3801c3507f2e3b149294e1053408a91b}{Solve\+Equation\+Staggered\+\_\+step1}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S1, const \mbox{\hyperlink{classInput}{Input}} \&In, \mbox{\hyperlink{classflux__staggered}{flux\+\_\+staggered}} \&Fstaggered, \mbox{\hyperlink{classDispersion}{Dispersion}} \&Disp, \mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&WM, const float \&dt1)
+\begin{DoxyCompactList}\small\item\em Solves the Nwogu\textquotesingle{}s equation using a staggered grid for the first step of the Runge-\/\+Kutta time integration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SolveEquation_8cpp_a90d3b8fa44e8b2d0f7fa0bd6fe518a4b}{Solve\+Equation\+Staggered\+\_\+step2}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S1, \mbox{\hyperlink{classState}{State}} \&S2, const \mbox{\hyperlink{classInput}{Input}} \&In, \mbox{\hyperlink{classflux__staggered}{flux\+\_\+staggered}} \&Fstaggered, \mbox{\hyperlink{classDispersion}{Dispersion}} \&Disp, \mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&WM, const float \&dt1)
+\begin{DoxyCompactList}\small\item\em Solves the Nwogu\textquotesingle{}s equation using a staggered grid for the second step of the Runge-\/\+Kutta time integration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SolveEquation_8cpp_a746d876f03c899216606b2c0ea948725}{Solve\+Equation\+Staggered\+\_\+step3}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S2, \mbox{\hyperlink{classState}{State}} \&S3, const \mbox{\hyperlink{classInput}{Input}} \&In, \mbox{\hyperlink{classflux__staggered}{flux\+\_\+staggered}} \&Fstaggered, \mbox{\hyperlink{classDispersion}{Dispersion}} \&Disp, \mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&WM, const float \&dt1)
+\begin{DoxyCompactList}\small\item\em Solves the Nwogu\textquotesingle{}s equation using a staggered grid for the third step of the Runge-\/\+Kutta time integration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SolveEquation_8cpp_a451c61e3381fb87a50744217adcc1807}{Solve\+Equation\+Collocated\+\_\+step1}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S1, const \mbox{\hyperlink{classInput}{Input}} \&In, \mbox{\hyperlink{classflux}{flux}} \&Fcollocated, \mbox{\hyperlink{classDispersion}{Dispersion}} \&Disp, \mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&WM, const float \&dt1)
+\begin{DoxyCompactList}\small\item\em Solves the Nwogu\textquotesingle{}s equation using a collocated grid for the first step of the Runge-\/\+Kutta time integration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SolveEquation_8cpp_aa85d0f93e1b2184b3b07cdbbac58cc13}{Solve\+Equation\+Collocated\+\_\+step2}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S1, \mbox{\hyperlink{classState}{State}} \&S2, const \mbox{\hyperlink{classInput}{Input}} \&In, \mbox{\hyperlink{classflux}{flux}} \&Fcollocated, \mbox{\hyperlink{classDispersion}{Dispersion}} \&Disp, \mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&WM, const float \&dt1)
+\begin{DoxyCompactList}\small\item\em Solves the Nwogu\textquotesingle{}s equation using a collocated grid for the second step of the Runge-\/\+Kutta time integration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{SolveEquation_8cpp_a3604d0243b01113e7901f7564f3763f0}{Solve\+Equation\+Collocated\+\_\+step3}} (\mbox{\hyperlink{classState}{State}} \&S0, \mbox{\hyperlink{classState}{State}} \&S2, \mbox{\hyperlink{classState}{State}} \&S3, const \mbox{\hyperlink{classInput}{Input}} \&In, \mbox{\hyperlink{classflux}{flux}} \&Fcollocated, \mbox{\hyperlink{classDispersion}{Dispersion}} \&Disp, \mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&WM, const float \&dt1)
+\begin{DoxyCompactList}\small\item\em Solves the Nwogu\textquotesingle{}s equation using a collocated grid for the third step of the Runge-\/\+Kutta time integration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements functions for solving the conservative form of Nwogu\textquotesingle{}s equations. 
+
+This file provides the implementation of solver routines for Nwogu\textquotesingle{}s equations, supporting both staggered and collocated grid configurations. It includes logic for handling various time integration methods and numerical flux schemes. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{SolveEquation_8cpp_a451c61e3381fb87a50744217adcc1807}\index{SolveEquation.cpp@{SolveEquation.cpp}!SolveEquationCollocated\_step1@{SolveEquationCollocated\_step1}}
+\index{SolveEquationCollocated\_step1@{SolveEquationCollocated\_step1}!SolveEquation.cpp@{SolveEquation.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveEquationCollocated\_step1()}{SolveEquationCollocated\_step1()}}
+{\footnotesize\ttfamily \label{SolveEquation_8cpp_a451c61e3381fb87a50744217adcc1807} 
+void Solve\+Equation\+Collocated\+\_\+step1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S1}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{\mbox{\hyperlink{classflux}{flux}} \&}]{Fcollocated}{, }\item[{\mbox{\hyperlink{classDispersion}{Dispersion}} \&}]{Disp}{, }\item[{\mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&}]{WM}{, }\item[{const float \&}]{dt1}{}\end{DoxyParamCaption})}
+
+
+
+Solves the Nwogu\textquotesingle{}s equation using a collocated grid for the first step of the Runge-\/\+Kutta time integration. 
+
+This function computes the fluxes and source terms for the continuity and momentum equations, and updates the state variables accordingly. It is the first step in the Runge-\/\+Kutta time integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & The state variable at the current time step. \\
+\hline
+{\em S1} & The state variable at the next time step. \\
+\hline
+{\em In} & The input parameters for the simulation. \\
+\hline
+{\em Fcollocated} & The flux computation object for the collocated grid. \\
+\hline
+{\em Disp} & The dispersion computation object. \\
+\hline
+{\em WM} & The wavemaker object for source terms. \\
+\hline
+{\em dt1} & The time step size for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SolveEquation_8cpp_aa85d0f93e1b2184b3b07cdbbac58cc13}\index{SolveEquation.cpp@{SolveEquation.cpp}!SolveEquationCollocated\_step2@{SolveEquationCollocated\_step2}}
+\index{SolveEquationCollocated\_step2@{SolveEquationCollocated\_step2}!SolveEquation.cpp@{SolveEquation.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveEquationCollocated\_step2()}{SolveEquationCollocated\_step2()}}
+{\footnotesize\ttfamily \label{SolveEquation_8cpp_aa85d0f93e1b2184b3b07cdbbac58cc13} 
+void Solve\+Equation\+Collocated\+\_\+step2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S1}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S2}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{\mbox{\hyperlink{classflux}{flux}} \&}]{Fcollocated}{, }\item[{\mbox{\hyperlink{classDispersion}{Dispersion}} \&}]{Disp}{, }\item[{\mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&}]{WM}{, }\item[{const float \&}]{dt1}{}\end{DoxyParamCaption})}
+
+
+
+Solves the Nwogu\textquotesingle{}s equation using a collocated grid for the second step of the Runge-\/\+Kutta time integration. 
+
+This function computes the fluxes and source terms for the continuity and momentum equations, and updates the state variables accordingly. It is the second step in the Runge-\/\+Kutta time integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & The state variable at the current time step. \\
+\hline
+{\em S1} & The state variable at the next time step. \\
+\hline
+{\em S2} & The state variable at the next time step after RK2. \\
+\hline
+{\em In} & The input parameters for the simulation. \\
+\hline
+{\em Fcollocated} & The flux computation object for the collocated grid. \\
+\hline
+{\em Disp} & The dispersion computation object. \\
+\hline
+{\em WM} & The wavemaker object for source terms. \\
+\hline
+{\em dt1} & The time step size for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SolveEquation_8cpp_a3604d0243b01113e7901f7564f3763f0}\index{SolveEquation.cpp@{SolveEquation.cpp}!SolveEquationCollocated\_step3@{SolveEquationCollocated\_step3}}
+\index{SolveEquationCollocated\_step3@{SolveEquationCollocated\_step3}!SolveEquation.cpp@{SolveEquation.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveEquationCollocated\_step3()}{SolveEquationCollocated\_step3()}}
+{\footnotesize\ttfamily \label{SolveEquation_8cpp_a3604d0243b01113e7901f7564f3763f0} 
+void Solve\+Equation\+Collocated\+\_\+step3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S2}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S3}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{\mbox{\hyperlink{classflux}{flux}} \&}]{Fcollocated}{, }\item[{\mbox{\hyperlink{classDispersion}{Dispersion}} \&}]{Disp}{, }\item[{\mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&}]{WM}{, }\item[{const float \&}]{dt1}{}\end{DoxyParamCaption})}
+
+
+
+Solves the Nwogu\textquotesingle{}s equation using a collocated grid for the third step of the Runge-\/\+Kutta time integration. 
+
+This function computes the fluxes and source terms for the continuity and momentum equations, and updates the state variables accordingly. It is the third step in the Runge-\/\+Kutta time integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & The state variable at the current time step. \\
+\hline
+{\em S2} & The state variable at the next time step after RK2. \\
+\hline
+{\em S3} & The state variable at the next time step after RK3. \\
+\hline
+{\em In} & The input parameters for the simulation. \\
+\hline
+{\em Fcollocated} & The flux computation object for the collocated grid. \\
+\hline
+{\em Disp} & The dispersion computation object. \\
+\hline
+{\em WM} & The wavemaker object for source terms. \\
+\hline
+{\em dt1} & The time step size for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SolveEquation_8cpp_a3801c3507f2e3b149294e1053408a91b}\index{SolveEquation.cpp@{SolveEquation.cpp}!SolveEquationStaggered\_step1@{SolveEquationStaggered\_step1}}
+\index{SolveEquationStaggered\_step1@{SolveEquationStaggered\_step1}!SolveEquation.cpp@{SolveEquation.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveEquationStaggered\_step1()}{SolveEquationStaggered\_step1()}}
+{\footnotesize\ttfamily \label{SolveEquation_8cpp_a3801c3507f2e3b149294e1053408a91b} 
+void Solve\+Equation\+Staggered\+\_\+step1 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S1}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{\mbox{\hyperlink{classflux__staggered}{flux\+\_\+staggered}} \&}]{Fstaggered}{, }\item[{\mbox{\hyperlink{classDispersion}{Dispersion}} \&}]{Disp}{, }\item[{\mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&}]{WM}{, }\item[{const float \&}]{dt1}{}\end{DoxyParamCaption})}
+
+
+
+Solves the Nwogu\textquotesingle{}s equation using a staggered grid for the first step of the Runge-\/\+Kutta time integration. 
+
+This function computes the fluxes and source terms for the continuity and momentum equations, and updates the state variables accordingly. It is the first step in the Runge-\/\+Kutta time integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & The state variable at the current time step. \\
+\hline
+{\em S1} & The state variable at the next time step. \\
+\hline
+{\em In} & The input parameters for the simulation. \\
+\hline
+{\em Fstaggered} & The flux computation object for the staggered grid. \\
+\hline
+{\em Disp} & The dispersion computation object. \\
+\hline
+{\em WM} & The wavemaker object for source terms. \\
+\hline
+{\em dt1} & The time step size for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SolveEquation_8cpp_a90d3b8fa44e8b2d0f7fa0bd6fe518a4b}\index{SolveEquation.cpp@{SolveEquation.cpp}!SolveEquationStaggered\_step2@{SolveEquationStaggered\_step2}}
+\index{SolveEquationStaggered\_step2@{SolveEquationStaggered\_step2}!SolveEquation.cpp@{SolveEquation.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveEquationStaggered\_step2()}{SolveEquationStaggered\_step2()}}
+{\footnotesize\ttfamily \label{SolveEquation_8cpp_a90d3b8fa44e8b2d0f7fa0bd6fe518a4b} 
+void Solve\+Equation\+Staggered\+\_\+step2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S1}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S2}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{\mbox{\hyperlink{classflux__staggered}{flux\+\_\+staggered}} \&}]{Fstaggered}{, }\item[{\mbox{\hyperlink{classDispersion}{Dispersion}} \&}]{Disp}{, }\item[{\mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&}]{WM}{, }\item[{const float \&}]{dt1}{}\end{DoxyParamCaption})}
+
+
+
+Solves the Nwogu\textquotesingle{}s equation using a staggered grid for the second step of the Runge-\/\+Kutta time integration. 
+
+This function computes the fluxes and source terms for the continuity and momentum equations, and updates the state variables accordingly. It is the second step in the Runge-\/\+Kutta time integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & The state variable at the current time step. \\
+\hline
+{\em S1} & The state variable at the next time step. \\
+\hline
+{\em S2} & The state variable at the next time step after RK2. \\
+\hline
+{\em In} & The input parameters for the simulation. \\
+\hline
+{\em Fstaggered} & The flux computation object for the staggered grid. \\
+\hline
+{\em Disp} & The dispersion computation object. \\
+\hline
+{\em WM} & The wavemaker object for source terms. \\
+\hline
+{\em dt1} & The time step size for the simulation. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{SolveEquation_8cpp_a746d876f03c899216606b2c0ea948725}\index{SolveEquation.cpp@{SolveEquation.cpp}!SolveEquationStaggered\_step3@{SolveEquationStaggered\_step3}}
+\index{SolveEquationStaggered\_step3@{SolveEquationStaggered\_step3}!SolveEquation.cpp@{SolveEquation.cpp}}
+\doxysubsubsection{\texorpdfstring{SolveEquationStaggered\_step3()}{SolveEquationStaggered\_step3()}}
+{\footnotesize\ttfamily \label{SolveEquation_8cpp_a746d876f03c899216606b2c0ea948725} 
+void Solve\+Equation\+Staggered\+\_\+step3 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} \&}]{S0}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S2}{, }\item[{\mbox{\hyperlink{classState}{State}} \&}]{S3}{, }\item[{const \mbox{\hyperlink{classInput}{Input}} \&}]{In}{, }\item[{\mbox{\hyperlink{classflux__staggered}{flux\+\_\+staggered}} \&}]{Fstaggered}{, }\item[{\mbox{\hyperlink{classDispersion}{Dispersion}} \&}]{Disp}{, }\item[{\mbox{\hyperlink{classWaveMaker}{Wave\+Maker}} \&}]{WM}{, }\item[{const float \&}]{dt1}{}\end{DoxyParamCaption})}
+
+
+
+Solves the Nwogu\textquotesingle{}s equation using a staggered grid for the third step of the Runge-\/\+Kutta time integration. 
+
+This function computes the fluxes and source terms for the continuity and momentum equations, and updates the state variables accordingly. It is the third step in the Runge-\/\+Kutta time integration.
+
+
+\begin{DoxyParams}{Parameters}
+{\em S0} & The state variable at the current time step. \\
+\hline
+{\em S2} & The state variable at the next time step after RK2. \\
+\hline
+{\em S3} & The state variable at the next time step after RK3. \\
+\hline
+{\em In} & The input parameters for the simulation. \\
+\hline
+{\em Fstaggered} & The flux computation object for the staggered grid. \\
+\hline
+{\em Disp} & The dispersion computation object. \\
+\hline
+{\em WM} & The wavemaker object for source terms. \\
+\hline
+{\em dt1} & The time step size for the simulation. \\
+\hline
+\end{DoxyParams}

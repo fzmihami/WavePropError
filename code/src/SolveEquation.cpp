@@ -1,11 +1,10 @@
 /**
  * @file SolveEquation.cpp
- * @brief Implementation of functions for solving the conservative form of the
- * Nwogu's equation.
+ * @brief Implements functions for solving the conservative form of Nwogu's equations.
  *
- * This file contains the implementation of functions for solving the Nwogu's
- * equations using both staggered and collocated grids. The functions are
- * designed to handle different time-stepping methods and numerical schemes.
+ * This file provides the implementation of solver routines for Nwogu's equations,
+ * supporting both staggered and collocated grid configurations. It includes logic
+ * for handling various time integration methods and numerical flux schemes.
  */
 
 #include <cmath>

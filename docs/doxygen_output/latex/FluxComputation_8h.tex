@@ -1,0 +1,466 @@
+\doxysection{code/include/\+Flux\+Computation.h File Reference}
+\hypertarget{FluxComputation_8h}{}\label{FluxComputation_8h}\index{code/include/FluxComputation.h@{code/include/FluxComputation.h}}
+
+
+Implementation of flux computation classes for the Shallow Water Equations on both collocated and staggered grids.  
+
+
+{\ttfamily \#include "{}Time\+Variables.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classflux}{flux}}
+\begin{DoxyCompactList}\small\item\em Computes the fluxes for the Shallow Water Equations in a collocated grid. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classflux__staggered}{flux\+\_\+staggered}}
+\begin{DoxyCompactList}\small\item\em Computes the fluxes for the Shallow Water Equations in a staggered grid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{FluxComputation_8h_a047d256037d27435f4f1218b38685b9b}{Recontruction\+\_\+\+Order1}} (float \texorpdfstring{$\ast$}{*}Hn, float \texorpdfstring{$\ast$}{*}Hl, float \texorpdfstring{$\ast$}{*}Hr, unsigned int N)
+\begin{DoxyCompactList}\small\item\em Performs first-\/order reconstruction of state variables at cell interfaces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FluxComputation_8h_a0b1b58ffc138adc95d6b8573e56daf77}{Recontruction\+\_\+\+Order2}} (float \texorpdfstring{$\ast$}{*}Hn, float \texorpdfstring{$\ast$}{*}Hl, float \texorpdfstring{$\ast$}{*}Hr, unsigned int N)
+\begin{DoxyCompactList}\small\item\em Performs second-\/order MUSCL reconstruction of state variables at cell interfaces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FluxComputation_8h_a885eac6dccfcc8b73fdb27b433efa00b}{Recontruction\+\_\+\+Order3}} (float \texorpdfstring{$\ast$}{*}Hn, float \texorpdfstring{$\ast$}{*}Hl, float \texorpdfstring{$\ast$}{*}Hr, unsigned int N)
+\begin{DoxyCompactList}\small\item\em Performs third-\/order TVD reconstruction of state variables at cell interfaces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FluxComputation_8h_ae61ccf497bda712978ba2fac7e211d13}{Recontruction\+\_\+\+Order5}} (float \texorpdfstring{$\ast$}{*}Hn, float \texorpdfstring{$\ast$}{*}Hl, float \texorpdfstring{$\ast$}{*}Hr, unsigned int N)
+\begin{DoxyCompactList}\small\item\em Performs fifth-\/order TVD reconstruction of state variables at cell interfaces. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{FluxComputation_8h_a14240127a8376ac6eff63eaca802f766}{minmod}} (float a, float b, float c)
+\begin{DoxyCompactList}\small\item\em Computes the Min\+Mod limiter function. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{FluxComputation_8h_ab5374d849e36ba16e42428a4674e16f3}{upwind}} (float V, float Q1, float Q2)
+\begin{DoxyCompactList}\small\item\em Upwind function for 1D advection problems. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{FluxComputation_8h_a03e356ed6b569840b09933d9538d1634}{upwind}} (float V, float Q1, float Q2, float Q3, float Q4)
+\begin{DoxyCompactList}\small\item\em Upwind function with slope limiting for 1D advection problems. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FluxComputation_8h_ade1f7f95f720e6c73d063f64fe10f87e}{Flux\+\_\+\+Central\+Upwind}} (float \texorpdfstring{$\ast$}{*}Hl, float \texorpdfstring{$\ast$}{*}Hr, float \texorpdfstring{$\ast$}{*}Ql, float \texorpdfstring{$\ast$}{*}Qr, float \texorpdfstring{$\ast$}{*}FluxH, float \texorpdfstring{$\ast$}{*}FluxQ, unsigned int N)
+\begin{DoxyCompactList}\small\item\em Central-\/upwind scheme for numerical flux computation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FluxComputation_8h_a1c4a609a92dc39c7441057fcf4a70e2f}{Flux\+\_\+\+HLL}} (float \texorpdfstring{$\ast$}{*}Hl, float \texorpdfstring{$\ast$}{*}Hr, float \texorpdfstring{$\ast$}{*}Ql, float \texorpdfstring{$\ast$}{*}Qr, float \texorpdfstring{$\ast$}{*}FluxH, float \texorpdfstring{$\ast$}{*}FluxQ, unsigned int N)
+\begin{DoxyCompactList}\small\item\em HLL (Harten, Lax, and van Leer) scheme for numerical flux computation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{FluxComputation_8h_a06eca82ea44bc6e1f759e96835038d81}{Flux\+\_\+\+HLLC}} (float \texorpdfstring{$\ast$}{*}Hl, float \texorpdfstring{$\ast$}{*}Hr, float \texorpdfstring{$\ast$}{*}Ql, float \texorpdfstring{$\ast$}{*}Qr, float \texorpdfstring{$\ast$}{*}FluxH, float \texorpdfstring{$\ast$}{*}FluxQ, unsigned int N)
+\begin{DoxyCompactList}\small\item\em HLLC (Harten, Lax, van Leer, and Contact) scheme for numerical flux computation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of flux computation classes for the Shallow Water Equations on both collocated and staggered grids. 
+
+This file defines the {\ttfamily flux} and {\ttfamily \doxylink{classflux__staggered}{flux\+\_\+staggered}} classes used to compute fluxes in the Shallow Water Equations. The {\ttfamily flux} class supports collocated grids using the Finite Volume Godunov method, while the {\ttfamily \doxylink{classflux__staggered}{flux\+\_\+staggered}} class is designed for staggered grids, implementing a conservative staggered scheme based on Stelling and Duinmeijer (2003). 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{FluxComputation_8h_ade1f7f95f720e6c73d063f64fe10f87e}\index{FluxComputation.h@{FluxComputation.h}!Flux\_CentralUpwind@{Flux\_CentralUpwind}}
+\index{Flux\_CentralUpwind@{Flux\_CentralUpwind}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{Flux\_CentralUpwind()}{Flux\_CentralUpwind()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_ade1f7f95f720e6c73d063f64fe10f87e} 
+void Flux\+\_\+\+Central\+Upwind (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{Hl}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hr}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Ql}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Qr}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{FluxH}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{FluxQ}{, }\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Central-\/upwind scheme for numerical flux computation. 
+
+This function computes the numerical fluxes for the variables {\ttfamily h} (height) and {\ttfamily Q} (momentum) using the central-\/upwind scheme, as described by Kurganov and Petrova (2007).
+
+The fluxes are calculated for each cell interface based on the left and right states, {\ttfamily Hl}, {\ttfamily Hr}, {\ttfamily Ql}, and {\ttfamily Qr}, and the speed of sound, {\ttfamily aL} and {\ttfamily aR}. The fluxes are computed for both {\ttfamily h} and {\ttfamily Q} using a central-\/upwind formula with local speeds {\ttfamily aL} and {\ttfamily aR}, and the fluxes are stored in {\ttfamily FluxH} and {\ttfamily FluxQ} respectively.
+
+
+\begin{DoxyParams}{Parameters}
+{\em Hl} & The array of left state values for the height (h). \\
+\hline
+{\em Hr} & The array of right state values for the height (h). \\
+\hline
+{\em Ql} & The array of left state values for the momentum (Q). \\
+\hline
+{\em Qr} & The array of right state values for the momentum (Q). \\
+\hline
+{\em FluxH} & The array where the numerical flux for height (h) will be stored. \\
+\hline
+{\em FluxQ} & The array where the numerical flux for momentum (Q) will be stored. \\
+\hline
+{\em N} & The number of cells.\\
+\hline
+\end{DoxyParams}
+The central-\/upwind numerical flux for each cell interface is computed as\+:
+
+\[  F_{h}^{i+1/2} = \frac{a_R F_{hL} - a_L F_{hR}}{a_R - a_L} + \frac{a_R a_L
+(H_r^{i} - H_l^{i})}{a_R - a_L}
+\]
+
+\[  F_{Q}^{i+1/2} = \frac{a_R F_{uL} - a_L F_{uR}}{a_R - a_L} + \frac{a_R a_L
+(Q_r^{i} - Q_l^{i})}{a_R - a_L}
+\]
+
+where\+:
+
+\[  a_R = \max\left(0, u_R + \sqrt{G H_R}, u_L + \sqrt{G H_L}\right)
+\]
+
+\[  a_L = \min\left(0, u_R - \sqrt{G H_R}, u_L - \sqrt{G H_L}\right)
+\]
+
+Reference\+: Kurganov, A., \& Petrova, G. (2007). \Hypertarget{FluxComputation_8h_a1c4a609a92dc39c7441057fcf4a70e2f}\index{FluxComputation.h@{FluxComputation.h}!Flux\_HLL@{Flux\_HLL}}
+\index{Flux\_HLL@{Flux\_HLL}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{Flux\_HLL()}{Flux\_HLL()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_a1c4a609a92dc39c7441057fcf4a70e2f} 
+void Flux\+\_\+\+HLL (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{Hl}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hr}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Ql}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Qr}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{FluxH}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{FluxQ}{, }\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+HLL (Harten, Lax, and van Leer) scheme for numerical flux computation. 
+
+This function computes the numerical fluxes for the variables {\ttfamily h} (height) and {\ttfamily Q} (momentum) using the HLL scheme (Harten, Lax, and van Leer, 1983).
+
+The function calculates the fluxes for each cell interface based on the left and right states and local wave speeds, with the fluxes stored in the arrays {\ttfamily FluxH} and {\ttfamily FluxQ}. The fluxes are computed using the HLL algorithm.
+
+The fluxes for height ({\ttfamily h}) and momentum ({\ttfamily Q}) are calculated using the following expressions\+:
+
+\[\begin{aligned}
+F_{h}^{i+1/2} =
+\begin{cases}
+F_{hL}, & \text{if } s_L > 0 \\
+F_{hR}, & \text{if } s_R < 0 \\
+\frac{s_R F_{hL} - s_L F_{hR} + (s_L s_R) (H_R - H_L)}{s_R - s_L}, &
+\text{otherwise} \end{cases} 
+\end{aligned}
+\]
+
+\[F_{Q}^{i+1/2} =
+\begin{cases}
+F_{Q_L}, & \text{if } s_L > 0 \\
+F_{Q_R}, & \text{if } s_R < 0 \\
+\frac{s_R F_{Q_L} - s_L F_{Q_R} + (s_L s_R) (Q_R - Q_L)}{s_R - s_L}, &
+\text{otherwise} \end{cases} \]
+
+where\+:
+\begin{DoxyItemize}
+\item $ s_L $ is the left wave speed,
+\item $ s_R $ is the right wave speed,
+\item $ F_{hL}, F_{hR} $ are the fluxes for height,
+\item $ F_{Q_L}, F_{Q_R} $ are the fluxes for momentum.
+\end{DoxyItemize}
+
+The wave speeds $ s_L $ and $ s_R $ are computed based on the local states and the characteristic speed of the system. The value $ h0 $ is computed based on the formulation in Toro (2009).
+
+
+\begin{DoxyParams}{Parameters}
+{\em Hl} & The array of left state values for the height (h). \\
+\hline
+{\em Hr} & The array of right state values for the height (h). \\
+\hline
+{\em Ql} & The array of left state values for the momentum (Q). \\
+\hline
+{\em Qr} & The array of right state values for the momentum (Q). \\
+\hline
+{\em FluxH} & The array where the numerical flux for height (h) will be stored. \\
+\hline
+{\em FluxQ} & The array where the numerical flux for momentum (Q) will be stored. \\
+\hline
+{\em N} & The number of cells.\\
+\hline
+\end{DoxyParams}
+Reference\+: Harten, A., Lax, P. D., \& van Leer, B. (1983). \Hypertarget{FluxComputation_8h_a06eca82ea44bc6e1f759e96835038d81}\index{FluxComputation.h@{FluxComputation.h}!Flux\_HLLC@{Flux\_HLLC}}
+\index{Flux\_HLLC@{Flux\_HLLC}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{Flux\_HLLC()}{Flux\_HLLC()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_a06eca82ea44bc6e1f759e96835038d81} 
+void Flux\+\_\+\+HLLC (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{Hl}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hr}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Ql}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Qr}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{FluxH}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{FluxQ}{, }\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+HLLC (Harten, Lax, van Leer, and Contact) scheme for numerical flux computation. 
+
+This function computes the numerical fluxes for the variables {\ttfamily h} (height) and {\ttfamily Q} (momentum) using the HLLC scheme (Harten, Lax, van Leer, and Contact, 1983). The HLLC scheme is a modification of the HLL scheme, which incorporates a contact wave and resolves the Riemann problem by considering three waves\+: a left and right moving wave, and a contact wave.
+
+The function computes the fluxes for each cell interface based on the left and right states ({\ttfamily Hl}, {\ttfamily Hr}, {\ttfamily Ql}, {\ttfamily Qr}) and the corresponding wave speeds.
+
+The fluxes for height ({\ttfamily h}) and momentum ({\ttfamily Q}) are calculated using the following expressions\+:
+
+\[\begin{aligned}
+F_{h}^{i+1/2} =
+\begin{cases}
+F_{hL}, & \text{if } s_L > 0 \\
+F_{hR}, & \text{if } s_R < 0 \\
+F_{hL} + s_L (h^*L - h_L), & \text{if } 0 \leq s_0 \\
+F_{hR} + s_R (h^*R - h_R), & \text{if } s_0 < 0
+\end{cases}
+\end{aligned}
+\]
+
+\[F_{Q}^{i+1/2} =
+\begin{cases}
+F_{Q_L}, & \text{if } s_L > 0 \\
+F_{Q_R}, & \text{if } s_R < 0 \\
+F_{Q_L} + s_L (q^*L - h_L u_L), & \text{if } 0 \leq s_0 \\
+F_{Q_R} + s_R (q^*R - h_R u_R), & \text{if } s_0 < 0
+\end{cases}
+\]
+
+where\+:
+\begin{DoxyItemize}
+\item $ s_L $ is the left wave speed,
+\item $ s_R $ is the right wave speed,
+\item $ s_0 $ is the middle wave speed (contact wave),
+\item $ F_{hL}, F_{hR} $ are the fluxes for height,
+\item $ F_{Q_L}, F_{Q_R} $ are the fluxes for momentum,
+\item $ h^*L, h^*R $ are the star variables for height at the left and right states,
+\item $ q^*L, q^*R $ are the star variables for momentum at the left and right states.
+\end{DoxyItemize}
+
+The function uses intermediate variables, including $ h_0 $ (the averaged height), $ u_0 $ (the averaged velocity), and calculates the middle wave speed $ s_0 $ based on the expressions presented in Toro (2001).
+
+
+\begin{DoxyParams}{Parameters}
+{\em Hl} & The array of left state values for the height (h). \\
+\hline
+{\em Hr} & The array of right state values for the height (h). \\
+\hline
+{\em Ql} & The array of left state values for the momentum (Q). \\
+\hline
+{\em Qr} & The array of right state values for the momentum (Q). \\
+\hline
+{\em FluxH} & The array where the numerical flux for height (h) will be stored. \\
+\hline
+{\em FluxQ} & The array where the numerical flux for momentum (Q) will be stored. \\
+\hline
+{\em N} & The number of cells.\\
+\hline
+\end{DoxyParams}
+Reference\+: Toro, 2001. "{}\+Shock-\/capturing methods for free-\/surface shallow flows."{} \Hypertarget{FluxComputation_8h_a14240127a8376ac6eff63eaca802f766}\index{FluxComputation.h@{FluxComputation.h}!minmod@{minmod}}
+\index{minmod@{minmod}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{minmod()}{minmod()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_a14240127a8376ac6eff63eaca802f766} 
+float minmod (\begin{DoxyParamCaption}\item[{float}]{a}{, }\item[{float}]{b}{, }\item[{float}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Computes the Min\+Mod limiter function. 
+
+The Min\+Mod function is a slope limiter used in high-\/resolution schemes to prevent spurious oscillations. It selects the smallest absolute value among the inputs if they have the same sign; otherwise, it returns zero.
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First input value. \\
+\hline
+{\em b} & Second input value. \\
+\hline
+{\em c} & Third input value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Min\+Mod limited value.
+\end{DoxyReturn}
+The function follows these rules\+:
+\begin{DoxyItemize}
+\item If all three inputs are positive, it returns the minimum of the three.
+\item If all three inputs are negative, it returns the maximum (most negative) of the three.
+\item Otherwise, it returns zero to avoid introducing new extrema.
+\end{DoxyItemize}
+
+Reference\+: Kim and Kim (2005) \Hypertarget{FluxComputation_8h_a047d256037d27435f4f1218b38685b9b}\index{FluxComputation.h@{FluxComputation.h}!Recontruction\_Order1@{Recontruction\_Order1}}
+\index{Recontruction\_Order1@{Recontruction\_Order1}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{Recontruction\_Order1()}{Recontruction\_Order1()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_a047d256037d27435f4f1218b38685b9b} 
+void Recontruction\+\_\+\+Order1 (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{Hn}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hl}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hr}{, }\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Performs first-\/order reconstruction of state variables at cell interfaces. 
+
+This function approximates the state variables at the interface between computational cells using a first-\/order upwind reconstruction. It assigns values from the left and right neighboring cells, which can be used as inputs for a local Riemann solver in numerical flux computations.
+
+The reconstruction follows\+:   \[U_L^{i+1/2} = U_i
+\]   \[U_R^{i+1/2} = U_{i+1}
+\] where $ U_L $ and $ U_R $ are the left and right states at the interface.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Hn} & Pointer to the array of state variables at cell centers (size N). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hl} & Pointer to the array storing left interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hr} & Pointer to the array storing right interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & Number of grid points in the input array Hn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Ensure that {\ttfamily Hl} and {\ttfamily Hr} arrays have been allocated with at least {\ttfamily N-\/1} elements. 
+\end{DoxyWarning}
+\Hypertarget{FluxComputation_8h_a0b1b58ffc138adc95d6b8573e56daf77}\index{FluxComputation.h@{FluxComputation.h}!Recontruction\_Order2@{Recontruction\_Order2}}
+\index{Recontruction\_Order2@{Recontruction\_Order2}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{Recontruction\_Order2()}{Recontruction\_Order2()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_a0b1b58ffc138adc95d6b8573e56daf77} 
+void Recontruction\+\_\+\+Order2 (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{Hn}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hl}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hr}{, }\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Performs second-\/order MUSCL reconstruction of state variables at cell interfaces. 
+
+This function computes the left and right interface states using the Monotonic Upstream-\/\+Centered Scheme for Conservation Laws (MUSCL), which provides a second-\/order accurate reconstruction with a Total Variation Diminishing (TVD) slope limiter.
+
+The reconstructed interface values are given by\+:   \[U_L^{i+1/2} = U_i + \phi (r_L) (U_i - U_{i-1})
+\]   \[U_R^{i+1/2} = U_{i+1} - \phi (r_R) (U_{i+2} - U_{i+1})
+\]
+
+where the slope ratio is defined as\+:    \[r_L = \frac{U_{i+1} - U_i}{U_i - U_{i-1}}, \quad
+r_R = \frac{U_{i+1} - U_i}{U_{i+2} - U_{i+1}}
+\]
+
+The function uses a Total Variation Diminishing (TVD) slope limiter to prevent oscillations. We use the Van-\/\+Leer Min\+Mod limiter, defined as\+:   \[\phi (r, \theta) = \max \left(0, \min \left( \theta r, \frac{1 + r}{2},
+\theta \right) \right) \]
+
+the value of $\theta$ is defined as a constant in \doxylink{GlobalVariables_8cpp}{Global\+Variables.\+cpp} file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Hn} & Pointer to the array of state variables at cell centers (size N). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hl} & Pointer to the array storing left interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hr} & Pointer to the array storing right interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & Number of grid points in the input array Hn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Ensure {\ttfamily Hl} and {\ttfamily Hr} arrays have at least {\ttfamily N-\/1} elements to avoid out-\/of-\/bounds errors. 
+\end{DoxyWarning}
+\Hypertarget{FluxComputation_8h_a885eac6dccfcc8b73fdb27b433efa00b}\index{FluxComputation.h@{FluxComputation.h}!Recontruction\_Order3@{Recontruction\_Order3}}
+\index{Recontruction\_Order3@{Recontruction\_Order3}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{Recontruction\_Order3()}{Recontruction\_Order3()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_a885eac6dccfcc8b73fdb27b433efa00b} 
+void Recontruction\+\_\+\+Order3 (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{Hn}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hl}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hr}{, }\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Performs third-\/order TVD reconstruction of state variables at cell interfaces. 
+
+This function implements the third-\/order Total Variation Diminishing (TVD) interpolation proposed by Kim and Kim (2005) for numerical flux computation. It ensures stability and prevents spurious oscillations using a nonlinear slope limiter.
+
+The reconstructed interface values are given by\+:   \[U_L^{i+1/2} = U_i + \max \left(0, \min \left(2, 2r_{L,i}, \beta_L \right)
+\right) (U_i - U_{i-1}) \]  \[ U_R^{i+1/2} = U_{i+1} - \max \left(0, \min
+\left(2, 2r_{R,i+1}, \beta_R \right) \right) (U_{i+2} - U_{i+1}) \]
+
+where\+:    \[\beta_L = \frac{1 + 2r_{L,i}}{3}, \quad
+\beta_R = \frac{1 + 2r_{R,i+1}}{3}
+\]
+
+and the slope ratios are\+:    \[r_{L,i} = \frac{U_{i+1} - U_i}{U_i - U_{i-1}}, \quad
+r_{R,i+1} = \frac{U_{i+1} - U_i}{U_{i+2} - U_{i+1}}
+\]
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Hn} & Pointer to the array of state variables at cell centers (size N). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hl} & Pointer to the array storing left interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hr} & Pointer to the array storing right interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & Number of grid points in the input array Hn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Assumes proper boundary handling for the first and last two grid points.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure {\ttfamily Hl} and {\ttfamily Hr} arrays have at least {\ttfamily N-\/1} elements to avoid out-\/of-\/bounds errors. 
+\end{DoxyWarning}
+\Hypertarget{FluxComputation_8h_ae61ccf497bda712978ba2fac7e211d13}\index{FluxComputation.h@{FluxComputation.h}!Recontruction\_Order5@{Recontruction\_Order5}}
+\index{Recontruction\_Order5@{Recontruction\_Order5}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{Recontruction\_Order5()}{Recontruction\_Order5()}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_ae61ccf497bda712978ba2fac7e211d13} 
+void Recontruction\+\_\+\+Order5 (\begin{DoxyParamCaption}\item[{float \texorpdfstring{$\ast$}{*}}]{Hn}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hl}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{Hr}{, }\item[{unsigned int}]{N}{}\end{DoxyParamCaption})}
+
+
+
+Performs fifth-\/order TVD reconstruction of state variables at cell interfaces. 
+
+This function implements a fifth-\/order Total Variation Diminishing (TVD) interpolation for numerical flux computation. It uses a nonlinear slope limiter to prevent spurious oscillations while maintaining high accuracy.
+
+The reconstructed interface values are given by\+:   \[U_L^{i+1/2} = U_i + \frac{1}{2} \max \left(0, \min \left(2, 2r_{L,i}, \beta_L
+\right) \right) (U_i - U_{i-1}) \]   \[ U_R^{i+1/2} = U_{i+1} - \frac{1}{2}
+\max \left(0, \min \left(2, 2r_{R,i+1}, \beta_R \right) \right) (U_{i+2} -
+U_{i+1}) \]
+
+where the slope limiter coefficients are\+:    \[\beta_L = \frac{-2/r_{L,i-1} + 11 + 24r_{L,i} - 3r_{L,i}r_{L,i+1}}{30},
+\quad \beta_R = \frac{-2/r_{R,i+2} + 11 + 24r_{R,i+1} -
+3r_{R,i}r_{R,i+1}}{30} \]
+
+The slope ratios are computed as\+:    \[r_{L,i} = \frac{U_{i+1} - U_i}{U_i - U_{i-1}},
+\quad r_{R,i+1} = \frac{U_{i} - U_{i-1}}{U_{i+1} - U_i}
+\]
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Hn} & Pointer to the array of state variables at cell centers (size N). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hl} & Pointer to the array storing left interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ out}}  & {\em Hr} & Pointer to the array storing right interface values (size N-\/1). \\
+\hline
+\mbox{\texttt{ in}}  & {\em N} & Number of grid points in the input array Hn.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Assumes proper boundary handling for the first and last two grid points.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Ensure {\ttfamily Hl} and {\ttfamily Hr} arrays have at least {\ttfamily N-\/1} elements to avoid out-\/of-\/bounds errors.
+\end{DoxyWarning}
+Refrence\+: Kim and Kim (2005) \Hypertarget{FluxComputation_8h_ab5374d849e36ba16e42428a4674e16f3}\index{FluxComputation.h@{FluxComputation.h}!upwind@{upwind}}
+\index{upwind@{upwind}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{upwind()}{upwind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_ab5374d849e36ba16e42428a4674e16f3} 
+float upwind (\begin{DoxyParamCaption}\item[{float}]{V}{, }\item[{float}]{Q1}{, }\item[{float}]{Q2}{}\end{DoxyParamCaption})}
+
+
+
+Upwind function for 1D advection problems. 
+
+This function implements the basic upwind scheme. It returns one of the two input values, depending on the sign of the velocity.
+\begin{DoxyItemize}
+\item If the velocity (V) is positive, the function returns Q1.
+\item If the velocity (V) is negative, the function returns Q2.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em V} & The velocity. \\
+\hline
+{\em Q1} & The value at the left of the interface. \\
+\hline
+{\em Q2} & The value at the right of the interface. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value corresponding to the upwind direction based on the velocity. 
+\end{DoxyReturn}
+\Hypertarget{FluxComputation_8h_a03e356ed6b569840b09933d9538d1634}\index{FluxComputation.h@{FluxComputation.h}!upwind@{upwind}}
+\index{upwind@{upwind}!FluxComputation.h@{FluxComputation.h}}
+\doxysubsubsection{\texorpdfstring{upwind()}{upwind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{FluxComputation_8h_a03e356ed6b569840b09933d9538d1634} 
+float upwind (\begin{DoxyParamCaption}\item[{float}]{V}{, }\item[{float}]{Q1}{, }\item[{float}]{Q2}{, }\item[{float}]{Q3}{, }\item[{float}]{Q4}{}\end{DoxyParamCaption})}
+
+
+
+Upwind function with slope limiting for 1D advection problems. 
+
+This function implements an upwind scheme with slope limiting, using a higher-\/order approximation for the advection of the variable.
+\begin{DoxyItemize}
+\item If the velocity (V) is positive, the function computes a limited difference between Q2 and Q3, taking into account the values Q1, Q2, and Q3.
+\item If the velocity (V) is negative, the function computes a limited difference between Q3 and Q4, considering Q2, Q3, and Q4.
+\end{DoxyItemize}
+
+The function uses the Min\+Mod limiter to avoid introducing non-\/physical oscillations. The limiter is scaled by a factor {\ttfamily theta\+RC} which controls the amount of limiting applied. The value of {\ttfamily theta\+RC} is defined in the \doxylink{GlobalVariables_8cpp}{Global\+Variables.\+cpp} file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em V} & The velocity. \\
+\hline
+{\em Q1} & The value at the first neighboring point. \\
+\hline
+{\em Q2} & The value at the second neighboring point. \\
+\hline
+{\em Q3} & The value at the third neighboring point. \\
+\hline
+{\em Q4} & The value at the fourth neighboring point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The limited value at the interface. 
+\end{DoxyReturn}

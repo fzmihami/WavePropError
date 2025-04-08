@@ -1,0 +1,57 @@
+\doxysection{code/src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{code/src/main.cpp@{code/src/main.cpp}}
+
+
+Main file for the numerical wave solver.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$omp.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Dispersion.\+h"{}}\newline
+{\ttfamily \#include "{}Flux\+Computation.\+h"{}}\newline
+{\ttfamily \#include "{}Read\+User\+Input.\+h"{}}\newline
+{\ttfamily \#include "{}Solve\+Equation.\+h"{}}\newline
+{\ttfamily \#include "{}Time\+Variables.\+h"{}}\newline
+{\ttfamily \#include "{}Wavemaker.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main file for the numerical wave solver. 
+
+This file contains the main functions and logic for the numerical wave solver. It initializes the model parameters, sets up the grid and time variables for either staggered or collocated grids, and runs the time-\/stepping loop for the simulation.
+
+that initializes the run parameters using the iput steering file, defines the grid and time variables for either staggered or collocated grids, sets up the flux, dispersion, and wavemaker objects, and runs the time-\/stepping loop. saves the simulation results to binary files, which will be read and plotted using the python scripts.
+
+The main components of the code include\+:
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{classInput}{Input} Handling}}\+: Reads user input parameters from the steering file created by the python script.
+\item {\bfseries{Grid Definition}}\+: Sets up the grid based on the selected scheme (staggered or collocated).
+\item {\bfseries{Time Variables}}\+: Allocates and initializes time variables for the simulation. This includes the free surface elevation and velocity.
+\item {\bfseries{Flux Computation}}\+: Computes the SW fluxes based on the selected numerical scheme (HLLC, HLL, central upwind or upwind for the conservative staggered scheme).
+\item {\bfseries{\doxylink{classDispersion}{Dispersion}}}\+: Implements and discretizes the dispersion terms based on the selected grid type.
+\item {\bfseries{Wavemaker}}\+: Generates wave forcing terms based on the approach described in wei et al. (1999).
+\item {\bfseries{Time Integration}}\+: Solves the governing equations using Runge-\/\+Kutta methods (1st, 2nd, or 3rd order).
+\item {\bfseries{Output}}\+: Saves time variables to binary files for post-\/processing and visualization.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The code uses Open\+MP for parallelization and requires the Open\+MP library to be linked during compilation. 
+\end{DoxyNote}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{argv}{}\end{DoxyParamCaption})}
+

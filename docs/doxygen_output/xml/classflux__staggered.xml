@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classflux__staggered" kind="class" language="C++" prot="public">
+    <compoundname>flux_staggered</compoundname>
+    <includes refid="FluxComputation_8h" local="no">FluxComputation.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classflux__staggered_1af8f15fc8cfc15349cb859f087460753a" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int flux_staggered::N</definition>
+        <argsstring></argsstring>
+        <name>N</name>
+        <qualifiedname>flux_staggered::N</qualifiedname>
+        <briefdescription>
+<para>Number of grid points. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="88" column="16" bodyfile="code/include/FluxComputation.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classflux__staggered_1a4b056356ee504a8b01be6b746378f81d" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux_staggered::WS</definition>
+        <argsstring></argsstring>
+        <name>WS</name>
+        <qualifiedname>flux_staggered::WS</qualifiedname>
+        <briefdescription>
+<para>Wave speed for the CFL computation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="91" column="9" bodyfile="code/include/FluxComputation.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux__staggered_1ad667361ac320bb15f1c574fca5c0f3cb" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux_staggered::HUn</definition>
+        <argsstring></argsstring>
+        <name>HUn</name>
+        <qualifiedname>flux_staggered::HUn</qualifiedname>
+        <briefdescription>
+<para>Hn*Un approximation in the continuity equation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="92" column="9" bodyfile="code/include/FluxComputation.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classflux__staggered_1a2e6fe0d852341d0324e2f5b3e2ab2f30" prot="public" static="no" mutable="no">
+        <type>float *</type>
+        <definition>float* flux_staggered::HUUn</definition>
+        <argsstring></argsstring>
+        <name>HUUn</name>
+        <qualifiedname>flux_staggered::HUUn</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="93" column="9" bodyfile="code/include/FluxComputation.h" bodystart="93" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classflux__staggered_1a50d7bab30663331b7203a3b49f4e9c25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>flux_staggered::flux_staggered</definition>
+        <argsstring>(unsigned int N)</argsstring>
+        <name>flux_staggered</name>
+        <qualifiedname>flux_staggered::flux_staggered</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>N</declname>
+        </param>
+        <briefdescription>
+<para>Constructor for the <ref refid="classflux__staggered" kindref="compound">flux_staggered</ref> class. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the <ref refid="classflux__staggered" kindref="compound">flux_staggered</ref> class with the number of grid points and allocates memory for the flux variables.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>N</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of grid points in the computational domain. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="104" column="3" bodyfile="code/src/FluxComputation.cpp" bodystart="23" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classflux__staggered_1ac5c4e71e1d64faca3f970ffebe8c8ebe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void flux_staggered::ComputeFlux</definition>
+        <argsstring>(const State &amp;state, const unsigned int &amp;OrderReconstruction)</argsstring>
+        <name>ComputeFlux</name>
+        <qualifiedname>flux_staggered::ComputeFlux</qualifiedname>
+        <param>
+          <type>const <ref refid="classState" kindref="compound">State</ref> &amp;</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>const unsigned int &amp;</type>
+          <declname>OrderReconstruction</declname>
+        </param>
+        <briefdescription>
+<para>Computes the fluxes for the Shallow Water Equations in a staggered grid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function computes the fluxes using the specified reconstruction order.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to a <ref refid="classState" kindref="compound">State</ref> object containing the current state of the system. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OrderReconstruction</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The order of reconstruction to be used (1 or 2).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Refrence: Stelling and Duinmeijer (2003) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="118" column="8" bodyfile="code/src/FluxComputation.cpp" bodystart="39" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classflux__staggered_1af346837e589bbbebce50b3f07a204465" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>flux_staggered::~flux_staggered</definition>
+        <argsstring>()</argsstring>
+        <name>~flux_staggered</name>
+        <qualifiedname>flux_staggered::~flux_staggered</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>brief Destructor for the <ref refid="classflux__staggered" kindref="compound">flux_staggered</ref> class.</para>
+<para>Cleans up dynamically allocated memory for the flux variables. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/include/FluxComputation.h" line="125" column="3" bodyfile="code/src/FluxComputation.cpp" bodystart="33" bodyend="37"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Computes the fluxes for the Shallow Water Equations in a staggered grid. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="classflux__staggered" kindref="compound">flux_staggered</ref></computeroutput> class is responsible for computing the fluxes in the shallow water equations using a conservative staggered scheme (Stelling and Duinmeijer, 2003). This flux computation is based on second-order reconstruction. </para>
+    </detaileddescription>
+    <location file="code/include/FluxComputation.h" line="86" column="1" bodyfile="code/include/FluxComputation.h" bodystart="86" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classflux__staggered_1ac5c4e71e1d64faca3f970ffebe8c8ebe" prot="public" virt="non-virtual"><scope>flux_staggered</scope><name>ComputeFlux</name></member>
+      <member refid="classflux__staggered_1a50d7bab30663331b7203a3b49f4e9c25" prot="public" virt="non-virtual"><scope>flux_staggered</scope><name>flux_staggered</name></member>
+      <member refid="classflux__staggered_1ad667361ac320bb15f1c574fca5c0f3cb" prot="public" virt="non-virtual"><scope>flux_staggered</scope><name>HUn</name></member>
+      <member refid="classflux__staggered_1a2e6fe0d852341d0324e2f5b3e2ab2f30" prot="public" virt="non-virtual"><scope>flux_staggered</scope><name>HUUn</name></member>
+      <member refid="classflux__staggered_1af8f15fc8cfc15349cb859f087460753a" prot="private" virt="non-virtual"><scope>flux_staggered</scope><name>N</name></member>
+      <member refid="classflux__staggered_1a4b056356ee504a8b01be6b746378f81d" prot="public" virt="non-virtual"><scope>flux_staggered</scope><name>WS</name></member>
+      <member refid="classflux__staggered_1af346837e589bbbebce50b3f07a204465" prot="public" virt="non-virtual"><scope>flux_staggered</scope><name>~flux_staggered</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="ReadUserInput_8cpp" kind="file" language="C++">
+    <compoundname>ReadUserInput.cpp</compoundname>
+    <includes local="no">algorithm</includes>
+    <includes local="no">cmath</includes>
+    <includes local="no">cstring</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">omp.h</includes>
+    <includes local="no">string</includes>
+    <includes local="no">vector</includes>
+    <includes refid="GlobalVariables_8h" local="yes">GlobalVariables.h</includes>
+    <includes refid="ReadUserInput_8h" local="yes">ReadUserInput.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ReadUserInput.h</label>
+        <link refid="ReadUserInput_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>code/src/ReadUserInput.cpp</label>
+        <link refid="ReadUserInput_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>algorithm</label>
+      </node>
+      <node id="3">
+        <label>cmath</label>
+      </node>
+      <node id="4">
+        <label>cstring</label>
+      </node>
+      <node id="11">
+        <label>fstream</label>
+      </node>
+      <node id="12">
+        <label>iomanip</label>
+      </node>
+      <node id="5">
+        <label>iostream</label>
+      </node>
+      <node id="6">
+        <label>omp.h</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="ReadUserInput_8cpp_1a979af3a6dbf69541b297d53581c424ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref></type>
+        <definition>scheme convertScheme</definition>
+        <argsstring>(std::string string1)</argsstring>
+        <name>convertScheme</name>
+        <param>
+          <type>std::string</type>
+          <declname>string1</declname>
+        </param>
+        <briefdescription>
+<para>Converts a string to an enumeration value of the scheme type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a string representation of a numerical scheme and converts it to the corresponding enumeration value.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string representation of the numerical scheme. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The corresponding enumeration value of the scheme type. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/ReadUserInput.cpp" line="121" column="8" bodyfile="code/src/ReadUserInput.cpp" bodystart="121" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="ReadUserInput_8cpp_1a3b44780a014089188e34196475b06538" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; unsigned int &gt;</type>
+        <definition>std::vector&lt; unsigned int &gt; convertIndexGauges</definition>
+        <argsstring>(std::string string1, float dx)</argsstring>
+        <name>convertIndexGauges</name>
+        <param>
+          <type>std::string</type>
+          <declname>string1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>dx</declname>
+        </param>
+        <briefdescription>
+<para>Converts a string to a vector of unsigned integers representing gauge indices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function takes a string representation of gauge indices and converts it to a vector of unsigned integers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string representation of the gauge indices. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The grid spacing used for the simulation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A vector of unsigned integers representing the gauge indices. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/ReadUserInput.cpp" line="143" column="13" bodyfile="code/src/ReadUserInput.cpp" bodystart="143" bodyend="172"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implements the <ref refid="classInput" kindref="compound">Input</ref> class for reading and handling user-defined parameters in the numerical wave solver. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file provides the implementation of the <ref refid="classInput" kindref="compound">Input</ref> class, which is responsible for:<itemizedlist>
+<listitem><para>Reading and parsing user-defined parameters from an input file,</para>
+</listitem><listitem><para>Converting string values to the appropriate data types,</para>
+</listitem><listitem><para>Logging the input configuration to the console for verification. </para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cstring&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;omp.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GlobalVariables_8h" kindref="compound">GlobalVariables.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ReadUserInput_8h" kindref="compound">ReadUserInput.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="classInput_1ae25a2db2d3fee019fcd582f769614f9e" kindref="member">Input::Input</ref>(std::string<sp/>nametest)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>std::ifstream<sp/>file;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>std::vector&lt;std::string&gt;<sp/>parameters;<sp/></highlight><highlight class="comment">//<sp/>Array<sp/>to<sp/>store<sp/>all<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>all<sp/>lines<sp/>from<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>file.open(nametest);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(file.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>line;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(std::getline(file,<sp/>line))<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>line<sp/>=<sp/>line.substr(line.find(</highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">)<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>parameters.push_back(line);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>file.close();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Unable<sp/>to<sp/>open<sp/>file&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Assign<sp/>values<sp/>to<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><ref refid="classInput_1a01d6c51d16a2e0f3941d9bab08f1e3ad" kindref="member">Scheme</ref><sp/>=<sp/><ref refid="ReadUserInput_8h_1a979af3a6dbf69541b297d53581c424ef" kindref="member">convertScheme</ref>(parameters[0]);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><ref refid="classInput_1a79c9872ba0b9d45323432f66ff93920f" kindref="member">OrderReconstruction</ref><sp/>=<sp/>std::stoi(parameters[1]);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><ref refid="classInput_1a846c82d3220d2603b3816ee835080fb5" kindref="member">OrderTime</ref><sp/>=<sp/>std::stoi(parameters[2]);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><ref refid="classInput_1ac733778f3f08c0e53d87c713b1f89e0e" kindref="member">CourantNumber</ref><sp/>=<sp/>std::stof(parameters[3]);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref><sp/>=<sp/>std::stof(parameters[4]);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref><sp/>=<sp/>std::stof(parameters[5]);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kindref="member">WaterDepth</ref><sp/>=<sp/>std::stof(parameters[6]);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref><sp/>=<sp/>std::stof(parameters[7]);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><ref refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" kindref="member">dtOutput</ref><sp/>=<sp/>std::stof(parameters[8]);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="classInput_1ae182944bc095662bd11c5fd42d46a74d" kindref="member">IndexGauges</ref><sp/>=<sp/><ref refid="ReadUserInput_8h_1a3b44780a014089188e34196475b06538" kindref="member">convertIndexGauges</ref>(parameters[9],<sp/><ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><ref refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" kindref="member">dtGauges</ref><sp/>=<sp/>std::stof(parameters[10]);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>read<sp/>wave<sp/>input<sp/>data<sp/>as<sp/>2D<sp/>vector<sp/>of<sp/>floats<sp/>from<sp/>string<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>12;<sp/>i<sp/>&lt;<sp/>parameters.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;float&gt;<sp/>row;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>temp<sp/>=<sp/>parameters[i];</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>delimiter<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>token;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((pos<sp/>=<sp/>temp.find(delimiter))<sp/>!=<sp/>std::string::npos)<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>token<sp/>=<sp/>temp.substr(0,<sp/>pos);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>row.push_back(std::stof(token));</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>temp.erase(0,<sp/>pos<sp/>+<sp/>delimiter.length());</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>row.push_back(std::stof(temp));</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>.push_back(row);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>define<sp/>and<sp/>create<sp/>results<sp/>folder</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>std::string<sp/>resultsFolder<sp/>=<sp/>nametest;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>resultsFolder.replace(0,<sp/>7,<sp/></highlight><highlight class="stringliteral">&quot;results/&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>resultsFolder<sp/>=</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>resultsFolder.substr(0,<sp/>resultsFolder.find(</highlight><highlight class="stringliteral">&quot;.&quot;</highlight><highlight class="normal">));<sp/></highlight><highlight class="comment">//<sp/>remove<sp/>file<sp/>extension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>std::string<sp/>command<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;rm<sp/>-rf<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>resultsFolder;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>system(command.c_str());</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>command<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;mkdir<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>resultsFolder;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>system(command.c_str());</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>command<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;mkdir<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>resultsFolder<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/FreeSurface&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>system(command.c_str());</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>command<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;mkdir<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>resultsFolder<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/TimeSeries&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>system(command.c_str());</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><ref refid="classInput_1acf4707403f56c6bed9967bf97b93cf1d" kindref="member">ResFolder</ref><sp/>=<sp/>resultsFolder;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classInput_1aa679c8f40bb7645ffbe6e8dbbe71b9d6" kindref="member">Input::LOGOUT</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Input<sp/>parameters&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;----------------&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Numerical<sp/>scheme<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="GlobalVariables_8h_1a96a5ba0386e2a1b3b9ec030f12e91e47" kindref="member">ListeScheme</ref>[<ref refid="classInput_1a01d6c51d16a2e0f3941d9bab08f1e3ad" kindref="member">Scheme</ref>]<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Order<sp/>of<sp/>reconstruction<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1a79c9872ba0b9d45323432f66ff93920f" kindref="member">OrderReconstruction</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Order<sp/>of<sp/>RK<sp/>time<sp/>integration<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1a846c82d3220d2603b3816ee835080fb5" kindref="member">OrderTime</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Courant<sp/>number<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1ac733778f3f08c0e53d87c713b1f89e0e" kindref="member">CourantNumber</ref><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Grid<sp/>spacing<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1a5e15ca9be77766091e67936bb7e9cbb9" kindref="member">dx</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>m&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Length<sp/>of<sp/>the<sp/>domain<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1ab894ff82367728f57ff63718cce01d48" kindref="member">LengthDomain</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>m&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Water<sp/>depth<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1ac65083cc5383b36aabf5fa42fd8c0399" kindref="member">WaterDepth</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>m&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Total<sp/>computation<sp/>time<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1abd36e9f26228b62a0e78f537f5902556" kindref="member">Time</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>s&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Time<sp/>step<sp/>for<sp/>the<sp/>output<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1abd29177ebf424d7d43211f62e0c01f8e" kindref="member">dtOutput</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>s&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Time<sp/>step<sp/>for<sp/>the<sp/>gauges<sp/>:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><ref refid="classInput_1a6ffa011bea67f92d44c00cf93b1bf7c2" kindref="member">dtGauges</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>s&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::left<sp/>&lt;&lt;<sp/>std::setw(25)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;frequency<sp/>[Hz]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::setw(25)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;amplitude<sp/>[m]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::setw(25)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;phase<sp/>[rad]&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/><ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>[i].size();<sp/>j++)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::setw(25)<sp/>&lt;&lt;<sp/><ref refid="classInput_1a9aaa34d407bcadb04e9a057d392cc5f3" kindref="member">WaveInput</ref>[i][j];</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>std::setw(25)<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;...&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment">//<sp/>function<sp/>to<sp/>convert<sp/>string<sp/>to<sp/>enum<sp/>scheme</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref><sp/><ref refid="ReadUserInput_8cpp_1a979af3a6dbf69541b297d53581c424ef" kindref="member">convertScheme</ref>(std::string<sp/>string1)<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>remove<sp/>leading<sp/>and<sp/>trailing<sp/>whitespaces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>string1.erase(std::remove(string1.begin(),<sp/>string1.end(),<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string1.end());</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>4;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(string1<sp/>==<sp/><ref refid="GlobalVariables_8h_1a96a5ba0386e2a1b3b9ec030f12e91e47" kindref="member">ListeScheme</ref>[i])<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>=<sp/>i;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Scheme<sp/>not<sp/>found&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="GlobalVariables_8h_1a1a1ed40592bd51f9b25af65953320968" kindref="member">scheme</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(index);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">//<sp/>function<sp/>to<sp/>convert<sp/>string<sp/>to<sp/>vector<sp/>of<sp/>unsigned<sp/>int<sp/>gauges<sp/>index</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">std::vector&lt;unsigned<sp/>int&gt;<sp/><ref refid="ReadUserInput_8cpp_1a3b44780a014089188e34196475b06538" kindref="member">convertIndexGauges</ref>(std::string<sp/>string1,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>dx)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>remove<sp/>leading<sp/>and<sp/>trailing<sp/>whitespaces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>string1.erase(std::remove(string1.begin(),<sp/>string1.end(),<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>string1.end());</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>std::vector&lt;float&gt;<sp/>gauges;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>std::string<sp/>temp<sp/>=<sp/>string1.substr(1,<sp/>string1.size()<sp/>-<sp/>2);<sp/></highlight><highlight class="comment">//<sp/>remove<sp/>brackets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(temp.empty())<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/>gaugesIndex;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gaugesIndex;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>std::string<sp/>delimiter<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>std::string<sp/>token;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((pos<sp/>=<sp/>temp.find(delimiter))<sp/>!=<sp/>std::string::npos)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>token<sp/>=<sp/>temp.substr(0,<sp/>pos);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>gauges.push_back(std::stoi(token));</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>temp.erase(0,<sp/>pos<sp/>+<sp/>delimiter.length());</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>gauges.push_back(std::stoi(temp));</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>convert<sp/>float<sp/>to<sp/>unsigned<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>std::vector&lt;unsigned<sp/>int&gt;<sp/>gaugesIndex;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>gauges.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>gaugesIndex.push_back(std::round(gauges[i]<sp/>/<sp/>dx));</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gaugesIndex;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="code/src/ReadUserInput.cpp"/>
+  </compounddef>
+</doxygen>

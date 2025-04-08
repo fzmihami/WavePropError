@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="GlobalVariables_8cpp" kind="file" language="C++">
+    <compoundname>GlobalVariables.cpp</compoundname>
+    <includes refid="GlobalVariables_8h" local="yes">GlobalVariables.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>GlobalVariables.h</label>
+        <link refid="GlobalVariables_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>code/src/GlobalVariables.cpp</label>
+        <link refid="GlobalVariables_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1accf9cafc36aeda21688e19a1c2d3888d" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float G</definition>
+        <argsstring></argsstring>
+        <name>G</name>
+        <initializer>= 9.81</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="12" column="13" bodyfile="code/src/GlobalVariables.cpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1aa08a577393243b86dfd2a97e61443673" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <initializer>= 3.14159265358979323846</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="13" column="13" bodyfile="code/src/GlobalVariables.cpp" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a777989279445ddc055c317df60b3dd64" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float hmin</definition>
+        <argsstring></argsstring>
+        <name>hmin</name>
+        <initializer>= 1e-6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="14" column="7" bodyfile="code/src/GlobalVariables.cpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a96a5ba0386e2a1b3b9ec030f12e91e47" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string ListeScheme[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>ListeScheme</name>
+        <initializer>= {&quot;conservative_staggered&quot;, &quot;hllc&quot;,
+                                    &quot;central_upwind&quot;, &quot;hll&quot;}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="16" column="19" bodyfile="code/src/GlobalVariables.cpp" bodystart="16" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1aca7f35c8ae5f70eaffe705ebc6766585" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float alpha1</definition>
+        <argsstring></argsstring>
+        <name>alpha1</name>
+        <initializer>= -0.39</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="19" column="13" bodyfile="code/src/GlobalVariables.cpp" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a8f669f98a450c90b372af97dbe393064" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float gamma1</definition>
+        <argsstring></argsstring>
+        <name>gamma1</name>
+        <initializer>= -0.531</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="20" column="13" bodyfile="code/src/GlobalVariables.cpp" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a7dce376424d554a29a3742d3dbfc7ee3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float alphaSP</definition>
+        <argsstring></argsstring>
+        <name>alphaSP</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="22" column="7" bodyfile="code/src/GlobalVariables.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a6a322c5e57d95bf50f6478579c28b9cd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gammaSP</definition>
+        <argsstring></argsstring>
+        <name>gammaSP</name>
+        <initializer>= 0.92</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="23" column="7" bodyfile="code/src/GlobalVariables.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a1e55a637d0220456f6caa6823b1efda9" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int nSP</definition>
+        <argsstring></argsstring>
+        <name>nSP</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="24" column="14" bodyfile="code/src/GlobalVariables.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a115114c8257e3a44296ac83db835062f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float epsilonSP</definition>
+        <argsstring></argsstring>
+        <name>epsilonSP</name>
+        <initializer>=
+    0.999</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="25" column="7" bodyfile="code/src/GlobalVariables.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a87f49feba762f3dd933bf0df4b960a2a" prot="public" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float thetaRC</definition>
+        <argsstring></argsstring>
+        <name>thetaRC</name>
+        <initializer>= 1.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="28" column="13" bodyfile="code/src/GlobalVariables.cpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="GlobalVariables_8cpp_1a6d1d85b49b60e43664912620f0c4fa8b" prot="public" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned positionWM</definition>
+        <argsstring></argsstring>
+        <name>positionWM</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="code/src/GlobalVariables.cpp" line="30" column="10" bodyfile="code/src/GlobalVariables.cpp" bodystart="30" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>This file contains the global constants and variables used in the numerical solver for wave propagation. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The global variables are used throughout the model to define physical constants, numerical scheme settings, and sponge layer parameters. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="GlobalVariables_8h" kindref="compound">GlobalVariables.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1accf9cafc36aeda21688e19a1c2d3888d" kindref="member">G</ref><sp/>=<sp/>9.81;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1aa08a577393243b86dfd2a97e61443673" kindref="member">PI</ref><sp/>=<sp/>3.14159265358979323846;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a777989279445ddc055c317df60b3dd64" kindref="member">hmin</ref><sp/>=<sp/>1e-6;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="GlobalVariables_8h_1a96a5ba0386e2a1b3b9ec030f12e91e47" kindref="member">ListeScheme</ref>[4]<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;conservative_staggered&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;hllc&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;central_upwind&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;hll&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1aca7f35c8ae5f70eaffe705ebc6766585" kindref="member">alpha1</ref><sp/>=<sp/>-0.39;<sp/></highlight><highlight class="comment">//<sp/>Nwogu</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a8f669f98a450c90b372af97dbe393064" kindref="member">gamma1</ref><sp/>=<sp/>-0.531;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a7dce376424d554a29a3742d3dbfc7ee3" kindref="member">alphaSP</ref><sp/>=<sp/>2;<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>value<sp/>suggested<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a6a322c5e57d95bf50f6478579c28b9cd" kindref="member">gammaSP</ref><sp/>=<sp/>0.92;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Range<sp/>[0.88<sp/>0.92]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a1e55a637d0220456f6caa6823b1efda9" kindref="member">nSP</ref><sp/>=<sp/>100;<sp/></highlight><highlight class="comment">//<sp/>Range<sp/>[50<sp/>-<sp/>100]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a115114c8257e3a44296ac83db835062f" kindref="member">epsilonSP</ref><sp/>=</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>0.999;<sp/></highlight><highlight class="comment">//<sp/>for<sp/>spl&gt;epsilonSP<sp/>we<sp/>consider<sp/>that<sp/>the<sp/>sponge<sp/>layer<sp/>is<sp/>not<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a87f49feba762f3dd933bf0df4b960a2a" kindref="member">thetaRC</ref><sp/>=<sp/>1.0;<sp/></highlight><highlight class="comment">//<sp/>Reconstruction<sp/>SWE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/><ref refid="GlobalVariables_8h_1a402c4b48d21417b113c1bdbc078d4b93" kindref="member">positionWM</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>position<sp/>of<sp/>the<sp/>wavemaker</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="code/src/GlobalVariables.cpp"/>
+  </compounddef>
+</doxygen>
