@@ -17,11 +17,3 @@ sphinx:
 python:
   install:
     - requirements: docs/requirements.txt  # For pip installation
-
-# Optional: specify the Conda environment setup
-conda:
-  install:
-    - environment: docs/environment.yml  # For conda installation
-
-
-
