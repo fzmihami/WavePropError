@@ -18,8 +18,6 @@ sphinx:
 python:
   install:
     - requirements: docs/requirements.txt  # For pip installation
-    - method: pip
-      path: .
 
 # Conda environment setup
 # conda:
