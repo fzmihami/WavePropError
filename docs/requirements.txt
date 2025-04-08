@@ -6,3 +6,5 @@ plotly
 sphinx
 sphinx_rtd_theme
 breathe
+sphinxcontrib-bibtex
+sphinx-autodoc-typehints
