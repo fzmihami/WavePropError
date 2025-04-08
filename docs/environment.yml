@@ -1,4 +1,4 @@
-name: docs-env
+name: wavepropenv
 channels:
   - defaults
 dependencies:

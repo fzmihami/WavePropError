@@ -21,8 +21,7 @@ python:
 
 # Optional: specify the Conda environment setup
 conda:
-  install:
-    - environment: docs/environment.yml  # For conda installation
+  environment: docs/environment.yml  # For conda installation
 
 
 
