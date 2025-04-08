@@ -15,9 +15,11 @@ sphinx:
   configuration: docs/source/conf.py
 
 # Python requirements
-# python:
-#   install:
-#     - requirements: docs/requirements.txt  # For pip installation
+python:
+  install:
+    - requirements: docs/requirements.txt  # For pip installation
+    - method: pip
+    - path: .
 
 # Optional: specify the Conda environment setup
 conda:
