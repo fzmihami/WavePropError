@@ -1,10 +1,20 @@
 name: wavepropenv
 channels:
+  - conda-forge
   - defaults
 dependencies:
-  - python=3.13
+  - python=3.11          
   - numpy
   - matplotlib
   - scipy
   - xarray
   - plotly
+  - ipython
+  - jupyter
+  - sphinx
+  - sphinx_rtd_theme
+  - breathe
+  - sphinxcontrib-bibtex
+  - sphinx-autodoc-typehints
+  - nbsphinx
+  - nbconvert

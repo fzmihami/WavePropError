@@ -24,6 +24,7 @@ The package supports four numerical schemes for solving the dispersive Nwogu's e
    modules/scheme_description
    modules/scripts
    modules/code
+   modules/examples
    
 
 References

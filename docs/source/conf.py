@@ -26,7 +26,8 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.graphviz',
               'sphinxcontrib.bibtex',
               'sphinx.ext.mathjax',
-              'sphinx_autodoc_typehints',]
+              'sphinx_autodoc_typehints',
+              'nbsphinx',]
 
 
 # C++ Documentation

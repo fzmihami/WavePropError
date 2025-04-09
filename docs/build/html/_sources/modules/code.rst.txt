@@ -1,6 +1,8 @@
 C++ Code Documentation
 ======================
 
+This section provides a detailed overview of the C++ code used in the WavePropError project.
+
 Main File (``main.cpp``)
 -------------------------
 .. doxygenfile:: main.cpp

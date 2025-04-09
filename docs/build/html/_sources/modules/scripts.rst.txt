@@ -2,6 +2,8 @@
 Python Scripts Documentation
 ============================
 
+This section provides a detailed overview of the Python scripts used in the WavePropError project.
+
 Model Execution Scripts (``run_model.py``)
 ------------------------------------------
 

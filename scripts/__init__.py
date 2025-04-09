@@ -1,4 +1,8 @@
 # __init__.py
 
-from .plotting import create_animation_plotly
-from .plotting import plot_gauges 
+from .run_model import *
+from .empirical_spec import *
+from .read_results import *
+from .exact_solution import *
+from .plotting import *
+from .error_calculation import *

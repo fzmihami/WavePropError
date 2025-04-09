@@ -23,5 +23,9 @@ python:
 # conda:
 #   environment: docs/environment.yml  # For conda installation
 
+# python:
+#   install:
+#     - method: conda
+#       environment: docs/environment.yml
 
 
