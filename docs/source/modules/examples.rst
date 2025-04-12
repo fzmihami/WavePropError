@@ -17,7 +17,8 @@ The examples are provided as interactive Jupyter notebooks and static HTML previ
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
    ../examples/test1_scheme.ipynb
+   ../examples/test2_reconstruction.ipynb
