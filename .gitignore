@@ -25,3 +25,10 @@ code/build/*
 .ipynb_checkpoints
 
 # Sphinx documentation
+docs/_build/
+docs/build/
+docs/source/_static/
+*.doctree
+
+# history
+*.history
