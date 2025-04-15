@@ -22,3 +22,4 @@ The examples are provided as interactive Jupyter notebooks and static HTML previ
 
    ../examples/test1_scheme.ipynb
    ../examples/test2_reconstruction.ipynb
+   ../examples/test3_error.ipynb

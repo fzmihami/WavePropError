@@ -24,6 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Numerical Error — Monochromatic Wave Propagation" href="test3_error.html" />
     <link rel="prev" title="Scheme Comparison — Monochromatic Wave Propagation" href="test1_scheme.html" /> 
 </head>
 
@@ -75,6 +76,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="test3_error.html">Numerical Error — Monochromatic Wave Propagation</a></li>
 </ul>
 </li>
 </ul>
@@ -135,8 +137,8 @@
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wave_amplitude</span> <span class="o">=</span> <span class="mf">1e-2</span> <span class="c1"># wave amplitude in m, small amplitude assumption</span>
-<span class="n">wave_period</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># wave period in s</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wave_amplitude</span> <span class="o">=</span> <span class="mf">0.5e-2</span> <span class="c1"># wave amplitude in m, small amplitude assumption</span>
+<span class="n">wave_period</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># wave period in s</span>
 <span class="n">water_depth</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># water depth in m</span>
 
 <span class="n">wave_length</span> <span class="o">=</span> <span class="n">wavelength_nwogu</span><span class="p">(</span><span class="n">wave_period</span><span class="p">,</span> <span class="n">water_depth</span><span class="p">)</span> <span class="c1"># wave length in m computed using Nwogu&#39;s dispersion relation</span>
@@ -149,7 +151,7 @@
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Wave length: 12.00
+Wave length: 5.20
 </pre></div></div>
 </div>
 </section>
@@ -218,9 +220,9 @@ Wave length: 12.00
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Grid size: 0.40 m
-Domain size: 360.00 m
-Simulation time: 200.00 s
+Grid size: 0.17 m
+Domain size: 156.13 m
+Simulation time: 100.00 s
 </pre></div></div>
 </div>
 </section>
@@ -266,19 +268,19 @@ Numerical scheme :hllc
 Order of reconstruction :1
 Order of RK time integration :3
 Courant number :0.5
-Grid spacing :0.400003 m
-Length of the domain :360.002 m
+Grid spacing :0.173476 m
+Length of the domain :156.128 m
 Water depth :1 m
-Total computation time :200 s
+Total computation time :100 s
 Time step for the output :1 s
 Time step for the gauges :1 s
 frequency [Hz]           amplitude [m]            phase [rad]
-0.25                     0.01                     0
+0.5                      0.005                    0
 
 Computation Progress:
 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||]
 
-The numerical simulation took 7.73504 s
+The numerical simulation took 8.20525 s
 
 
 Reading first_order results and converting to xarray.Dataset...
@@ -324,19 +326,19 @@ Numerical scheme :hllc
 Order of reconstruction :2
 Order of RK time integration :3
 Courant number :0.5
-Grid spacing :0.400003 m
-Length of the domain :360.002 m
+Grid spacing :0.173476 m
+Length of the domain :156.128 m
 Water depth :1 m
-Total computation time :200 s
+Total computation time :100 s
 Time step for the output :1 s
 Time step for the gauges :1 s
 frequency [Hz]           amplitude [m]            phase [rad]
-0.25                     0.01                     0
+0.5                      0.005                    0
 
 Computation Progress:
 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||]
 
-The numerical simulation took 7.88994 s
+The numerical simulation took 7.98568 s
 
 
 Reading second_order results and converting to xarray.Dataset...
@@ -382,19 +384,19 @@ Numerical scheme :hllc
 Order of reconstruction :3
 Order of RK time integration :3
 Courant number :0.5
-Grid spacing :0.400003 m
-Length of the domain :360.002 m
+Grid spacing :0.173476 m
+Length of the domain :156.128 m
 Water depth :1 m
-Total computation time :200 s
+Total computation time :100 s
 Time step for the output :1 s
 Time step for the gauges :1 s
 frequency [Hz]           amplitude [m]            phase [rad]
-0.25                     0.01                     0
+0.5                      0.005                    0
 
 Computation Progress:
 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||]
 
-The numerical simulation took 7.85848 s
+The numerical simulation took 7.96609 s
 
 
 Reading third_order results and converting to xarray.Dataset...
@@ -440,19 +442,19 @@ Numerical scheme :hllc
 Order of reconstruction :5
 Order of RK time integration :3
 Courant number :0.5
-Grid spacing :0.400003 m
-Length of the domain :360.002 m
+Grid spacing :0.173476 m
+Length of the domain :156.128 m
 Water depth :1 m
-Total computation time :200 s
+Total computation time :100 s
 Time step for the output :1 s
 Time step for the gauges :1 s
 frequency [Hz]           amplitude [m]            phase [rad]
-0.25                     0.01                     0
+0.5                      0.005                    0
 
 Computation Progress:
 100% [||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||]
 
-The numerical simulation took 7.67825 s
+The numerical simulation took 8.23713 s
 
 
 Reading fifth_order results and converting to xarray.Dataset...
@@ -494,7 +496,7 @@ Done!
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_animation_plotly</span><span class="p">([</span><span class="n">ds_first</span><span class="p">,</span> <span class="n">ds_second</span><span class="p">,</span> <span class="n">ds_third</span><span class="p">,</span> <span class="n">ds_fifth</span><span class="p">],</span> <span class="n">ds_exact</span><span class="p">)</span>
 
 <span class="c1"># Additional formatting of the fig object</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">yaxis_range</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">])</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
     <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
         <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;h&quot;</span><span class="p">,</span>
@@ -535,7 +537,7 @@ Done!
 <section id="Figure-of-the-final-time-step">
 <h3>Figure of the final time step<a class="headerlink" href="#Figure-of-the-final-time-step" title="Link to this heading"></a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -588,6 +590,7 @@ Done!
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="test1_scheme.html" class="btn btn-neutral float-left" title="Scheme Comparison — Monochromatic Wave Propagation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="test3_error.html" class="btn btn-neutral float-right" title="Numerical Error — Monochromatic Wave Propagation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

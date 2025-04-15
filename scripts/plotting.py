@@ -275,8 +275,8 @@ def plot_gauges(
                 )
 
             # add labels
-            fig.update_xaxes(title_text="Time [s]", row=i + 1, col=1)
-            fig.update_yaxes(title_text="Free surface [m]", row=i + 1, col=1)
+            fig.update_yaxes(title_text="Free surface [m]", row=num + 1, col=1)
+        fig.update_xaxes(title_text="Time [s]", row=num + 1, col=1)
 
         # update layout
         fig.update_layout(template="plotly_white")
@@ -327,8 +327,8 @@ def plot_gauges(
             )
 
         # add labels
-        fig.update_xaxes(title_text="Time [s]", row=i + 1, col=1)
-        fig.update_yaxes(title_text="Free surface [m]", row=i + 1, col=1)
+        fig.update_yaxes(title_text="Free surface [m]", row=num + 1, col=1)
+    fig.update_xaxes(title_text="Time [s]", row=num + 1, col=1)
 
     # update layout
     fig.update_layout(template="plotly_white")
