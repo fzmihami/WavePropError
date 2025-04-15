@@ -31,4 +31,4 @@ docs/source/_static/
 *.doctree
 
 # history
-*.history
+.history/
